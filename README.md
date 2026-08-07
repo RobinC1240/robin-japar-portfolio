@@ -24,16 +24,19 @@ files and folders beginning with an underscore.
     index.html                                          home
     about.html                                          about
     work-flash-vendor-transition.html                   case study
+    work-enterprise-personalization.html                case study
+    work-executive-ux-scorecard.html                    case study
     work-servicenow-employee-experience-taxonomy.html   case study
     work-taxonomy-consulting-service.html               case study
-    work-executive-ux-scorecard.html                    case study
-    work-enterprise-personalization.html                case study
     work-friction-mapping-framework.html                case study
     assets/                                             images and icons
     .nojekyll
 
 Each page carries its own CSS and JavaScript inline, so there is nothing to
 link, bundle, or compile. To change something, edit the HTML file directly.
+
+This README is documentation for the repository, not part of the site. Delete
+it if you would rather not have it visible.
 
 ## Two things to check before you announce the site
 
@@ -63,13 +66,23 @@ without a preview image. Recommended size 1200x630. Drop the file into
 
 ## Known limitations
 
-**The contact and resume forms are not connected.** Both are built and
-validated, but `CF_ENDPOINT` and `RR_ENDPOINT` are empty, so each form shows a
-clear notice rather than pretending to send. To connect them, sign up for a
-form relay such as Formspree, Basin, or Web3Forms, then set the endpoint near
-the top of the script block in each HTML file. Set the destination inbox inside
-the relay's dashboard rather than in the page, because published HTML is public
-and gets scraped by address harvesters.
+**The forms are connected, but confirm the first submission.** Both forms post
+to Formspree: contact goes to `mzepdbae`, resume requests to `mgawoelz`. The
+wiring was tested against a Formspree-compatible mock covering validation, a
+successful send, a server error, and the honeypot, all passing.
+
+What could not be tested from here is real delivery, because the build
+environment blocks outbound requests to formspree.io. Formspree also holds the
+first submission on a new form until you confirm it by email. So after
+publishing, submit each form once, watch for the Formspree confirmation email,
+confirm it, then submit again to verify the message reaches your inbox.
+
+The destination inbox is set inside the Formspree dashboard, not in these
+files, which is deliberate: published HTML is public and gets scraped by
+address harvesters.
+
+Formspree's free tier allows 50 submissions per month across both forms
+combined. If that becomes tight, upgrading is a plan change with no edits here.
 
 **Fonts load from Google Fonts.** Fraunces and Lato come from
 `fonts.googleapis.com` rather than being served from `assets/`. Self-hosting
@@ -82,3 +95,10 @@ taxonomy and taxonomy consulting pages render their chapters from a data object
 at load time. They look correct in any browser, but crawlers that do not run
 JavaScript see roughly a third to a half of the copy. Google executes
 JavaScript; many AI answer engines and social scrapers do not.
+
+## Case study navigation
+
+Each of the six case studies ends with a Previous / All work / Next block above
+the footer. The sequence follows the order of the work grid on the home page
+and wraps circularly, so the last project leads back to the first. All work
+targets `index.html#work`, which scrolls to the project selection area.

@@ -144,7 +144,7 @@ a{color:var(--forest-600)}
 
 
 /* ---------- header ---------- */
-.masthead{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.masthead{position:sticky;top:0;z-index:100;background:var(--paper);border-bottom:1px solid var(--rule)}
 .masthead-in{display:flex;align-items:center;justify-content:space-between;gap:20px;max-width:var(--shell);margin:0 auto;padding:14px var(--gut)}
 .brand{font-family:var(--font-display);font-size:19px;color:var(--ink);text-decoration:none;letter-spacing:-.01em;line-height:1.2}
 .brand span{display:block;font-family:var(--font-body);font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:3px}
@@ -612,12 +612,50 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 .headrow .lede{margin-top:0;max-width:58ch}
 
 /* bridge: heading, copy, action across three columns on one centre line */
-.bridge-row{display:grid;grid-template-columns:2fr 2fr 1fr;gap:clamp(24px,3vw,48px);align-items:center}
+/* Column ratio, gutter and row gap all match .bandhead and the system
+   .btnrow spacing, so this row sits on the same grid rhythm as the other
+   heading-plus-copy sections rather than inventing its own. */
+/* Top aligned, not centred: when the heading runs long the two columns are
+   very different heights and centring leaves the copy floating. The right
+   column is dropped by the height of the eyebrow (21px line + 20px margin)
+   so the copy starts level with the heading rather than the eyebrow. */
+.bridge-row{
+  --head-offset:41px;
+  display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);
+  gap:34px clamp(28px,4vw,58px);align-items:start;
+}
+/* Two columns: heading left, copy right with the action beneath it. The
+   heading spans both rows and centres against the whole right-hand block, so
+   the row reads as middle aligned rather than top aligned. */
+.bridge-row > :first-child{grid-column:1;grid-row:1 / span 2;align-self:start}
+.bridge-row > .bridge-copy{grid-column:2;grid-row:1;margin-top:var(--head-offset)}
+.bridge-row > .btnrow{grid-column:2;grid-row:2;justify-content:flex-start}
+/* Vertical rule between the heading and the right-hand column, matching the
+   .bandhead.split treatment on the About page. Drawn as a grid-placed
+   pseudo-element spanning rows 1 and 2 so it runs unbroken past the row gap
+   between the copy and the button, which a border on each item would not. */
+.bridge-row::before{
+  content:"";grid-column:2;grid-row:1 / 3;
+  /* stretch, or this empty box collapses to zero height and the border has
+     nothing to draw along. The margin drops the rule to start level with the
+     heading, matching the copy. */
+  align-self:stretch;margin-top:var(--head-offset);
+  border-left:1px solid var(--rule);pointer-events:none;
+}
+.bridge-row > .bridge-copy,.bridge-row > .btnrow{padding-left:clamp(28px,4vw,58px)}
+.bridge-row > :first-child,.bridge-row > .bridge-copy,.bridge-row > .btnrow{text-align:left}
 .bridge-row h2{margin-top:6px;font-size:clamp(24px,2.6vw,34px);max-width:none;text-wrap:pretty}
 .bridge-copy{margin:0;font-size:clamp(16px,1.5vw,17.5px);line-height:1.62;color:var(--body);text-wrap:pretty}
 .bridge-row .btnrow{margin:0;justify-content:flex-start}
 .bridge-row .btn{white-space:nowrap}
-@media (max-width:980px){.bridge-row{grid-template-columns:1fr;gap:22px}}
+@media (max-width:980px){.bridge-row{grid-template-columns:1fr;gap:22px}
+  /* stacked: clear the explicit placements or they force a phantom second column */
+  .bridge-row > :first-child,.bridge-row > .bridge-copy,.bridge-row > .btnrow{grid-column:1;grid-row:auto}
+  /* stacked: a left rule would read as an indent */
+  .bridge-row::before{display:none}
+  .bridge-row > .bridge-copy,.bridge-row > .btnrow{padding-left:0}
+  /* stacked: no second column to align to */
+  .bridge-row > .bridge-copy{margin-top:0}}
 
 .method-close{
   margin:clamp(38px,4.4vw,58px) auto 0;padding-top:28px;border-top:1px solid var(--rule);
@@ -819,15 +857,82 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 
 /* sectors as static sage pills, not interactive */
 .sectors{
-  margin:26px 0 0;padding:22px 0 0;border-top:1px solid var(--rule);
+  margin:28px 0 0;padding:0;
   list-style:none;display:flex;flex-wrap:wrap;gap:10px;
 }
 .sectors li{
   background:var(--sage-100);border:1px solid var(--sage);border-radius:999px;
   padding:8px 18px;font-size:14.5px;line-height:1.4;color:var(--forest-900);
 }
-.awards-pills li:last-child{background:var(--tint);border-color:var(--green-mid);font-weight:700}
-.sectors-note{margin:16px 0 0;font-size:14.5px;line-height:1.6;color:var(--muted)}
+/* ---------- recognition ----------
+   Reversed band, deliberately unlike the light two-column sections either
+   side of it. No pills: awards are grouped under typographic category
+   headings and separated by hairlines, so each entry reads as an achievement
+   rather than a tag. */
+/* Head sits on the same four-column grid as the awards below: title across
+   the first two columns, lede across the last two. That fills the row width
+   without letting the lede run to a 95-character measure, and it ties the
+   head structurally to the columns underneath rather than floating above
+   them. */
+.rec-head{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:clamp(28px,3vw,44px);align-items:end;
+}
+.rec-title{grid-column:1 / span 2}
+.rec-head .lede{grid-column:3 / span 2;margin:0;max-width:none}
+@media (max-width:980px){
+  /* grid below drops to two columns here, so the head follows: title left,
+     lede right. Going straight to one column would stretch the lede to a
+     95-character line. */
+  .rec-head{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rec-title{grid-column:1}
+  .rec-head .lede{grid-column:2}
+}
+@media (max-width:620px){
+  .rec-head{grid-template-columns:1fr}
+  .rec-title,.rec-head .lede{grid-column:1}
+  .rec-head .lede{margin-top:4px}
+}
+.rec-grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:clamp(28px,3vw,44px);margin-top:clamp(38px,4.4vw,58px);
+}
+.rec-cat{
+  /* flex-end plus a two-line min-height keeps every category rule on the same
+     line, whether the label wraps or not */
+  display:flex;align-items:flex-end;line-height:1.3;min-height:3.75em;
+  margin:0 0 4px;padding-bottom:12px;border-bottom:1px solid var(--sage);
+  font-family:var(--font-body);font-size:11.5px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--sage);
+}
+.rec-list{list-style:none;margin:0;padding:0}
+.rec-list li{
+  padding:14px 0;border-bottom:1px solid var(--rule-dark);
+  font-family:var(--font-display);font-size:16.5px;line-height:1.36;
+  color:#FFFFFF;text-wrap:pretty;
+}
+.rec-list li:last-child{border-bottom:0}
+.rec-count{
+  display:block;font-family:var(--font-body);font-size:11.5px;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin-bottom:5px;
+}
+@media (max-width:980px){.rec-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){
+  /* one column, so each group reads as its own short scannable block */
+  .rec-grid{grid-template-columns:1fr;gap:30px}
+  .rec-list li{padding:12px 0}
+}
+/* Vertical rule between the heading and the copy, replacing the horizontal
+   rule that used to sit above the sector pills. Scoped to .split so the other
+   three .bandhead instances on this site are unaffected. */
+.bandhead.split .body{
+  border-left:1px solid var(--rule);
+  padding-left:clamp(28px,4vw,58px);
+}
+@media (max-width:900px){
+  /* columns stack here, so a left rule would read as a stray indent */
+  .bandhead.split .body{border-left:0;padding-left:0}
+}
 
 /* contact actions */
 /* one box model for every action, so the row cannot go ragged */
@@ -954,7 +1059,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
   <!-- ============ ENVIRONMENTS AND RECOGNITION ============ -->
   <section class="section" style="background:var(--paper-alt);border-block:1px solid var(--rule)" aria-labelledby="env-h">
     <div class="shell">
-      <div class="bandhead">
+      <div class="bandhead split">
         <div>
           <p class="eyebrow">Where I have worked</p>
           <h2 id="env-h">Different industries. Familiar enterprise problems.</h2>
@@ -971,32 +1076,49 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
             <li>Finance</li>
             <li>Technology</li>
           </ul>
-          <p class="sectors-note">Including enterprise consulting and employee experience programs</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============ RECOGNITION ============ -->
-  <section class="section" aria-labelledby="rec-h">
+  <section class="section on-dark" aria-labelledby="rec-h">
     <div class="shell">
-      <div class="bandhead">
-        <div>
+      <div class="rec-head">
+        <div class="rec-title">
           <p class="eyebrow">Recognition</p>
-          <h2 id="rec-h">Recognized across customer experience, innovation, transformation, delivery, and leadership.</h2>
+          <h2 id="rec-h">Recognition for transformation, delivery, and leadership.</h2>
         </div>
-        <div class="body">
-          <p>My work has been recognized through multiple AT&amp;T awards spanning customer experience, digital transformation, technology delivery, service excellence, collaboration, and leadership, along with 7 Far Exceeds annual performance reviews.</p>
-          <ul class="sectors awards-pills">
-            <li>Serve Customer First</li>
-            <li>Win As One</li>
-            <li>Acting Boldly</li>
-            <li>GOal Getter Award</li>
-            <li>4&times; Digital Transformation Awards</li>
-            <li>Service Excellence Award</li>
-            <li>Bothell Super Hero Award</li>
+        <p class="lede">My work has been recognized through multiple AT&amp;T awards spanning customer experience, digital transformation, technology delivery, service excellence, collaboration, and leadership, along with 7 Far Exceeds annual performance reviews.</p>
+      </div>
+      <div class="rec-grid">
+        <div>
+          <p class="rec-cat">Transformation &amp; innovation</p>
+          <ul class="rec-list">
+            <li><span class="rec-count">Four times</span>Digital Transformation Awards</li>
             <li>Technology Development Award</li>
-            <li>7&times; Far Exceeds Annual Reviews</li>
+            <li>Acting Boldly</li>
+          </ul>
+        </div>
+        <div>
+          <p class="rec-cat">Customer &amp; service</p>
+          <ul class="rec-list">
+            <li>Serve Customer First</li>
+            <li>Service Excellence Award</li>
+          </ul>
+        </div>
+        <div>
+          <p class="rec-cat">Leadership &amp; collaboration</p>
+          <ul class="rec-list">
+            <li>Win As One</li>
+            <li>Bothell Super Hero Award</li>
+          </ul>
+        </div>
+        <div>
+          <p class="rec-cat">Performance</p>
+          <ul class="rec-list">
+            <li><span class="rec-count">Seven times</span>Far Exceeds Annual Reviews</li>
+            <li>GOal Getter Award</li>
           </ul>
         </div>
       </div>
@@ -1200,7 +1322,7 @@ tog.addEventListener("click", ()=>{
    dashboard. Never put the destination address in this file: anything
    here is public page source and gets harvested.
    ============================================================ */
-const CF_ENDPOINT = "";   // e.g. "https://formspree.io/f/xxxxxxx"
+const CF_ENDPOINT = "https://formspree.io/f/mzepdbae";   // e.g. "https://formspree.io/f/xxxxxxx"
 
 (function(){
   const bd=$("#cf-backdrop"), dlg=$("#cf-dialog"), form=$("#cf-form"),
@@ -1307,7 +1429,7 @@ resolveLinks();
    scraped by address harvesters.
    ============================================================ */
 (function () {
-  var RR_ENDPOINT = "";
+  var RR_ENDPOINT = "https://formspree.io/f/mgawoelz";
   var $ = function (s) { return document.querySelector(s); };
   var bd = $("#rr-backdrop"), dlg = $("#rr-dialog"), form = $("#rr-form"),
       statusEl = $("#rr-status"), submit = $("#rr-submit");

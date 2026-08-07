@@ -180,7 +180,7 @@ a{color:var(--forest-600)}
 
 
 /* ---------- header ---------- */
-.masthead{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.masthead{position:sticky;top:0;z-index:100;background:var(--paper);border-bottom:1px solid var(--rule)}
 .masthead-in{display:flex;align-items:center;justify-content:space-between;gap:20px;max-width:var(--shell);margin:0 auto;padding:14px var(--gut)}
 .brand{font-family:var(--font-display);font-size:19px;color:var(--ink);text-decoration:none;letter-spacing:-.01em;line-height:1.2}
 .brand span{display:block;font-family:var(--font-body);font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:3px}
@@ -648,14 +648,52 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 .headrow .lede{margin-top:0;max-width:58ch}
 
 /* bridge: heading, copy, action across three columns on one centre line */
-.bridge-row{display:grid;grid-template-columns:2fr 2fr 1fr;gap:clamp(24px,3vw,48px);align-items:center}
+/* Column ratio, gutter and row gap all match .bandhead and the system
+   .btnrow spacing, so this row sits on the same grid rhythm as the other
+   heading-plus-copy sections rather than inventing its own. */
+/* Top aligned, not centred: when the heading runs long the two columns are
+   very different heights and centring leaves the copy floating. The right
+   column is dropped by the height of the eyebrow (21px line + 20px margin)
+   so the copy starts level with the heading rather than the eyebrow. */
+.bridge-row{
+  --head-offset:41px;
+  display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);
+  gap:34px clamp(28px,4vw,58px);align-items:start;
+}
+/* Two columns: heading left, copy right with the action beneath it. The
+   heading spans both rows and centres against the whole right-hand block, so
+   the row reads as middle aligned rather than top aligned. */
+.bridge-row > :first-child{grid-column:1;grid-row:1 / span 2;align-self:start}
+.bridge-row > .bridge-copy{grid-column:2;grid-row:1;margin-top:var(--head-offset)}
+.bridge-row > .btnrow{grid-column:2;grid-row:2;justify-content:flex-start}
+/* Vertical rule between the heading and the right-hand column, matching the
+   .bandhead.split treatment on the About page. Drawn as a grid-placed
+   pseudo-element spanning rows 1 and 2 so it runs unbroken past the row gap
+   between the copy and the button, which a border on each item would not. */
+.bridge-row::before{
+  content:"";grid-column:2;grid-row:1 / 3;
+  /* stretch, or this empty box collapses to zero height and the border has
+     nothing to draw along. The margin drops the rule to start level with the
+     heading, matching the copy. */
+  align-self:stretch;margin-top:var(--head-offset);
+  border-left:1px solid var(--rule);pointer-events:none;
+}
+.bridge-row > .bridge-copy,.bridge-row > .btnrow{padding-left:clamp(28px,4vw,58px)}
+.bridge-row > :first-child,.bridge-row > .bridge-copy,.bridge-row > .btnrow{text-align:left}
 .bridge-row h2{margin-top:6px;font-size:clamp(24px,2.6vw,34px);max-width:none;text-wrap:pretty}
 .bridge-copy{margin:0;font-size:clamp(16px,1.5vw,17.5px);line-height:1.62;color:var(--body);text-wrap:pretty}
 .bridge-copy p{margin:0}
 .bridge-copy p + p{margin-top:14px}
 .bridge-row .btnrow{margin:0;justify-content:flex-start}
 .bridge-row .btn{white-space:nowrap}
-@media (max-width:980px){.bridge-row{grid-template-columns:1fr;gap:22px}}
+@media (max-width:980px){.bridge-row{grid-template-columns:1fr;gap:22px}
+  /* stacked: clear the explicit placements or they force a phantom second column */
+  .bridge-row > :first-child,.bridge-row > .bridge-copy,.bridge-row > .btnrow{grid-column:1;grid-row:auto}
+  /* stacked: a left rule would read as an indent */
+  .bridge-row::before{display:none}
+  .bridge-row > .bridge-copy,.bridge-row > .btnrow{padding-left:0}
+  /* stacked: no second column to align to */
+  .bridge-row > .bridge-copy{margin-top:0}}
 
 .method-close{
   margin:clamp(38px,4.4vw,58px) auto 0;padding-top:28px;border-top:1px solid var(--rule);
@@ -811,6 +849,50 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 .valcell .vw{margin:6px 0 0;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green-mid)}
 .valcell .vd{margin:12px 0 0;padding-top:12px;border-top:1px solid var(--rule);
   font-size:14.5px;line-height:1.58;color:var(--muted);text-wrap:pretty}
+
+/* ---------- project pagination (case studies only) ----------
+   Circular arrow controls either side of the six project numbers, the
+   familiar pagination pattern. Forest circle, sage arrow. */
+.projnav{border-top:1px solid var(--rule);background:var(--paper)}
+.projnav .shell{padding-block:clamp(30px,3.8vw,46px)}
+.projnav-row{display:flex;align-items:center;justify-content:center;gap:clamp(10px,1.6vw,22px)}
+.projnav-arrow{
+  flex:none;width:48px;height:48px;border-radius:50%;background:var(--forest);
+  display:flex;align-items:center;justify-content:center;text-decoration:none;
+  transition:background-color .18s ease,transform .18s ease;
+}
+.projnav-arrow svg{width:19px;height:19px;stroke:var(--sage);fill:none;
+  stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:stroke .18s ease}
+.projnav-arrow:hover,.projnav-arrow:focus-visible{background:var(--forest-800);transform:translateY(-2px)}
+.projnav-arrow:hover svg,.projnav-arrow:focus-visible svg{stroke:#FFFFFF}
+.projnav-nums{display:flex;align-items:center;gap:clamp(4px,1vw,14px)}
+.projnav-num{
+  min-width:40px;height:40px;padding:0 6px;border-radius:2px;
+  display:flex;align-items:center;justify-content:center;text-decoration:none;
+  font-family:var(--font-body);font-size:14px;font-weight:700;letter-spacing:.08em;
+  color:var(--muted);transition:color .18s ease,background-color .18s ease;
+}
+.projnav-num:hover,.projnav-num:focus-visible{color:var(--forest);background:var(--tint)}
+.projnav-num[aria-current="page"]{
+  color:var(--forest);background:var(--tint);
+  box-shadow:inset 0 -2px 0 var(--forest);
+}
+.projnav-allrow{text-align:center;margin-top:clamp(10px,1.4vw,16px)}
+.projnav-all{
+  display:inline-block;padding:11px 18px;
+  font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;text-decoration:none;color:var(--forest-600);
+  transition:color .18s ease;
+}
+.projnav-all:hover,.projnav-all:focus-visible{color:var(--forest);text-decoration:underline;text-underline-offset:4px}
+@media (max-width:560px){
+  /* keep all eight controls on one line down to 320px */
+  .projnav-row{gap:6px}
+  .projnav-arrow{width:42px;height:42px}
+  .projnav-arrow svg{width:17px;height:17px}
+  .projnav-nums{gap:1px}
+  .projnav-num{min-width:31px;height:38px;padding:0 2px;font-size:13px;letter-spacing:.04em}
+}
 </style>
 </head>
 <body>
@@ -1031,6 +1113,24 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
     </div>
   </section>
 
+
+  <nav class="projnav" aria-label="Case study pagination">
+    <div class="shell">
+      <div class="projnav-row">
+        <a class="projnav-arrow" href="work-friction-mapping-framework.html" aria-label="Previous project: Inventing Friction Mapping" title="Inventing Friction Mapping"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5 8 12l7 7"/></svg></a>
+        <div class="projnav-nums">
+          <a class="projnav-num" href="work-flash-vendor-transition.html" aria-current="page" title="Rebuilding a High-Performing Content Team"><span class="sr-only">Project </span>01</a>
+          <a class="projnav-num" href="work-enterprise-personalization.html" title="Designing Enterprise Personalization"><span class="sr-only">Project </span>02</a>
+          <a class="projnav-num" href="work-executive-ux-scorecard.html" title="Designing an Executive UX Scorecard"><span class="sr-only">Project </span>03</a>
+          <a class="projnav-num" href="work-servicenow-employee-experience-taxonomy.html" title="Designing Enterprise Taxonomy"><span class="sr-only">Project </span>04</a>
+          <a class="projnav-num" href="work-taxonomy-consulting-service.html" title="Building a Full-Service Taxonomy Offering"><span class="sr-only">Project </span>05</a>
+          <a class="projnav-num" href="work-friction-mapping-framework.html" title="Inventing Friction Mapping"><span class="sr-only">Project </span>06</a>
+        </div>
+        <a class="projnav-arrow" href="work-enterprise-personalization.html" aria-label="Next project: Designing Enterprise Personalization" title="Designing Enterprise Personalization"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="projnav-allrow"><a class="projnav-all" href="index.html#work">All work</a></div>
+    </div>
+  </nav>
 </main>
 
 <footer class="foot">
@@ -1208,7 +1308,7 @@ tog.addEventListener("click", ()=>{
    dashboard. Never put the destination address in this file: anything
    here is public page source and gets harvested.
    ============================================================ */
-const CF_ENDPOINT = "";   // e.g. "https://formspree.io/f/xxxxxxx"
+const CF_ENDPOINT = "https://formspree.io/f/mzepdbae";   // e.g. "https://formspree.io/f/xxxxxxx"
 
 (function(){
   const bd=$("#cf-backdrop"), dlg=$("#cf-dialog"), form=$("#cf-form"),
@@ -1315,7 +1415,7 @@ resolveLinks();
    scraped by address harvesters.
    ============================================================ */
 (function () {
-  var RR_ENDPOINT = "";
+  var RR_ENDPOINT = "https://formspree.io/f/mgawoelz";
   var $ = function (s) { return document.querySelector(s); };
   var bd = $("#rr-backdrop"), dlg = $("#rr-dialog"), form = $("#rr-form"),
       statusEl = $("#rr-status"), submit = $("#rr-submit");
