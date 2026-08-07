@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rebuilding a content team after a flash vendor cut | Robin Japar</title>
+<meta name="description" content="A 2019 flash vendor cut replaced an experienced team overnight. I transferred the missing Adobe AEM knowledge and cut retest failure from 45% to under 10%.">
+<link rel="canonical" href="https://www.japarofcontent.com/work/flash-vendor-transition">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#1D3B32">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Robin Japar">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Robin Japar">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://www.japarofcontent.com/work/flash-vendor-transition">
+<meta property="og:title" content="Rebuilding a content team after a flash vendor cut | Robin Japar">
+<meta property="og:description" content="A 2019 flash vendor cut replaced an experienced team overnight. I transferred the missing Adobe AEM knowledge and cut retest failure from 45% to under 10%.">
+<meta property="og:image" content="https://www.japarofcontent.com/assets/social-card.jpg">
+<meta property="og:image:alt" content="Robin Japar, enterprise content strategy and AI readiness">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rebuilding a content team after a flash vendor cut | Robin Japar">
+<meta name="twitter:description" content="A 2019 flash vendor cut replaced an experienced team overnight. I transferred the missing Adobe AEM knowledge and cut retest failure from 45% to under 10%.">
+<meta name="twitter:image" content="https://www.japarofcontent.com/assets/social-card.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://www.japarofcontent.com/#robin",
+      "name": "Robin Japar",
+      "jobTitle": "Enterprise content strategy, experience architecture, and AI readiness leader",
+      "url": "https://www.japarofcontent.com/",
+      "sameAs": [
+        "https://www.linkedin.com/in/robin-japar"
+      ],
+      "knowsAbout": [
+        "Enterprise content strategy",
+        "Content design",
+        "Taxonomy",
+        "Information architecture",
+        "Content modeling",
+        "Headless CMS",
+        "Adobe Experience Manager",
+        "ServiceNow Employee Center",
+        "Personalization",
+        "UX research",
+        "Customer journey analysis",
+        "Content governance",
+        "AI readiness",
+        "Service design"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.japarofcontent.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Flash vendor transition",
+          "item": "https://www.japarofcontent.com/work/flash-vendor-transition"
+        }
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://www.japarofcontent.com/work/flash-vendor-transition#work",
+      "url": "https://www.japarofcontent.com/work/flash-vendor-transition",
+      "name": "Rebuilding a content team after a flash vendor transition",
+      "headline": "Rebuilding a content team after a flash vendor transition",
+      "about": [
+        "Content operations",
+        "Adobe Experience Manager",
+        "Team capability building",
+        "Quality governance",
+        "Vendor management",
+        "Knowledge transfer"
+      ],
+      "abstract": "Rebuilt enterprise content delivery capability after a flash vendor transition, reducing retest failure from 45 percent to under 10 percent within a year while enterprise delivery continued.",
+      "author": {
+        "@id": "https://www.japarofcontent.com/#robin"
+      },
+      "creator": {
+        "@id": "https://www.japarofcontent.com/#robin"
+      },
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://www.japarofcontent.com/#site"
+      }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+
+
+/* ============================================================
+   DESIGN TOKENS
+   Sourced from the Wix site theme: base black/white,
+   accents deep forest, sage, mid green, cream.
+   ============================================================ */
+:root{
+  /* BASE - white, black, neutral ramp. These carry the page. */
+  --paper:#FCFDFC;
+  --paper-alt:#F2F5F3;
+  --black:#000000;
+  --black-soft:#101010;
+  --rule:#DCE3DF;
+  --rule-dark:#2B2B2B;
+  --ink:#000000;
+  --body:#3E3E3B;
+  --muted:#6A6A66;
+  --on-black:#EDEDE9;
+  --on-black-mute:#B0B0AA;
+
+  /* ACCENT - restrained. Never used as a page background. */
+  --forest-900:#0F2019;
+  --forest-800:#163026;
+  --forest:#1D3B32;
+  --forest-600:#2F5648;
+  --green-mid:#4A6C5E;
+  --sage:#A9BFB8;
+  --sage-100:#DCE6E2;
+  --tint:#E6EBE8;
+  --band:#F2F5F3;
+
+  --font-display:"Fraunces",Georgia,"Times New Roman",serif;
+  --font-body:"Lato",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+
+  --shell:1200px;
+  --gut:clamp(20px,5vw,64px);
+  --sec:clamp(64px,9vw,120px);
+}
+
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--body);
+  font-family:var(--font-body);font-size:17px;font-weight:400;line-height:1.72;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;display:block;height:auto}
+h1,h2,h3,h4{font-family:var(--font-display);color:var(--ink);font-weight:400;margin:0;text-wrap:balance}
+h1{font-size:clamp(35px,5.4vw,64px);line-height:1.08;letter-spacing:-.02em}
+h2{font-size:clamp(28px,3.7vw,44px);line-height:1.15;letter-spacing:-.015em}
+h3{font-size:clamp(20px,2.1vw,25px);line-height:1.28;letter-spacing:-.008em}
+h4{font-size:18px;line-height:1.35}
+p{margin:0}
+a{color:var(--forest-600)}
+
+.shell{max-width:var(--shell);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:var(--sec)}
+.stack>*+*{margin-top:var(--s,1rem)}
+
+.skip{position:absolute;left:-9999px;top:0;background:var(--forest);color:#fff;padding:12px 20px;z-index:200}
+.skip:focus{left:12px;top:12px}
+
+.eyebrow{
+  font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--forest-600);margin:0 0 20px;
+}
+.on-dark .eyebrow{color:var(--sage)}
+.lede{font-size:clamp(18px,1.9vw,20.5px);line-height:1.66;color:var(--body);text-wrap:pretty}
+.on-dark{background:var(--black);color:var(--on-black)}
+.on-dark h2,.on-dark h3,.on-dark h4{color:#FFFFFF}
+.on-dark .lede{color:var(--on-black-mute)}
+
+
+/* ---------- header ---------- */
+.masthead{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.masthead-in{display:flex;align-items:center;justify-content:space-between;gap:20px;max-width:var(--shell);margin:0 auto;padding:14px var(--gut)}
+.brand{font-family:var(--font-display);font-size:19px;color:var(--ink);text-decoration:none;letter-spacing:-.01em;line-height:1.2}
+.brand span{display:block;font-family:var(--font-body);font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.mainnav{display:flex;align-items:center;gap:clamp(14px,2vw,28px)}
+.mainnav a,.mainnav button{font-family:var(--font-body);font-size:14px;color:var(--body);text-decoration:none;padding:6px 0;border:0;border-bottom:2px solid transparent;background:none;cursor:pointer;line-height:inherit}
+.mainnav a:hover,.mainnav button:hover,.mainnav a:focus-visible,.mainnav button:focus-visible{color:var(--forest-600);border-bottom-color:var(--sage)}
+.mainnav a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--forest)}
+.navtoggle{display:none;background:none;border:1px solid var(--rule);border-radius:4px;padding:9px 13px;font-family:var(--font-body);font-size:13px;color:var(--ink);cursor:pointer}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-block;font-family:var(--font-body);font-size:14.5px;font-weight:700;
+  cursor:pointer;line-height:1.5;text-align:center;-webkit-appearance:none;appearance:none;
+  letter-spacing:.02em;text-decoration:none;padding:14px 28px;border-radius:2px;
+  border:2px solid var(--forest);background:var(--forest);color:#fff;transition:background .18s ease-out,color .18s,border-color .18s,transform .18s ease-out;
+}
+/* One rule governs both variants:
+   secondary fills with the primary's resting colour,
+   primary shifts to a clearly different accent tone.
+   Every button also lifts, so the change is felt as well as seen. */
+.btn:hover,.btn:focus-visible{
+  background:#fff;border-color:var(--forest);color:var(--forest);
+  transform:translateY(-2px);
+}
+.btn:active{transform:translateY(0)}
+
+.btn.alt{background:transparent;color:var(--forest);border-color:var(--forest)}
+.btn.alt:hover,.btn.alt:focus-visible{
+  background:var(--forest);border-color:var(--forest);color:#fff;
+  transform:translateY(-2px);
+}
+
+.on-dark .btn{background:var(--paper);border-color:var(--paper);color:var(--black)}
+.on-dark .btn:hover,.on-dark .btn:focus-visible{
+  background:transparent;border-color:var(--paper);color:var(--paper);
+  transform:translateY(-2px);
+}
+.on-dark .btn.alt{background:transparent;color:var(--paper);border-color:var(--sage)}
+.on-dark .btn.alt:hover,.on-dark .btn.alt:focus-visible{
+  background:var(--paper);border-color:var(--paper);color:var(--black);
+  transform:translateY(-2px);
+}
+.btnrow{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+
+/* focus */
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--forest-600);outline-offset:3px}
+.on-dark a:focus-visible,.on-dark button:focus-visible{outline-color:var(--sage)}
+
+/* ---------- hero ---------- */
+.hero{background:var(--paper);border-bottom:1px solid var(--rule)}
+.hero-grid{display:grid;grid-template-columns:1.28fr .72fr;gap:clamp(32px,5vw,72px);align-items:stretch;padding-block:clamp(56px,7vw,96px)}
+.hero p.lede{margin-top:26px}
+.portrait{position:relative;border-radius:3px;overflow:hidden;background:var(--sage-100);min-height:430px}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.ph{
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  background:var(--sage-100);color:var(--forest);text-align:center;padding:24px;
+  font-family:var(--font-body);font-size:13px;line-height:1.6;
+}
+.ph[hidden]{display:none}
+.ph strong{font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.portrait figcaption{
+  position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(15,32,25,.86));
+  color:#EEF2F0;font-size:12.5px;line-height:1.5;padding:34px 18px 14px;
+}
+
+/* ---------- proof bar ---------- */
+.proof{background:var(--black);color:var(--on-black)}
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule-dark)}
+.metric{background:var(--black);padding:clamp(28px,4vw,42px) clamp(16px,2.4vw,30px)}
+.metric .val{font-family:var(--font-display);font-size:clamp(34px,4.4vw,52px);line-height:1;color:#FFFFFF;font-weight:300;letter-spacing:-.02em}
+.metric .lbl{font-size:14px;line-height:1.6;color:var(--on-black-mute);margin-top:14px;max-width:30ch}
+
+/* ---------- systems graphic (signature) ---------- */
+.systems{border:1px solid var(--rule-dark);border-radius:3px;padding:clamp(20px,3vw,34px);background:var(--black-soft)}
+.chain{display:grid;grid-template-columns:1fr;gap:0;--dot-y:22px}
+.node{position:relative;padding:15px 0 15px 26px;background:none;border:0;border-radius:0}
+.node::before{
+  content:"";position:absolute;left:-5px;top:var(--dot-y);width:9px;height:9px;border-radius:50%;
+  background:var(--sage);border:1px solid var(--black);z-index:1;
+}
+/* rail segment: runs from this dot centre to the next dot centre.
+   offset by the dot centre, then 100% of node height lands exactly on the next one. */
+.node::after{
+  content:"";position:absolute;left:-1px;top:calc(var(--dot-y) + 5.5px);width:1px;height:100%;
+  background:var(--green-mid);z-index:0;
+}
+.node:last-child{padding-bottom:0}
+.node:last-child::after{display:none}
+.node:last-child::before{background:var(--tint)}
+.node .n-t{font-family:var(--font-display);font-size:18px;color:#FFFFFF;line-height:1.2}
+.node .n-d{font-size:13px;line-height:1.55;color:var(--on-black-mute);margin-top:5px}
+.chain-cap{font-size:13px;color:var(--sage);margin-top:18px;border-top:1px solid var(--rule-dark);padding-top:16px}
+
+/* ---------- pov ---------- */
+.pov-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,66px);align-items:start}
+.pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule-dark);margin-top:34px;border:1px solid var(--rule-dark)}
+.pillar{background:var(--black);padding:22px 20px}
+.pillar h4{color:#FFFFFF;font-size:17px}
+.pillar p{font-size:14px;line-height:1.6;color:var(--on-black-mute);margin-top:7px}
+
+/* ---------- progression ---------- */
+.tchev{display:none}
+.tnode:hover .tlabel,.tnode:focus-visible .tlabel{color:var(--ink)}
+.tnode:hover .tdot,.tnode:focus-visible .tdot{transform:scale(1.18);border-color:var(--forest);border-width:3px}
+.tnode:hover .tdot i,.tnode:focus-visible .tdot i{background:var(--forest);transform:scale(1.15)}
+.track{position:relative;margin-top:44px}
+.track-line{display:none}
+.track-nodes{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.tnode{
+  background:none;border:0;padding:0 6px 0 0;text-align:left;cursor:pointer;font-family:var(--font-body);
+  display:grid;align-content:start;justify-items:start;width:100%;position:relative;
+}
+.tnode::before{
+  content:"";position:absolute;left:14px;right:-22px;top:13px;height:2px;
+  background:var(--sage);z-index:0;
+}
+.tnode:last-child::before{display:none}
+.tdot{position:relative;z-index:1;width:28px;height:28px;border-radius:50%;background:var(--paper);border:2px solid var(--green-mid);display:grid;place-items:center;transition:transform .18s ease-out,border-color .18s,border-width .18s,background .18s}
+.tdot i{width:9px;height:9px;border-radius:50%;background:var(--green-mid);display:block;transition:transform .18s ease-out,background .18s;font-style:normal}
+.tnode.is-open .tdot{border-color:var(--forest);background:var(--forest);transform:scale(1.16)}
+.tnode.is-open .tdot i{background:var(--tint)}
+.tnode.is-open:hover .tdot{transform:scale(1.24)}
+.tlabel{font-size:13px;line-height:1.45;color:var(--muted);margin-top:14px;max-width:16ch;display:block;min-height:2.9em}
+.tnode.is-open .tlabel{color:var(--ink);font-weight:700}
+.tstage{font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--forest-600);display:block;margin-top:10px}
+.panel{
+  margin-top:44px;background:var(--band);border:1px solid var(--rule);border-left:4px solid var(--forest);
+  border-radius:0;padding:clamp(24px,3.4vw,38px);
+}
+.panel .quote{font-family:var(--font-display);font-size:clamp(20px,2.5vw,27px);line-height:1.34;color:var(--ink);max-width:34ch}
+.panel .proofpt{margin-top:18px;max-width:62ch}
+.panel .meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:22px;font-size:13.5px;color:var(--muted)}
+.panel .meta b{color:var(--ink);font-weight:700}
+
+/* ---------- capabilities ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:44px}
+.card{background:var(--paper);padding:clamp(22px,2.6vw,30px)}
+.card .idx{font-size:11.5px;font-weight:700;letter-spacing:.14em;color:var(--forest-600);text-transform:uppercase}
+.card h3{margin-top:12px;font-size:21px}
+.card p{margin-top:11px;font-size:15.5px;line-height:1.62;color:var(--muted)}
+
+/* ---------- featured work ---------- */
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.6vw,30px);margin-top:44px}
+.wcard{display:flex;flex-direction:column;border:1px solid var(--rule);border-radius:3px;overflow:hidden;background:var(--paper)}
+.wthumb{aspect-ratio:16/10;background:var(--sage-100);position:relative;border-bottom:1px solid var(--rule)}
+.wthumb img{width:100%;height:100%;object-fit:cover}
+.wbody{padding:clamp(20px,2.4vw,26px);display:flex;flex-direction:column;flex:1}
+.wtag{font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--forest-600)}
+.wcard h3{margin-top:12px;font-size:21px}
+.wfields{margin-top:18px;border-top:1px solid var(--rule);padding-top:16px;display:grid;gap:11px}
+.field{display:grid;grid-template-columns:88px minmax(0,1fr);gap:12px;font-size:14px;line-height:1.55}
+.field dt{font-weight:700;color:var(--ink);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;padding-top:2px}
+.field dd{margin:0;color:var(--muted)}
+.wai{margin-top:16px;background:var(--tint);border-left:3px solid var(--green-mid);padding:13px 15px;font-size:14px;line-height:1.6;color:var(--forest-800)}
+.wai b{display:block;font-size:11px;letter-spacing:.11em;text-transform:uppercase;margin-bottom:5px;color:var(--forest)}
+.wlink{margin-top:auto;padding-top:20px;font-size:14.5px;font-weight:700;color:var(--forest-600);text-decoration:none;display:inline-block}
+.wlink:hover{text-decoration:underline}
+
+/* ---------- recognition ---------- */
+.rec{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule-dark);border:1px solid var(--rule-dark);margin-top:44px}
+.rcol{background:var(--black);padding:24px 20px}
+.rcol h3{font-size:19px;color:#FFFFFF}
+.rcol ul{margin:14px 0 0;padding:0;list-style:none}
+.rcol li{font-size:14px;line-height:1.55;color:var(--on-black-mute);padding-left:16px;position:relative;margin-top:9px}
+.rcol li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:1px;background:var(--green-mid)}
+
+/* ---------- closing ---------- */
+.closing{background:var(--paper-alt);border-top:1px solid var(--rule)}
+.closing-in{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(28px,5vw,64px);align-items:center}
+
+/* ---------- footer ---------- */
+.foot{background:var(--black);color:var(--on-black-mute);padding-block:52px 34px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+.foot h4{color:#FFFFFF;font-family:var(--font-body);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:700}
+.foot ul{list-style:none;margin:14px 0 0;padding:0}
+.foot li{margin-top:9px}
+.foot a{color:var(--on-black-mute);text-decoration:none;font-size:14.5px}
+.foot a:hover{color:#fff;text-decoration:underline}
+.foot .sig{font-family:var(--font-display);font-size:22px;color:#FFFFFF}
+.foot .tag{font-size:14.5px;margin-top:10px;max-width:40ch;color:var(--on-black-mute)}
+.foot-base{border-top:1px solid var(--rule-dark);margin-top:38px;padding-top:20px;font-size:12.5px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+
+/* ---------- contact modal ---------- */
+.cf-backdrop{position:absolute;inset:0;background:rgba(10,14,12,.62);z-index:300;display:none}
+.cf-backdrop[data-open="true"]{display:block}
+.cf-dialog{
+  position:absolute;left:50%;transform:translateX(-50%);width:min(620px,calc(100vw - 32px));
+  background:var(--paper);border:1px solid var(--rule);border-radius:4px;z-index:301;
+  box-shadow:0 24px 70px rgba(10,14,12,.28);
+}
+.cf-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;padding:26px 28px 0}
+.cf-head h2{font-size:26px}
+.cf-head p{font-size:15px;color:var(--muted);margin-top:9px;max-width:46ch}
+.cf-close{
+  background:none;border:1px solid var(--rule);border-radius:3px;width:34px;height:34px;flex:0 0 34px;
+  cursor:pointer;color:var(--body);font-size:17px;line-height:1;display:grid;place-items:center;
+}
+.cf-close:hover{border-color:var(--forest);color:var(--forest)}
+.cf-body{padding:22px 28px 28px}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cf-field{margin-top:16px;display:block}
+.cf-field label{display:block;font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink);margin-bottom:7px}
+.cf-field .opt{color:var(--muted);font-weight:400;letter-spacing:0;text-transform:none;font-size:12.5px}
+.cf-field input,.cf-field select,.cf-field textarea{
+  width:100%;font-family:var(--font-body);font-size:15.5px;color:var(--ink);background:var(--paper);
+  border:1px solid var(--rule);border-radius:3px;padding:11px 12px;line-height:1.5;
+}
+.cf-field textarea{min-height:112px;resize:vertical}
+.cf-field input:focus,.cf-field select:focus,.cf-field textarea:focus{outline:3px solid var(--forest-600);outline-offset:1px;border-color:var(--forest-600)}
+.cf-field input[aria-invalid="true"],.cf-field textarea[aria-invalid="true"],.cf-field select[aria-invalid="true"]{border-color:#8C2F2F}
+.cf-err{display:block;font-size:13px;color:#8C2F2F;margin-top:6px;min-height:0}
+.cf-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.cf-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:24px;padding-top:20px;border-top:1px solid var(--rule)}
+.cf-note{font-size:13px;color:var(--muted);margin-top:14px}
+.cf-status{padding:14px 16px;border-radius:3px;font-size:15px;line-height:1.6;margin-top:18px}
+.cf-status.ok{background:var(--tint);border-left:3px solid var(--forest);color:var(--forest-800)}
+.cf-status.bad{background:#F7ECEC;border-left:3px solid #8C2F2F;color:#6B2020}
+.cf-linkbtn{background:none;border:0;padding:0;font:inherit;color:var(--sage);cursor:pointer;text-decoration:none}
+.cf-linkbtn:hover{color:#fff;text-decoration:underline}
+@media (max-width:620px){.cf-row{grid-template-columns:1fr}.cf-head,.cf-body{padding-left:20px;padding-right:20px}}
+
+/* ---------- responsive ---------- */
+@media (max-width:1000px){
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .portrait{max-width:340px;aspect-ratio:4/5;min-height:0;margin-inline:auto}
+  .proof-grid{grid-template-columns:repeat(2,1fr)}
+  .pov-grid,.closing-in{grid-template-columns:1fr}
+  .cards,.work,.rec{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .navtoggle{display:block}
+  .mainnav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--rule);flex-direction:column;align-items:stretch;gap:0;padding:6px var(--gut) 16px}
+  .mainnav.open{display:flex}
+  .mainnav a,.mainnav button{padding:12px 0;border-bottom:1px solid var(--rule);text-align:left;width:100%}
+  .masthead-in{position:relative}
+  .tlabel{min-height:0}
+  .track-nodes{grid-template-columns:1fr;gap:0}
+  .tnode{grid-template-columns:28px minmax(0,1fr) 16px;gap:0 14px;align-items:start;padding:12px 10px 22px;margin-left:0;border-left:0;border-radius:5px;min-height:56px}
+  .tnode:last-child{padding-bottom:12px}
+  .tnode::before{display:block;left:23px;right:auto;top:26px;width:2px;height:100%;background:var(--sage)}
+  .tnode:hover,.tnode:focus-visible{background:var(--paper-alt)}
+  .tnode.is-open{background:var(--tint)}
+  .tchev{display:block;align-self:center;width:9px;height:9px;border-right:2px solid var(--green-mid);border-bottom:2px solid var(--green-mid);transform:rotate(-45deg);transition:transform .2s}
+  .tnode.is-open .tchev{transform:rotate(45deg);border-color:var(--forest)}
+
+/* accordion panel, rendered in the flow of the list on narrow screens */
+  .track{margin-top:26px}
+  .panel.inline{position:relative;margin:0 0 0 52px;padding:22px 20px 24px;border-left-width:3px}
+  .panel.inline::before{content:"";position:absolute;left:-32px;top:0;bottom:-26px;width:2px;background:var(--sage)}
+  .panel.inline[data-last]::before{display:none}
+  .panel.inline .quote{font-size:20px;max-width:none}
+  .panel.inline .meta{gap:10px 0;flex-direction:column}
+
+  .tlabel,.tstage{margin-top:0;max-width:none}
+  .tstage{margin-top:4px}
+  .cards,.work,.rec,.proof-grid,.pillars{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  body{font-size:16px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+}
+
+
+/* ================= CASE STUDY ================= */
+.crumbs{font-size:13px;color:var(--muted);padding-top:26px}
+.crumbs a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule)}
+.crumbs a:hover{color:var(--forest-600);border-bottom-color:var(--forest-600)}
+.crumbs span{margin:0 8px;color:var(--sage)}
+
+.case-hero{background:var(--paper-alt);border-bottom:1px solid var(--rule)}
+.case-hero .inner{
+  padding-block:clamp(28px,3.5vw,44px) clamp(46px,6vw,72px);
+  display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);
+  gap:clamp(28px,4vw,64px);align-items:center;
+}
+.nb{white-space:nowrap}
+.case-hero h1{margin-top:8px;font-size:clamp(30px,3.5vw,45px);text-wrap:pretty;hyphens:none}
+
+/* one supporting paragraph, labelled, rather than a subtitle plus a boxed summary */
+.brief{margin-top:26px;font-size:18px;line-height:1.62;color:var(--body);text-wrap:pretty}
+.jump a span{font-size:15px;transition:transform .18s ease-out}
+
+/* the credibility asset earns the second column */
+/* the headline result runs dark against the light hero */
+.proofcard{
+  display:block;align-self:center;background:var(--black);border:1px solid var(--black);
+  border-top:3px solid var(--sage);
+  border-radius:3px;padding:26px 28px 24px;text-decoration:none;
+}
+.pc-k{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sage)}
+.pc-h{display:block;margin-top:10px;font-family:var(--font-display);font-size:clamp(26px,2.8vw,34px);line-height:1.15;color:#FFFFFF;letter-spacing:-.015em}
+.pc-b{display:block;margin-top:12px;font-size:14.5px;line-height:1.58;color:var(--on-black-mute)}
+.pc-m{display:block;margin-top:16px;padding-top:14px;border-top:1px solid var(--rule-dark);
+  font-size:12.5px;font-weight:700;letter-spacing:.05em;color:var(--sage)}
+
+
+
+
+
+/* prose sections */
+.chap{padding-block:clamp(48px,6vw,76px)}
+.chap.band{background:var(--paper-alt);border-block:1px solid var(--rule)}
+.chap-grid{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:clamp(28px,4vw,58px);align-items:start}
+/* no artifact: heading and prose split the width as an editorial spread */
+.chap.solo .chap-grid{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:center}
+.chap.solo .chap-head{position:static}
+/* section intro that has prose but no artifact beside it */
+.bandhead{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,4vw,58px);align-items:center}
+.bandhead h2{max-width:none;text-wrap:pretty}
+.bandhead .lede,.bandhead .body{margin-top:0;max-width:none}
+.bandhead .body p:first-child{margin-top:0}
+.bandhead .body p+p{margin-top:16px}
+.bandhead .body .btnrow{margin-top:28px}
+.chap.on-dark .body{color:var(--on-black-mute)}
+.chap.solo .body{margin-top:0;max-width:60ch}
+/* flipped chapters put the evidence first, breaking the repeating rhythm */
+.chap.flip .chap-grid{grid-template-columns:380px minmax(0,1fr)}
+.chap.flip .chap-grid > div{order:2}
+.chap.flip .chap-grid > figure{order:1}
+.chap.solo h2{max-width:none}
+.chap h2{max-width:none;text-wrap:pretty}
+.chap .body{margin-top:20px;max-width:62ch}
+.chap .body p+p{margin-top:16px}
+.chap .body ul{margin:16px 0 0;padding:0;list-style:none}
+.chap .body li{position:relative;padding-left:20px;margin-top:10px;line-height:1.65}
+.chap .body li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:1px;background:var(--green-mid)}
+
+/* point boxes: the list, broken out of the prose column */
+.pointgrid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px;
+  margin:clamp(30px,3.6vw,46px) 0 0;padding:0;list-style:none;
+}
+.point{
+  background:var(--paper);border:1px solid var(--rule);border-top:3px solid var(--d2);border-radius:3px;
+  padding:20px 22px 22px;font-size:15px;line-height:1.58;color:var(--ink);
+}
+.point:nth-child(4n+1){border-top-color:var(--d4)}
+.point:nth-child(4n+2){border-top-color:var(--d3)}
+.point:nth-child(4n+3){border-top-color:var(--d2)}
+.point:nth-child(4n+4){border-top-color:var(--d1)}
+
+/* evidence */
+.evidence{border:1px solid var(--rule);background:var(--paper);border-radius:3px;overflow:hidden}
+.evidence .ph{position:static;aspect-ratio:4/3}
+.evidence .shot{background:var(--sage-100);position:relative;line-height:0}
+.evidence .shot img{width:100%;height:auto;display:block}
+.evidence figcaption{padding:14px 16px;font-size:13.5px;line-height:1.6;color:var(--muted);border-top:1px solid var(--rule)}
+.evidence figcaption b{display:block;color:var(--ink);font-size:13.5px;margin-bottom:4px}
+
+/* outcomes */
+.result h3 + 
+
+/* recognition */
+.awards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:32px}
+.award{border:1px solid var(--rule);border-left:3px solid var(--green-mid);padding:20px 22px;background:var(--paper)}
+.award .nm{font-family:var(--font-display);font-size:19px;color:var(--ink)}
+.award .yr{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.award p{margin-top:11px;font-size:15px;line-height:1.6;color:var(--muted)}
+
+
+/* ================= INFOGRAPHICS ================= */
+:root{--d1:#DCE6E2;--d2:#A9BFB8;--d3:#4A6C5E;--d4:#1D3B32}
+.figband{border-block:1px solid var(--rule-dark)}
+.figwrap{margin:34px 0 0;background:var(--paper);border-radius:4px;padding:clamp(18px,2.4vw,30px)}
+.figwrap svg{width:100%;height:auto;display:block}
+.figcap{margin-top:22px;padding-top:18px;border-top:1px solid var(--rule);font-size:14px;line-height:1.65;color:var(--muted)}
+.illus{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--forest-600);background:var(--tint);padding:3px 8px;border-radius:2px;margin-bottom:10px}
+
+/* method rail */
+.method{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:38px;position:relative}
+.mstep{position:relative;padding-top:46px}
+/* connector runs dot centre to dot centre; the last step has nothing to connect to */
+.mstep::before{content:"";position:absolute;left:16px;right:-26px;top:15px;height:2px;background:var(--d2)}
+.mstep:last-child::before{display:none}
+.mstep .num{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;
+  background:var(--forest);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700;z-index:1}
+.mstep h3{margin:0;font-size:16px;line-height:1.3;font-family:var(--font-display);font-weight:400}
+.mstep p{margin-top:10px;font-size:13.5px;line-height:1.6;color:var(--muted)}
+
+/* content matrix */
+.matrix{margin-top:12px;border:1px solid var(--rule);border-radius:3px;overflow:hidden;font-size:12.5px}
+.matrix table{width:100%;border-collapse:collapse;table-layout:fixed}
+.matrix th,.matrix td{padding:9px 8px;text-align:center;border:1px solid var(--rule);line-height:1.35}
+.matrix thead th{background:var(--paper-alt);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.matrix tbody th{text-align:left;background:var(--paper-alt);font-weight:400;color:var(--ink);font-size:12.5px}
+.matrix .lv3{background:var(--d3);color:#fff}
+.matrix .lv2{background:var(--d2);color:var(--forest-800)}
+.matrix .lv1{background:var(--d1);color:var(--forest-800)}
+.matrix .lv0{background:var(--paper);color:var(--faint,#9aa39d)}
+.mkey{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:12px;font-size:12.5px;color:var(--muted)}
+.mkey span{display:flex;align-items:center;gap:6px}
+.mkey i{width:12px;height:12px;border-radius:2px;display:block}
+
+/* colored result + readiness cards */
+.result:nth-child(1){border-top:3px solid var(--d4)}
+.result:nth-child(2){border-top:3px solid var(--d3)}
+.result:nth-child(3){border-top:3px solid var(--d2)}
+.result:nth-child(4){border-top:3px solid var(--d1)}
+
+@media (max-width:900px){
+  .method{grid-template-columns:1fr;gap:0}
+  .mstep{padding:0 0 26px 48px}
+  .mstep::before{left:15px;right:auto;top:32px;bottom:0;width:2px;height:auto}
+  .mstep:last-child::before{display:none}
+  .mstep .num{left:0;top:0}
+  .matrix{font-size:11px}
+  .matrix th,.matrix td{padding:6px 4px}
+}
+
+/* placeholder flag for unconfirmed detail */
+.todo{background:#FFF6E5;border-bottom:1px dashed #B08900;color:#6B5300;padding:0 3px}
+
+@media (max-width:900px){
+  .case-hero .inner{grid-template-columns:1fr;gap:0}
+  .proofcard{margin-top:30px}
+  .chap-grid,.chap.flip .chap-grid,.chap.solo .chap-grid,.bandhead{grid-template-columns:1fr}
+  .bandhead .lede,.bandhead .body{margin-top:20px}
+  .chap.solo .chap-head{position:static}
+  .chap.solo .body{margin-top:20px}
+  .chap.flip .chap-grid > div,.chap.flip .chap-grid > figure{order:0}
+  .results,.ai-grid,.awards,          .evidence{max-width:520px}
+}
+
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+
+/* ===== page-specific ===== */
+.metriccard{background:var(--black);border-radius:3px;padding:28px 30px 26px;align-self:center}
+.mc-n{display:block;font-family:var(--font-display);font-size:clamp(44px,5vw,62px);line-height:1;color:var(--paper);letter-spacing:-.02em}
+.mc-k{display:block;margin-top:14px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sage)}
+.mc-b{display:block;margin-top:12px;font-size:14.5px;line-height:1.58;color:var(--on-black-mute)}
+.mc-m{display:block;margin-top:16px;padding-top:14px;border-top:1px solid var(--rule-dark);font-size:12.5px;letter-spacing:.04em;color:var(--sage)}
+
+/* when a chapter carries metrics, copy sits under the heading and metrics take the right column */
+.chap.statright .chap-grid{grid-template-columns:minmax(0,1.3fr) minmax(230px,.7fr)}
+.chap.statright .chap-head{position:static}
+.chap.statright .chap-head .body{margin-top:24px;max-width:62ch}
+/* metrics sit centred against the copy rather than pinned to the top */
+.chap.statright .chap-grid{align-items:center}
+.chap.statright .chapstat.side{align-self:center;margin-top:0}
+
+/* short chapter headings travel with the reading position */
+.chap .chap-head{position:static}
+/* and carry the chapter's hard numbers where there are any */
+.chapstat{margin:30px 0 0;border-top:1px solid var(--rule)}
+.chapstat > div{padding:16px 0;border-bottom:1px solid var(--rule)}
+.chapstat dt{font-family:var(--font-display);font-size:34px;line-height:1;color:var(--forest);letter-spacing:-.02em}
+.chapstat dd{margin:8px 0 0;font-size:14px;line-height:1.5;color:var(--muted);max-width:26ch}
+.chap.on-dark .chapstat{border-top-color:var(--rule-dark)}
+.chap.on-dark .chapstat > div{border-bottom-color:var(--rule-dark)}
+.chap.on-dark .chapstat dt{color:var(--sage)}
+.chap.on-dark .chapstat dd{color:var(--on-black-mute)}
+
+/* stacked section head: copy reads directly beneath the heading */
+.stackhead h2{max-width:none;text-wrap:pretty}
+
+.headrow{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(240px,.75fr);gap:clamp(28px,4vw,58px);align-items:start;margin-top:24px}
+/* a lede sitting directly under the heading needs its own gap;
+   one inside .headrow is already spaced by the row */
+.stackhead > .lede{margin-top:24px;max-width:none}
+.headrow .lede{margin-top:0;max-width:58ch}
+
+/* bridge: heading, copy, action across three columns on one centre line */
+.bridge-row{display:grid;grid-template-columns:2fr 2fr 1fr;gap:clamp(24px,3vw,48px);align-items:center}
+.bridge-row h2{margin-top:6px;font-size:clamp(24px,2.6vw,34px);max-width:none;text-wrap:pretty}
+.bridge-copy{margin:0;font-size:clamp(16px,1.5vw,17.5px);line-height:1.62;color:var(--body);text-wrap:pretty}
+.bridge-copy p{margin:0}
+.bridge-copy p + p{margin-top:14px}
+.bridge-row .btnrow{margin:0;justify-content:flex-start}
+.bridge-row .btn{white-space:nowrap}
+@media (max-width:980px){.bridge-row{grid-template-columns:1fr;gap:22px}}
+
+.method-close{
+  margin:clamp(38px,4.4vw,58px) auto 0;padding-top:28px;border-top:1px solid var(--rule);
+  text-align:center;max-width:44ch;
+  font-family:var(--font-display);font-size:clamp(19px,2.1vw,25px);line-height:1.38;
+  color:var(--forest);text-wrap:balance;
+}
+
+/* the offering as a narrative progression: three beats on one rail */
+.beats{margin-top:clamp(34px,4vw,52px);display:grid;gap:clamp(30px,3.6vw,46px)}
+.beat{position:relative;padding-left:34px}
+.beat::before{content:"";position:absolute;left:5px;top:22px;bottom:-46px;width:1px;background:var(--sage-100)}
+.beat:last-child::before{display:none}
+.beat-dot{position:absolute;left:0;top:9px;width:11px;height:11px;border-radius:50%;
+  background:var(--paper);border:2px solid var(--green-mid)}
+.beat:last-child .beat-dot{background:var(--forest);border-color:var(--forest)}
+.beat h3{margin:0;font-family:var(--font-display);font-size:clamp(21px,2.3vw,27px);
+  line-height:1.28;color:var(--ink);text-wrap:pretty}
+.beat-d{margin:14px 0 0;font-size:16.5px;line-height:1.68;color:var(--body);text-wrap:pretty}
+.beat-add{margin:18px 0 0;padding-left:16px;border-left:2px solid var(--forest);
+  font-size:16px;line-height:1.6;color:var(--forest-900);text-wrap:pretty}
+.beat-add span,.beat-became span{
+  display:block;font-family:var(--font-body);font-size:10.5px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--green-mid);margin-bottom:6px;
+}
+.beat-became{margin:16px 0 0;font-family:var(--font-display);font-size:17.5px;
+  line-height:1.4;color:var(--muted)}
+.beat-close{
+  margin:0 auto;text-align:center;max-width:42ch;
+  font-family:var(--font-display);font-weight:400;
+  font-size:clamp(22px,2.8vw,34px);line-height:1.3;letter-spacing:-.012em;
+  color:var(--sage);text-wrap:balance;
+}
+@media (max-width:600px){.beat{padding-left:26px}}
+
+/* lifecycle: the three phases the offering came to cover */
+.lifecycle{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.phase{border:1px solid var(--rule);border-radius:3px;background:var(--paper);display:flex;flex-direction:column}
+.phase.added{border-color:var(--d3)}
+.ph-top{padding:16px 20px;border-bottom:1px solid var(--rule);display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.phase.added .ph-top{background:var(--tint);border-bottom-color:var(--d1)}
+.ph-n{font-family:var(--font-display);font-size:15px;color:var(--muted)}
+.phase.added .ph-n{color:var(--forest)}
+.ph-tag{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.phase.added .ph-tag{color:var(--forest)}
+.ph-body{padding:18px 20px 20px}
+.ph-h{font-family:var(--font-display);font-size:20px;line-height:1.25;color:var(--ink)}
+.ph-l{margin:14px 0 0;padding:0;list-style:none}
+.ph-l li{position:relative;padding-left:20px;margin-top:9px;font-size:14px;line-height:1.5;color:var(--body)}
+.ph-l li::before{content:"";position:absolute;left:0;top:8px;width:10px;height:2px;background:var(--d1)}
+.phase.added .ph-l li::before{background:var(--d3)}
+
+/* the offering, phase by phase */
+.offering 
+
+/* header groups everything that identifies the phase: number, name, timing, status */
+.pcard.added .pcard.added .ph-meta > span{display:block;margin-top:3px;font-size:10.5px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted)}
+.pcard.added .ph-meta > span{color:var(--forest)}
+
+.ph-grid h4{font-family:var(--font-body);font-size:11px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted);margin:0}
+.ph-grid ul{margin:14px 0 0;padding:0;list-style:none}
+.ph-grid li{position:relative;padding-left:20px;margin-top:10px;font-size:15px;line-height:1.55;color:var(--ink)}
+.ph-grid li::before{content:"";position:absolute;left:0;top:9px;width:10px;height:2px;background:var(--d2)}
+
+/* the outcome is the payoff, so it gets the emphasis and absorbs the uneven list length */
+.pcard.added .ph-gets li::before{background:var(--d3)}
+
+/* the demand, counted */
+.demandsec .lost{
+  display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1.05fr);
+  gap:clamp(20px,3vw,40px);align-items:center;
+  margin-top:clamp(30px,3.6vw,44px);padding:30px 34px;background:var(--black);border-radius:3px;
+}
+.lost-n{font-family:var(--font-display);font-size:clamp(52px,6vw,76px);line-height:.86;color:var(--paper);margin:0}
+.lost-t{font-family:var(--font-display);font-size:clamp(19px,2.1vw,25px);line-height:1.3;color:var(--paper);margin:0;text-wrap:pretty}
+.lost-d{margin:0;font-size:15px;line-height:1.66;color:var(--on-black-mute);text-wrap:pretty;
+  padding-left:clamp(20px,3vw,40px);border-left:1px solid var(--rule-dark)}
+
+.clusters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,2.6vw,32px);margin-top:clamp(20px,2.6vw,32px)}
+.cl{border:1px solid var(--rule);border-radius:3px;background:var(--paper);display:flex;flex-direction:column}
+.cl-head{padding:26px 28px 22px;flex:1}
+.cl-n{font-family:var(--font-display);font-size:clamp(44px,5vw,58px);line-height:1;color:var(--forest);letter-spacing:-.02em}
+.cl-n span{display:block;margin-top:8px;font-family:var(--font-body);font-size:12px;font-weight:700;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.cl-head h3{margin-top:20px;font-size:clamp(21px,2.2vw,26px);line-height:1.25}
+.cl-d{margin-top:10px;font-size:15.5px;line-height:1.6;color:var(--muted)}
+/* the insight the evidence adds up to, as a full-bleed belly band */
+.statementband{background:var(--black);padding-block:clamp(48px,6vw,84px);margin-top:clamp(44px,5vw,72px)}
+.section.hasband{padding-bottom:0;border-bottom:0}
+.demand-close{
+  margin:0 auto;text-align:center;max-width:38ch;
+  font-family:var(--font-display);font-weight:400;
+  font-size:clamp(24px,3.2vw,40px);line-height:1.26;letter-spacing:-.015em;
+  color:var(--sage);text-wrap:balance;
+}
+.cl-became{
+  margin:0;padding:16px 28px;background:var(--tint);border-top:1px solid var(--rule);
+  font-family:var(--font-display);font-size:18px;color:var(--forest);display:flex;align-items:baseline;gap:12px;
+}
+.cl-became span{font-family:var(--font-body);font-size:10.5px;font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--forest-600)}
+
+
+/* sourced value case */
+.vgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--rule-dark);border:1px solid var(--rule-dark);margin-top:38px}
+.vcell{background:var(--black);padding:22px 22px 24px}
+.v-n{font-family:var(--font-display);font-size:30px;line-height:1;color:var(--paper);letter-spacing:-.02em}
+.v-d{margin-top:11px;font-size:14px;line-height:1.55;color:var(--on-black-mute)}
+.v-s{margin-top:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sage)}
+
+@media (max-width:900px){
+  .headrow,.clusters{grid-template-columns:1fr}
+  .vgrid{grid-template-columns:1fr}
+  .demandsec .lost{grid-template-columns:1fr;gap:14px}
+  .lost-d{padding-left:0;border-left:0;padding-top:14px;border-top:1px solid var(--rule-dark)}
+        .ph-meta > span{display:inline;margin-left:10px}
+    .chap .chap-head{position:static}
+  .chap.statright .chap-grid{grid-template-columns:1fr}
+  .chap.statright .chap-grid{align-items:start}
+  .chap.statright .chapstat.side{align-self:center;margin-top:0}
+  .chapstat{margin-top:22px}
+}
+
+
+/* the 2019 results, stated once as a single transformation */
+.figband{background:var(--black);padding-block:clamp(52px,6.5vw,88px)}
+.figband .eyebrow{color:var(--sage)}
+.figband h2{color:#fff;max-width:none;text-wrap:pretty}
+.figband .lede{color:var(--on-black-mute);max-width:none}
+.figgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--rule-dark);
+  border:1px solid var(--rule-dark);margin-top:clamp(32px,4vw,48px)}
+@media (max-width:820px){.figgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.figgrid{grid-template-columns:1fr}}
+.figcell{background:var(--black);padding:28px 26px 30px}
+.figcell .fn{font-family:var(--font-display);font-size:clamp(30px,3.4vw,42px);line-height:1;
+  color:#fff;letter-spacing:-.02em}
+.figcell .fl{margin-top:12px;font-size:14.5px;line-height:1.55;color:var(--on-black-mute)}
+.fignote{
+  margin:clamp(34px,4vw,50px) auto 0;padding-top:26px;border-top:1px solid var(--rule-dark);
+  text-align:center;max-width:46ch;
+  font-family:var(--font-display);font-size:clamp(19px,2.1vw,25px);line-height:1.38;
+  color:var(--sage);text-wrap:balance;
+}
+
+/* validation row */
+.valgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--rule);
+  border:1px solid var(--rule);margin-top:28px}
+@media (max-width:760px){.valgrid{grid-template-columns:1fr}}
+.valcell{background:var(--paper);padding:22px 24px 24px}
+.valcell .vt{margin:0;font-family:var(--font-display);font-size:19px;line-height:1.3;color:var(--ink);text-wrap:pretty}
+.valcell .vw{margin:6px 0 0;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green-mid)}
+.valcell .vd{margin:12px 0 0;padding-top:12px;border-top:1px solid var(--rule);
+  font-size:14.5px;line-height:1.58;color:var(--muted);text-wrap:pretty}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="masthead">
+  <div class="masthead-in">
+    <a class="brand" href="#" data-link="home">Robin Japar<span>Content infrastructure &amp; AI readiness</span></a>
+    <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="mainnav">Menu</button>
+    <nav class="mainnav" id="mainnav" aria-label="Primary"></nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="shell">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="#" data-link="home">Home</a><span aria-hidden="true">/</span>Flash vendor transition
+    </nav>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <header class="case-hero">
+    <div class="shell inner">
+      <div>
+        <p class="eyebrow" style="margin-bottom:0">Enterprise case study</p>
+        <h1 id="case-h">Rebuilding a high-performing content team after a flash vendor transition</h1>
+        <p class="brief">In 2019, a flash vendor transition replaced an experienced onshore team with an offshore team that was new to the Adobe AEM content stack. The work did not pause. I had to transfer the missing knowledge, build capability quickly, and restore quality while enterprise delivery continued.</p>
+      </div>
+
+      <div class="proofcard" style="cursor:default">
+        <span class="pc-k">Quality recovery</span>
+        <span class="pc-h">45% to under 10%</span>
+        <span class="pc-b">Retest failure reduced within one year while enterprise delivery continued.</span>
+        <span class="pc-m">2019</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ THE STARTING CONDITION ============ -->
+  <section class="section demandsec hasband" style="background:var(--paper);border-top:1px solid var(--rule)" aria-labelledby="cut-h">
+    <div class="shell">
+      <div class="stackhead">
+        <p class="eyebrow">The starting condition</p>
+        <h2 id="cut-h">The team changed overnight. The commitments did not.</h2>
+        <p class="lede">A flash cut is not a transition. There is no handoff, no shadowing period, and no time to capture what the departing team knows. The work already in flight keeps moving, and the release commitments already made to the business do not change.</p>
+      </div>
+
+      <div class="lost">
+        <p class="lost-n">45%</p>
+        <p class="lost-t">of work was failing retest</p>
+        <p class="lost-d">Every failure created rework, put releases at risk, and increased the chance of defects reaching customer-facing experiences. The problem was not effort. It was a sudden loss of platform knowledge and operating judgment.</p>
+      </div>
+
+      <div class="clusters">
+        <article class="cl">
+          <div class="cl-head">
+            <h3>What disappeared overnight</h3>
+            <p class="cl-d">Deep knowledge of the Adobe AEM stack, release patterns, content rules, and the judgment that comes from years of shipping complex enterprise work. Very little of it had been documented.</p>
+          </div>
+        </article>
+        <article class="cl">
+          <div class="cl-head">
+            <h3>What still had to ship</h3>
+            <p class="cl-d">Master and variant content, personalized experiences, authenticated journeys, testing, release governance, and compliance review all continued at enterprise scale.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="statementband">
+      <div class="shell">
+        <p class="demand-close">The work could not pause while the team learned how to do it. That was the challenge.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW I REBUILT IT ============ -->
+  <section class="section offering" aria-labelledby="rebuild-h">
+    <div class="shell">
+      <div class="stackhead">
+        <p class="eyebrow">How I rebuilt capability</p>
+        <h2 id="rebuild-h">I treated the gap as a knowledge problem, not a performance problem.</h2>
+        <p class="lede">Pushing the team harder would not have solved it. They were working with a fraction of the knowledge the previous team had carried. The real task was to identify what was missing, rebuild it into something teachable, and put controls in place so quality could improve consistently.</p>
+      </div>
+
+      <div class="beats">
+        <article class="beat">
+          <span class="beat-dot" aria-hidden="true"></span>
+          <h3>Find the knowledge gaps</h3>
+          <p class="beat-d">I traced live failures back to the specific point where knowledge broke down. That separated what needed training from what needed a workflow or quality control.</p>
+          <p class="beat-became"><span>This shaped</span>the training curriculum</p>
+        </article>
+        <article class="beat">
+          <span class="beat-dot" aria-hidden="true"></span>
+          <h3>Turn experience into something teachable</h3>
+          <p class="beat-d">I converted undocumented AEM knowledge into onboarding, workflows, standards, checklists, acceptance criteria, and job aids the team could use in the work itself.</p>
+          <p class="beat-add"><span>Key decision</span>Documentation had to live inside the workflow, not beside it.</p>
+          <p class="beat-became"><span>This created</span>capability that did not depend on one person</p>
+        </article>
+        <article class="beat">
+          <span class="beat-dot" aria-hidden="true"></span>
+          <h3>Make quality visible and actionable</h3>
+          <p class="beat-d">I introduced retest reporting, root-cause analysis, and vendor scorecards so failures had a traceable source and the team could act on patterns instead of reacting to individual defects.</p>
+          <p class="beat-add"><span>Key decision</span>Track the cause, not just the failure count.</p>
+          <p class="beat-became"><span>This created</span>a team that could see problems earlier and correct them</p>
+        </article>
+      </div>
+
+      <figure class="evidence" style="margin:clamp(38px,4.4vw,58px) 0 0">
+        <button class="zoom" type="button"><img src="assets/flash-01-training-quality.webp" width="1100" height="1375" loading="lazy" decoding="async" alt="Training curriculum checklist, a chart of retest failure falling from 45 percent to under 10 percent across four quarters, and the onboard, train, apply, improve workflow cycle."></button>
+        <figcaption>
+          <b>Training, quality, and the loop between them</b>
+          The enablement curriculum on one side, the retest failure trend on the other, and the operating cycle that connected them: onboard, train, apply, improve.
+          <span class="nda">Illustrative diagram. Quarterly points between the start and end figures are indicative.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ THE TURNAROUND ============ -->
+  <section class="section" style="background:var(--paper-alt);border-block:1px solid var(--rule)" aria-labelledby="turn-h">
+    <div class="shell">
+      <p class="eyebrow">How the year unfolded</p>
+      <h2 id="turn-h">Five moves from disruption to independence.</h2>
+      <div class="method">
+        <div class="mstep"><span class="num" aria-hidden="true">1</span><h3>Find where knowledge was breaking down</h3><p>Trace live failures to the point where the team no longer had the knowledge to proceed confidently.</p></div>
+        <div class="mstep"><span class="num" aria-hidden="true">2</span><h3>Rebuild the missing knowledge</h3><p>Turn undocumented AEM expertise into training, standards, workflows, and job aids.</p></div>
+        <div class="mstep"><span class="num" aria-hidden="true">3</span><h3>Put quality controls into the work</h3><p>Add checklists, acceptance criteria, and review points where errors were most likely to occur.</p></div>
+        <div class="mstep"><span class="num" aria-hidden="true">4</span><h3>Make failure diagnosable</h3><p>Use retest reporting and root-cause analysis to show what was failing, why, and where accountability belonged.</p></div>
+        <div class="mstep"><span class="num" aria-hidden="true">5</span><h3>Coach toward independence</h3><p>Build enough capability and judgment that the team could deliver reliably without depending on me.</p></div>
+      </div>
+      <p class="method-close">Success was not just getting quality back. It was building a team that could sustain it without me.</p>
+    </div>
+  </section>
+
+  <!-- ============ THE 2019 RESULTS ============ -->
+  <section class="section figband" aria-labelledby="fig-h">
+    <div class="shell">
+      <div class="stackhead">
+        <p class="eyebrow">What the year produced</p>
+        <h2 id="fig-h">The turnaround showed up across quality, speed, scale, and reporting.</h2>
+        <p class="lede">By year end, the recovery was visible across the operation: fewer defects, stronger quality, faster delivery, greater scale, and more reliable reporting. These measures tell the same story from different angles: the team had moved from instability to dependable performance.</p>
+      </div>
+      <div class="figgrid">
+        <div class="figcell"><p class="fn">45% to &lt;10%</p><p class="fl">Retest failure rate</p></div>
+        <div class="figcell"><p class="fn">43%</p><p class="fl">Reduction in root-cause defects in 10 months</p></div>
+        <div class="figcell"><p class="fn">99.3%</p><p class="fl">Portfolio quality performance</p></div>
+        <div class="figcell"><p class="fn">1,500+</p><p class="fl">Portfolio efforts delivered</p></div>
+        <div class="figcell"><p class="fn">36%</p><p class="fl">Faster speed to market</p></div>
+        <div class="figcell"><p class="fn">94%</p><p class="fl">Reporting accuracy</p></div>
+      </div>
+      <p class="fignote">The numbers mattered because they showed the team was no longer recovering. It was performing.</p>
+    </div>
+  </section>
+
+  <!-- ============ LEADING UNDER PRESSURE ============ -->
+  <section class="chap solo" aria-labelledby="lead-h" style="background:var(--paper-alt);border-block:1px solid var(--rule)">
+    <div class="shell chap-grid">
+      <div class="chap-head">
+        <p class="eyebrow">The dual mandate</p>
+        <h2 id="lead-h">I had to rebuild capability without slowing delivery.</h2>
+      </div>
+      <div class="body">
+        <p>Training could not happen before the work. It had to happen inside live enterprise delivery, while release commitments stayed intact.</p>
+        <p>That meant making deliberate tradeoffs every week: teach what the next release required now, defer what could wait, and keep enough structure around the work that learning did not create new risk.</p>
+        <p>I was also transparent with stakeholders that quality would recover progressively, not overnight. The goal was not a quick fix. It was to build a team that could deliver reliably on its own.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VALIDATION ============ -->
+  <section class="section" aria-labelledby="val-h">
+    <div class="shell">
+      <div class="bandhead">
+        <div>
+          <p class="eyebrow">How the work was recognized</p>
+          <h2 id="val-h">The turnaround was recognized while it was still unfolding.</h2>
+        </div>
+        <div class="body">
+          <p>The strongest validation came from how the work was assessed at the time, not in hindsight. The recovery was measured against the delivery, quality, and leadership expectations it was meant to protect, and the results were recognized through both performance evaluation and awards.</p>
+          <div class="valgrid">
+            <div class="valcell">
+              <p class="vt">Service Excellence Award</p>
+              <p class="vw">2019</p>
+              <p class="vd">Recognized the delivery turnaround and recovery of quality at scale.</p>
+            </div>
+            <div class="valcell">
+              <p class="vt">Far Exceeds</p>
+              <p class="vw">2019 annual performance evaluation</p>
+              <p class="vd">Reflected the overall leadership, execution, and results achieved across the year.</p>
+            </div>
+            <div class="valcell">
+              <p class="vt">&ldquo;GOal&rdquo; Getter Award</p>
+              <p class="vw">March 2020</p>
+              <p class="vd">Recognized the broader operating improvements and digital transformation work that grew out of the year&rsquo;s results.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING ============ -->
+  <section class="section" style="background:var(--paper-alt);border-block:1px solid var(--rule)" aria-labelledby="close-h">
+    <div class="shell">
+      <div class="bridge-row">
+        <div>
+          <p class="eyebrow">What it taught me</p>
+          <h2 id="close-h">Sustainable systems cannot depend on one person knowing how everything works.</h2>
+        </div>
+        <div class="bridge-copy">
+          <p>This experience changed how I think about content systems. Capability has to live in the structure, documentation, workflows, and governance, not in the memory of a few experienced people.</p>
+          <p>That lesson has carried through every stage of my work since: design the system so the organization can understand it, operate it, and sustain it without depending on the person who built it.</p>
+        </div>
+        <div class="btnrow"><button class="btn" type="button" data-cf-open>Start a conversation</button></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="shell">
+    <div class="foot-grid">
+      <div>
+        <p class="sig">Robin Japar</p>
+        <p class="tag">I make enterprise content understandable to people, manageable by organizations, and consumable by AI.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul id="foot-nav"></ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#" data-link="linkedin">LinkedIn profile</a></li>
+          <li><button type="button" class="cf-linkbtn" data-cf-open>Contact form</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; <span id="yr"></span> Robin Japar.</span>
+      <span>Enterprise content infrastructure, experience strategy, and AI readiness.</span>
+    </div>
+  </div>
+</footer>
+<div class="cf-backdrop" id="cf-backdrop" data-open="false"></div>
+<div class="cf-dialog" id="cf-dialog" role="dialog" aria-modal="true" aria-labelledby="cf-title" hidden>
+  <div class="cf-head">
+    <div>
+      <h2 id="cf-title">Start a conversation</h2>
+      <p>I work with organizations navigating enterprise content transformation, ServiceNow experiences, AI readiness, knowledge strategy, and complex digital programs.</p>
+    </div>
+    <button type="button" class="cf-close" id="cf-close" aria-label="Close contact form">&times;</button>
+  </div>
+  <div class="cf-body">
+    <form id="cf-form" novalidate>
+      <div class="cf-hp"><label for="cf-company-url">Leave this field empty</label><input id="cf-company-url" name="company_url" tabindex="-1" autocomplete="off"></div>
+      <div class="cf-row">
+        <div class="cf-field"><label for="cf-name">Name</label><input id="cf-name" name="name" required autocomplete="name"><span class="cf-err" id="err-cf-name"></span></div>
+        <div class="cf-field"><label for="cf-email">Work email</label><input id="cf-email" name="email" type="email" required autocomplete="email"><span class="cf-err" id="err-cf-email"></span></div>
+      </div>
+      <div class="cf-row">
+        <div class="cf-field"><label for="cf-org">Organization</label><input id="cf-org" name="organization" required autocomplete="organization"><span class="cf-err" id="err-cf-org"></span></div>
+        <div class="cf-field"><label for="cf-type">Opportunity type</label>
+          <select id="cf-type" name="opportunity_type" required>
+            <option value="">Select one</option>
+            <option>Enterprise leadership roles</option>
+            <option>Advisory and consulting engagements</option>
+            <option>ServiceNow experience and content transformation</option>
+            <option>AEM experience and content transformation</option>
+            <option>Speaking, workshops, and thought leadership</option>
+          </select><span class="cf-err" id="err-cf-type"></span></div>
+      </div>
+      <div class="cf-field"><label for="cf-msg">What are you working on</label><textarea id="cf-msg" name="message" required></textarea><span class="cf-err" id="err-cf-msg"></span></div>
+      <div class="cf-row">
+        <div class="cf-field"><label for="cf-timing">Desired timing <span class="opt">optional</span></label><input id="cf-timing" name="timing" placeholder="This quarter, next quarter, exploring"></div>
+        <div class="cf-field"><label for="cf-link">LinkedIn or project link <span class="opt">optional</span></label><input id="cf-link" name="link" type="url" placeholder="https://"></div>
+      </div>
+      <div class="cf-actions">
+        <button type="submit" class="btn" id="cf-submit">Send message</button>
+        <button type="button" class="btn alt" data-cf-close>Cancel</button>
+      </div>
+      <p class="cf-note">I read everything that comes through and reply to relevant inquiries, usually within a few business days.</p>
+      <div id="cf-status" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</div>
+<div class="cf-backdrop" id="rr-backdrop" data-open="false" hidden></div>
+<div class="cf-dialog" id="rr-dialog" role="dialog" aria-modal="true" aria-labelledby="rr-title" hidden>
+  <div class="cf-head">
+    <div>
+      <p class="cf-eyebrow">Resume request</p>
+      <h2 id="rr-title">Request my resume</h2>
+      <p>I share my resume directly rather than posting it publicly. Tell me a little about the role and I will send it over.</p>
+    </div>
+    <button type="button" class="cf-close" id="rr-close" aria-label="Close resume request form">&times;</button>
+  </div>
+  <div class="cf-body">
+    <form id="rr-form" novalidate>
+      <div class="cf-hp"><label for="rr-company-url">Leave this field empty</label><input id="rr-company-url" name="company_url" tabindex="-1" autocomplete="off"></div>
+      <div class="cf-row">
+        <div class="cf-field"><label for="rr-name">Your name</label><input id="rr-name" name="name" required autocomplete="name"><span class="cf-err" id="err-rr-name"></span></div>
+        <div class="cf-field"><label for="rr-role">Your role</label><input id="rr-role" name="requester_role" required placeholder="Recruiter, hiring manager, talent partner"><span class="cf-err" id="err-rr-role"></span></div>
+      </div>
+      <div class="cf-row">
+        <div class="cf-field"><label for="rr-position">Position you are recruiting for</label><input id="rr-position" name="position" required><span class="cf-err" id="err-rr-position"></span></div>
+        <div class="cf-field"><label for="rr-company">Company the role sits with</label><input id="rr-company" name="company" required autocomplete="organization"><span class="cf-err" id="err-rr-company"></span></div>
+      </div>
+      <div class="cf-row">
+        <div class="cf-field"><label for="rr-email">Email</label><input id="rr-email" name="email" type="email" required autocomplete="email"><span class="cf-err" id="err-rr-email"></span></div>
+        <div class="cf-field"><label for="rr-contact">Phone or LinkedIn <span class="opt">optional</span></label><input id="rr-contact" name="other_contact"></div>
+      </div>
+      <div class="cf-field"><label for="rr-notes">Anything else about the role <span class="opt">optional</span></label><textarea id="rr-notes" name="notes"></textarea></div>
+      <div class="cf-actions">
+        <button type="submit" class="btn" id="rr-submit">Send request</button>
+        <button type="button" class="btn alt" data-rr-close>Cancel</button>
+      </div>
+      <p class="cf-note">Requests come straight to me. I reply to relevant enquiries, usually within a few business days.</p>
+      <div id="rr-status" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</div>
+<script>
+const PAGES = {
+  home:        "index.html",
+  work:        "index.html#work",
+  about:       "about.html",
+  contact:     "index.html",
+  linkedin:    "https://www.linkedin.com/in/robin-japar",
+  caseFlash:           "work-flash-vendor-transition.html",
+  casePersonalization: "work-enterprise-personalization.html",
+  caseScorecard:       "work-executive-ux-scorecard.html",
+  caseTaxonomy:        "work-servicenow-employee-experience-taxonomy.html",
+  caseOffering:        "work-taxonomy-consulting-service.html",
+  caseTaxonomyService: "work-taxonomy-consulting-service.html",
+  caseFriction:        "work-friction-mapping-framework.html"
+};
+
+const NAV = [
+  ["home","Home"],["about","About"],["contact","Contact"]
+];
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function resolveLinks(){
+  document.querySelectorAll("[data-link]").forEach(a=>{
+    const k = a.getAttribute("data-link");
+    if(PAGES[k]) a.setAttribute("href", PAGES[k]);
+  });
+  /* Served directly as static files. Internal links are already relative
+     filenames, so only external links need handling. */
+  document.querySelectorAll("a[href]").forEach(function(a){
+    var h = a.getAttribute("href") || "";
+    if(h.charAt(0) === "#" || a.hasAttribute("target")) return;
+    if(/^https?:/i.test(h)){
+      a.setAttribute("target","_blank");
+      a.setAttribute("rel","noopener noreferrer");
+    }
+  });
+}
+
+
+$("#mainnav").innerHTML = NAV.map(([k,l])=>
+  k === "contact"
+    ? `<button type="button" data-cf-open>${l}</button>`
+    : `<a href="${PAGES[k]}" data-link="${k}">${l}</a>`
+).join("");
+$("#foot-nav").innerHTML = NAV.filter(([k])=>k!=="contact")
+  .map(([k,l])=>`<li><a href="${PAGES[k]}" data-link="${k}">${l}</a></li>`).join("");
+
+
+
+
+/* ============================================================
+   PROJECT OBJECT
+   Same schema as every other case study. A new case is a new
+   object, not new markup.
+   Fields marked TODO need confirmation before publishing.
+   ============================================================ */
+const TODO = t => `<span class="todo" title="Needs confirmation before publishing">${t}</span>`;
+
+const tog = $("#navtoggle"), nv = $("#mainnav");
+tog.addEventListener("click", ()=>{
+  const open = nv.classList.toggle("open");
+  tog.setAttribute("aria-expanded", open ? "true":"false");
+});
+
+/* ============================================================
+   CONTACT MODAL
+   A static page cannot send mail on its own. Point CF_ENDPOINT at a
+   form relay whose destination inbox is configured in that service's
+   dashboard. Never put the destination address in this file: anything
+   here is public page source and gets harvested.
+   ============================================================ */
+const CF_ENDPOINT = "";   // e.g. "https://formspree.io/f/xxxxxxx"
+
+(function(){
+  const bd=$("#cf-backdrop"), dlg=$("#cf-dialog"), form=$("#cf-form"),
+        statusEl=$("#cf-status"), submit=$("#cf-submit");
+  let lastFocus=null;
+
+  const FIELDS=[["cf-name","Enter your name"],["cf-email","Enter a valid work email"],
+                ["cf-org","Enter your organization"],["cf-type","Choose an opportunity type"],
+                ["cf-msg","Tell me briefly what you are working on"]];
+
+  function open(trigger){
+    lastFocus=trigger||document.activeElement;
+    bd.dataset.open="true"; dlg.hidden=false;
+    // absolute placement keeps the dialog reachable inside a tall Wix iframe,
+    // where position:fixed would anchor to the full page rather than the viewport
+    const y = window.scrollY + Math.max(24, window.innerHeight*0.08);
+    dlg.style.top = y + "px";
+    const doc = document.documentElement;
+    bd.style.height = Math.max(doc.scrollHeight, dlg.offsetTop + dlg.offsetHeight + 80) + "px";
+    // a dialog taller than the viewport must align to its top, or the header scrolls off
+    const tall = dlg.offsetHeight > window.innerHeight * 0.9;
+    dlg.scrollIntoView({block: tall ? "start" : "center", behavior: reduceMotion ? "auto" : "smooth"});
+    setTimeout(()=>$("#cf-name").focus(), reduceMotion?0:260);
+    document.addEventListener("keydown", onKey, true);
+  }
+  function close(){
+    bd.dataset.open="false"; dlg.hidden=true;
+    document.removeEventListener("keydown", onKey, true);
+    if(lastFocus) lastFocus.focus();
+  }
+  function onKey(e){
+    if(e.key==="Escape"){ e.preventDefault(); close(); return; }
+    if(e.key!=="Tab") return;
+    const f=[...dlg.querySelectorAll('button,input,select,textarea,a[href]')].filter(el=>!el.disabled && el.offsetParent!==null);
+    if(!f.length) return;
+    const first=f[0], last=f[f.length-1];
+    if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
+  }
+  function setErr(id,msg){
+    const el=document.getElementById(id), out=document.getElementById("err-"+id);
+    if(!el||!out) return;
+    out.textContent=msg||"";
+    if(msg) el.setAttribute("aria-invalid","true"); else el.removeAttribute("aria-invalid");
+  }
+  function validate(){
+    let ok=true, firstBad=null;
+    FIELDS.forEach(([id,msg])=>{
+      const el=document.getElementById(id);
+      const val=(el.value||"").trim();
+      let bad = !val;
+      if(!bad && id==="cf-email") bad = !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val);
+      setErr(id, bad?msg:"");
+      if(bad){ ok=false; if(!firstBad) firstBad=el; }
+    });
+    if(firstBad) firstBad.focus();
+    return ok;
+  }
+
+  document.querySelectorAll("[data-cf-open]").forEach(b=>b.addEventListener("click",e=>{e.preventDefault(); open(e.currentTarget);}));
+  document.querySelectorAll("[data-cf-close]").forEach(b=>b.addEventListener("click",close));
+  $("#cf-close").addEventListener("click",close);
+  bd.addEventListener("click",close);
+
+  form.addEventListener("submit", async e=>{
+    e.preventDefault();
+    statusEl.className=""; statusEl.textContent="";
+    if(form.company_url.value){ close(); return; }   // honeypot tripped
+    if(!validate()) return;
+    if(!CF_ENDPOINT){
+      statusEl.className="cf-status bad";
+      statusEl.textContent="The form endpoint is not configured yet, so this message was not sent. Set CF_ENDPOINT in the page script.";
+      return;
+    }
+    submit.disabled=true; submit.textContent="Sending";
+    try{
+      const res = await fetch(CF_ENDPOINT,{
+        method:"POST", headers:{Accept:"application/json"}, body:new FormData(form)
+      });
+      if(!res.ok) throw new Error(res.status);
+      form.reset();
+      statusEl.className="cf-status ok";
+      statusEl.textContent="Message sent. Thank you, I will be in touch.";
+    }catch(err){
+      statusEl.className="cf-status bad";
+      statusEl.textContent="Something went wrong sending that. Please try again, or reach me through LinkedIn.";
+    }finally{
+      submit.disabled=false; submit.textContent="Send message";
+    }
+  });
+})();
+
+
+
+$("#yr").textContent = new Date().getFullYear();
+resolveLinks();
+
+/* ============================================================
+   RESUME REQUEST MODAL
+   The resume is not posted publicly, so this captures who is asking
+   before it is sent. Point RR_ENDPOINT at a form relay and set the
+   destination inbox inside that service's dashboard. The address is
+   deliberately absent from this file: page source is public and gets
+   scraped by address harvesters.
+   ============================================================ */
+(function () {
+  var RR_ENDPOINT = "";
+  var $ = function (s) { return document.querySelector(s); };
+  var bd = $("#rr-backdrop"), dlg = $("#rr-dialog"), form = $("#rr-form"),
+      statusEl = $("#rr-status"), submit = $("#rr-submit");
+  if (!bd || !dlg || !form) return;
+  var lastFocus = null;
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var FIELDS = [["rr-name", "Enter your name"], ["rr-role", "Enter your role"],
+                ["rr-position", "Enter the position"], ["rr-company", "Enter the company"],
+                ["rr-email", "Enter a valid email"]];
+
+  function openDlg(trigger) {
+    lastFocus = trigger || document.activeElement;
+    bd.dataset.open = "true"; bd.hidden = false; dlg.hidden = false;
+    var top = window.scrollY + Math.max(24, window.innerHeight * 0.08);
+    dlg.style.top = top + "px";
+    var doc = document.documentElement;
+    bd.style.height = Math.max(doc.scrollHeight, dlg.offsetTop + dlg.offsetHeight + 80) + "px";
+    var tall = dlg.offsetHeight > window.innerHeight * 0.9;
+    dlg.scrollIntoView({ block: tall ? "start" : "center", behavior: reduce ? "auto" : "smooth" });
+    setTimeout(function () { $("#rr-name").focus(); }, reduce ? 0 : 260);
+    document.addEventListener("keydown", onKey, true);
+  }
+  function closeDlg() {
+    bd.dataset.open = "false"; bd.hidden = true; dlg.hidden = true;
+    document.removeEventListener("keydown", onKey, true);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e) {
+    if (e.key === "Escape") { e.preventDefault(); closeDlg(); return; }
+    if (e.key !== "Tab") return;
+    var f = dlg.querySelectorAll('a[href],button:not([disabled]),input,select,textarea');
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+
+  document.addEventListener("click", function (e) {
+    var open = e.target.closest("[data-rr-open]");
+    if (open) { e.preventDefault(); openDlg(open); return; }
+    if (e.target.closest("[data-rr-close]") || e.target === $("#rr-close") || e.target === bd) closeDlg();
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (form.company_url && form.company_url.value) return;
+    var ok = true;
+    FIELDS.forEach(function (pair) {
+      var el = $("#" + pair[0]), err = $("#err-" + pair[0]);
+      var bad = !el.value.trim() || (el.type === "email" && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(el.value));
+      if (err) err.textContent = bad ? pair[1] : "";
+      el.setAttribute("aria-invalid", bad ? "true" : "false");
+      if (bad && ok) { el.focus(); ok = false; }
+    });
+    if (!ok) return;
+    statusEl.className = "cf-status";
+    if (!RR_ENDPOINT) {
+      statusEl.className = "cf-status bad";
+      statusEl.textContent = "This form is not connected yet. Set RR_ENDPOINT in the page source to a form relay before publishing.";
+      return;
+    }
+    submit.disabled = true;
+    statusEl.textContent = "Sending...";
+    fetch(RR_ENDPOINT, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
+      .then(function (r) { if (!r.ok) throw new Error(); form.reset();
+        statusEl.className = "cf-status good";
+        statusEl.textContent = "Thank you. I will send my resume shortly."; })
+      .catch(function () { statusEl.className = "cf-status bad";
+        statusEl.textContent = "Something went wrong. Please email me instead."; })
+      .then(function () { submit.disabled = false; });
+  });
+})();
+</script>
+</body>
+</html>

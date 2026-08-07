@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ServiceNow employee experience taxonomy | Robin Japar</title>
+<meta name="description" content="I designed the employee-centered taxonomy behind a unified ServiceNow Employee Center, using content analysis, search behavior, and tree testing.">
+<link rel="canonical" href="https://www.japarofcontent.com/work/servicenow-employee-experience-taxonomy">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#1D3B32">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Robin Japar">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Robin Japar">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://www.japarofcontent.com/work/servicenow-employee-experience-taxonomy">
+<meta property="og:title" content="ServiceNow employee experience taxonomy | Robin Japar">
+<meta property="og:description" content="I designed the employee-centered taxonomy behind a unified ServiceNow Employee Center, using content analysis, search behavior, and tree testing.">
+<meta property="og:image" content="https://www.japarofcontent.com/assets/social-card.jpg">
+<meta property="og:image:alt" content="Robin Japar, enterprise content strategy and AI readiness">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ServiceNow employee experience taxonomy | Robin Japar">
+<meta name="twitter:description" content="I designed the employee-centered taxonomy behind a unified ServiceNow Employee Center, using content analysis, search behavior, and tree testing.">
+<meta name="twitter:image" content="https://www.japarofcontent.com/assets/social-card.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://www.japarofcontent.com/#robin",
+      "name": "Robin Japar",
+      "jobTitle": "Enterprise content strategy, experience architecture, and AI readiness leader",
+      "url": "https://www.japarofcontent.com/",
+      "sameAs": [
+        "https://www.linkedin.com/in/robin-japar"
+      ],
+      "knowsAbout": [
+        "Enterprise content strategy",
+        "Content design",
+        "Taxonomy",
+        "Information architecture",
+        "Content modeling",
+        "Headless CMS",
+        "Adobe Experience Manager",
+        "ServiceNow Employee Center",
+        "Personalization",
+        "UX research",
+        "Customer journey analysis",
+        "Content governance",
+        "AI readiness",
+        "Service design"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.japarofcontent.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "ServiceNow employee experience taxonomy",
+          "item": "https://www.japarofcontent.com/work/servicenow-employee-experience-taxonomy"
+        }
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://www.japarofcontent.com/work/servicenow-employee-experience-taxonomy#work",
+      "url": "https://www.japarofcontent.com/work/servicenow-employee-experience-taxonomy",
+      "name": "Designing the taxonomy behind a ServiceNow employee experience",
+      "headline": "Designing the taxonomy behind a ServiceNow employee experience",
+      "about": [
+        "Enterprise taxonomy",
+        "ServiceNow Employee Center",
+        "Findability",
+        "Information architecture",
+        "Tree testing",
+        "Content governance"
+      ],
+      "abstract": "Designed an employee-centered taxonomy for a global ServiceNow Employee Center, organizing content around employee tasks rather than departmental ownership. Published by ServiceNow as deployment guidance.",
+      "author": {
+        "@id": "https://www.japarofcontent.com/#robin"
+      },
+      "creator": {
+        "@id": "https://www.japarofcontent.com/#robin"
+      },
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://www.japarofcontent.com/#site"
+      }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+
+/* ============================================================
+   DESIGN TOKENS
+   Sourced from the Wix site theme: base black/white,
+   accents deep forest, sage, mid green, cream.
+   ============================================================ */
+:root{
+  /* BASE - white, black, neutral ramp. These carry the page. */
+  --paper:#FCFDFC;
+  --paper-alt:#F2F5F3;
+  --black:#000000;
+  --black-soft:#101010;
+  --rule:#DCE3DF;
+  --rule-dark:#2B2B2B;
+  --ink:#000000;
+  --body:#3E3E3B;
+  --muted:#6A6A66;
+  --on-black:#EDEDE9;
+  --on-black-mute:#B0B0AA;
+
+  /* ACCENT - restrained. Never used as a page background. */
+  --forest-900:#0F2019;
+  --forest-800:#163026;
+  --forest:#1D3B32;
+  --forest-600:#2F5648;
+  --green-mid:#4A6C5E;
+  --sage:#A9BFB8;
+  --sage-100:#DCE6E2;
+  --tint:#E6EBE8;
+  --band:#F2F5F3;
+
+  --font-display:"Fraunces",Georgia,"Times New Roman",serif;
+  --font-body:"Lato",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+
+  --shell:1200px;
+  --gut:clamp(20px,5vw,64px);
+  --sec:clamp(64px,9vw,120px);
+}
+
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--body);
+  font-family:var(--font-body);font-size:17px;font-weight:400;line-height:1.72;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;display:block;height:auto}
+h1,h2,h3,h4{font-family:var(--font-display);color:var(--ink);font-weight:400;margin:0;text-wrap:balance}
+h1{font-size:clamp(35px,5.4vw,64px);line-height:1.08;letter-spacing:-.02em}
+h2{font-size:clamp(28px,3.7vw,44px);line-height:1.15;letter-spacing:-.015em}
+h3{font-size:clamp(20px,2.1vw,25px);line-height:1.28;letter-spacing:-.008em}
+h4{font-size:18px;line-height:1.35}
+p{margin:0}
+a{color:var(--forest-600)}
+
+.shell{max-width:var(--shell);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:var(--sec)}
+.stack>*+*{margin-top:var(--s,1rem)}
+
+.skip{position:absolute;left:-9999px;top:0;background:var(--forest);color:#fff;padding:12px 20px;z-index:200}
+.skip:focus{left:12px;top:12px}
+
+.eyebrow{
+  font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--forest-600);margin:0 0 20px;
+}
+.on-dark .eyebrow{color:var(--sage)}
+.lede{font-size:clamp(18px,1.9vw,20.5px);line-height:1.66;max-width:60ch;color:var(--body)}
+.on-dark{background:var(--black);color:var(--on-black)}
+.on-dark h2,.on-dark h3,.on-dark h4{color:#FFFFFF}
+.on-dark .lede{color:var(--on-black-mute)}
+
+
+/* ---------- header ---------- */
+.masthead{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.masthead-in{display:flex;align-items:center;justify-content:space-between;gap:20px;max-width:var(--shell);margin:0 auto;padding:14px var(--gut)}
+.brand{font-family:var(--font-display);font-size:19px;color:var(--ink);text-decoration:none;letter-spacing:-.01em;line-height:1.2}
+.brand span{display:block;font-family:var(--font-body);font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.mainnav{display:flex;align-items:center;gap:clamp(14px,2vw,28px)}
+.mainnav a,.mainnav button{font-family:var(--font-body);font-size:14px;color:var(--body);text-decoration:none;padding:6px 0;border:0;border-bottom:2px solid transparent;background:none;cursor:pointer;line-height:inherit}
+.mainnav a:hover,.mainnav button:hover,.mainnav a:focus-visible,.mainnav button:focus-visible{color:var(--forest-600);border-bottom-color:var(--sage)}
+.mainnav a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--forest)}
+.navtoggle{display:none;background:none;border:1px solid var(--rule);border-radius:4px;padding:9px 13px;font-family:var(--font-body);font-size:13px;color:var(--ink);cursor:pointer}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-block;font-family:var(--font-body);font-size:14.5px;font-weight:700;
+  cursor:pointer;line-height:1.5;text-align:center;-webkit-appearance:none;appearance:none;
+  letter-spacing:.02em;text-decoration:none;padding:14px 28px;border-radius:2px;
+  border:2px solid var(--forest);background:var(--forest);color:#fff;transition:background .18s ease-out,color .18s,border-color .18s,transform .18s ease-out;
+}
+/* One rule governs both variants:
+   secondary fills with the primary's resting colour,
+   primary shifts to a clearly different accent tone.
+   Every button also lifts, so the change is felt as well as seen. */
+.btn:hover,.btn:focus-visible{
+  background:#fff;border-color:var(--forest);color:var(--forest);
+  transform:translateY(-2px);
+}
+.btn:active{transform:translateY(0)}
+
+.btn.alt{background:transparent;color:var(--forest);border-color:var(--forest)}
+.btn.alt:hover,.btn.alt:focus-visible{
+  background:var(--forest);border-color:var(--forest);color:#fff;
+  transform:translateY(-2px);
+}
+
+.on-dark .btn{background:var(--paper);border-color:var(--paper);color:var(--black)}
+.on-dark .btn:hover,.on-dark .btn:focus-visible{
+  background:transparent;border-color:var(--paper);color:var(--paper);
+  transform:translateY(-2px);
+}
+.on-dark .btn.alt{background:transparent;color:var(--paper);border-color:var(--sage)}
+.on-dark .btn.alt:hover,.on-dark .btn.alt:focus-visible{
+  background:var(--paper);border-color:var(--paper);color:var(--black);
+  transform:translateY(-2px);
+}
+.btnrow{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+
+/* focus */
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--forest-600);outline-offset:3px}
+.on-dark a:focus-visible,.on-dark button:focus-visible{outline-color:var(--sage)}
+
+/* ---------- hero ---------- */
+.hero{background:var(--paper);border-bottom:1px solid var(--rule)}
+.hero-grid{display:grid;grid-template-columns:1.28fr .72fr;gap:clamp(32px,5vw,72px);align-items:stretch;padding-block:clamp(56px,7vw,96px)}
+.hero p.lede{margin-top:26px}
+.portrait{position:relative;border-radius:3px;overflow:hidden;background:var(--sage-100);min-height:430px}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.ph{
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  background:var(--sage-100);color:var(--forest);text-align:center;padding:24px;
+  font-family:var(--font-body);font-size:13px;line-height:1.6;
+}
+.ph[hidden]{display:none}
+.ph strong{font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.portrait figcaption{
+  position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(15,32,25,.86));
+  color:#EEF2F0;font-size:12.5px;line-height:1.5;padding:34px 18px 14px;
+}
+
+/* ---------- proof bar ---------- */
+.proof{background:var(--black);color:var(--on-black)}
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule-dark)}
+.metric{background:var(--black);padding:clamp(28px,4vw,42px) clamp(16px,2.4vw,30px)}
+.metric .val{font-family:var(--font-display);font-size:clamp(34px,4.4vw,52px);line-height:1;color:#FFFFFF;font-weight:300;letter-spacing:-.02em}
+.metric .lbl{font-size:14px;line-height:1.6;color:var(--on-black-mute);margin-top:14px;max-width:30ch}
+
+/* ---------- systems graphic (signature) ---------- */
+.systems{border:1px solid var(--rule-dark);border-radius:3px;padding:clamp(20px,3vw,34px);background:var(--black-soft)}
+.chain{display:grid;grid-template-columns:1fr;gap:0;--dot-y:22px}
+.node{position:relative;padding:15px 0 15px 26px;background:none;border:0;border-radius:0}
+.node::before{
+  content:"";position:absolute;left:-5px;top:var(--dot-y);width:9px;height:9px;border-radius:50%;
+  background:var(--sage);border:1px solid var(--black);z-index:1;
+}
+/* rail segment: runs from this dot centre to the next dot centre.
+   offset by the dot centre, then 100% of node height lands exactly on the next one. */
+.node::after{
+  content:"";position:absolute;left:-1px;top:calc(var(--dot-y) + 5.5px);width:1px;height:100%;
+  background:var(--green-mid);z-index:0;
+}
+.node:last-child{padding-bottom:0}
+.node:last-child::after{display:none}
+.node:last-child::before{background:var(--tint)}
+.node .n-t{font-family:var(--font-display);font-size:18px;color:#FFFFFF;line-height:1.2}
+.node .n-d{font-size:13px;line-height:1.55;color:var(--on-black-mute);margin-top:5px}
+.chain-cap{font-size:13px;color:var(--sage);margin-top:18px;border-top:1px solid var(--rule-dark);padding-top:16px}
+
+/* ---------- pov ---------- */
+.pov-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,66px);align-items:start}
+.pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule-dark);margin-top:34px;border:1px solid var(--rule-dark)}
+.pillar{background:var(--black);padding:22px 20px}
+.pillar h4{color:#FFFFFF;font-size:17px}
+.pillar p{font-size:14px;line-height:1.6;color:var(--on-black-mute);margin-top:7px}
+
+/* ---------- progression ---------- */
+.tchev{display:none}
+.tnode:hover .tlabel,.tnode:focus-visible .tlabel{color:var(--ink)}
+.tnode:hover .tdot,.tnode:focus-visible .tdot{transform:scale(1.18);border-color:var(--forest);border-width:3px}
+.tnode:hover .tdot i,.tnode:focus-visible .tdot i{background:var(--forest);transform:scale(1.15)}
+.track{position:relative;margin-top:44px}
+.track-line{display:none}
+.track-nodes{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.tnode{
+  background:none;border:0;padding:0 6px 0 0;text-align:left;cursor:pointer;font-family:var(--font-body);
+  display:grid;align-content:start;justify-items:start;width:100%;position:relative;
+}
+.tnode::before{
+  content:"";position:absolute;left:14px;right:-22px;top:13px;height:2px;
+  background:var(--sage);z-index:0;
+}
+.tnode:last-child::before{display:none}
+.tdot{position:relative;z-index:1;width:28px;height:28px;border-radius:50%;background:var(--paper);border:2px solid var(--green-mid);display:grid;place-items:center;transition:transform .18s ease-out,border-color .18s,border-width .18s,background .18s}
+.tdot i{width:9px;height:9px;border-radius:50%;background:var(--green-mid);display:block;transition:transform .18s ease-out,background .18s;font-style:normal}
+.tnode.is-open .tdot{border-color:var(--forest);background:var(--forest);transform:scale(1.16)}
+.tnode.is-open .tdot i{background:var(--tint)}
+.tnode.is-open:hover .tdot{transform:scale(1.24)}
+.tlabel{font-size:13px;line-height:1.45;color:var(--muted);margin-top:14px;max-width:16ch;display:block;min-height:2.9em}
+.tnode.is-open .tlabel{color:var(--ink);font-weight:700}
+.tstage{font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--forest-600);display:block;margin-top:10px}
+.panel{
+  margin-top:44px;background:var(--band);border:1px solid var(--rule);border-left:4px solid var(--forest);
+  border-radius:0;padding:clamp(24px,3.4vw,38px);
+}
+.panel .quote{font-family:var(--font-display);font-size:clamp(20px,2.5vw,27px);line-height:1.34;color:var(--ink);max-width:34ch}
+.panel .proofpt{margin-top:18px;max-width:62ch}
+.panel .meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:22px;font-size:13.5px;color:var(--muted)}
+.panel .meta b{color:var(--ink);font-weight:700}
+
+/* ---------- capabilities ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:44px}
+.card{background:var(--paper);padding:clamp(22px,2.6vw,30px)}
+.card .idx{font-size:11.5px;font-weight:700;letter-spacing:.14em;color:var(--forest-600);text-transform:uppercase}
+.card h3{margin-top:12px;font-size:21px}
+.card p{margin-top:11px;font-size:15.5px;line-height:1.62;color:var(--muted)}
+
+/* ---------- featured work ---------- */
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.6vw,30px);margin-top:44px}
+.wcard{display:flex;flex-direction:column;border:1px solid var(--rule);border-radius:3px;overflow:hidden;background:var(--paper)}
+.wthumb{aspect-ratio:16/10;background:var(--sage-100);position:relative;border-bottom:1px solid var(--rule)}
+.wthumb img{width:100%;height:100%;object-fit:cover}
+.wbody{padding:clamp(20px,2.4vw,26px);display:flex;flex-direction:column;flex:1}
+.wtag{font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--forest-600)}
+.wcard h3{margin-top:12px;font-size:21px}
+.wfields{margin-top:18px;border-top:1px solid var(--rule);padding-top:16px;display:grid;gap:11px}
+.field{display:grid;grid-template-columns:88px minmax(0,1fr);gap:12px;font-size:14px;line-height:1.55}
+.field dt{font-weight:700;color:var(--ink);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;padding-top:2px}
+.field dd{margin:0;color:var(--muted)}
+.wai{margin-top:16px;background:var(--tint);border-left:3px solid var(--green-mid);padding:13px 15px;font-size:14px;line-height:1.6;color:var(--forest-800)}
+.wai b{display:block;font-size:11px;letter-spacing:.11em;text-transform:uppercase;margin-bottom:5px;color:var(--forest)}
+.wlink{margin-top:auto;padding-top:20px;font-size:14.5px;font-weight:700;color:var(--forest-600);text-decoration:none;display:inline-block}
+.wlink:hover{text-decoration:underline}
+
+/* ---------- recognition ---------- */
+.rec{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule-dark);border:1px solid var(--rule-dark);margin-top:44px}
+.rcol{background:var(--black);padding:24px 20px}
+.rcol h3{font-size:19px;color:#FFFFFF}
+.rcol ul{margin:14px 0 0;padding:0;list-style:none}
+.rcol li{font-size:14px;line-height:1.55;color:var(--on-black-mute);padding-left:16px;position:relative;margin-top:9px}
+.rcol li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:1px;background:var(--green-mid)}
+
+/* ---------- closing ---------- */
+.closing{background:var(--paper-alt);border-top:1px solid var(--rule)}
+.closing-in{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(28px,5vw,64px);align-items:center}
+
+/* ---------- footer ---------- */
+.foot{background:var(--black);color:var(--on-black-mute);padding-block:52px 34px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+.foot h4{color:#FFFFFF;font-family:var(--font-body);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:700}
+.foot ul{list-style:none;margin:14px 0 0;padding:0}
+.foot li{margin-top:9px}
+.foot a{color:var(--on-black-mute);text-decoration:none;font-size:14.5px}
+.foot a:hover{color:#fff;text-decoration:underline}
+.foot .sig{font-family:var(--font-display);font-size:22px;color:#FFFFFF}
+.foot .tag{font-size:14.5px;margin-top:10px;max-width:40ch;color:var(--on-black-mute)}
+.foot-base{border-top:1px solid var(--rule-dark);margin-top:38px;padding-top:20px;font-size:12.5px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+
+/* ---------- contact modal ---------- */
+.cf-backdrop{position:absolute;inset:0;background:rgba(10,14,12,.62);z-index:300;display:none}
+.cf-backdrop[data-open="true"]{display:block}
+.cf-dialog{
+  position:absolute;left:50%;transform:translateX(-50%);width:min(620px,calc(100vw - 32px));
+  background:var(--paper);border:1px solid var(--rule);border-radius:4px;z-index:301;
+  box-shadow:0 24px 70px rgba(10,14,12,.28);
+}
+.cf-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;padding:26px 28px 0}
+.cf-head h2{font-size:26px}
+.cf-head p{font-size:15px;color:var(--muted);margin-top:9px;max-width:46ch}
+.cf-close{
+  background:none;border:1px solid var(--rule);border-radius:3px;width:34px;height:34px;flex:0 0 34px;
+  cursor:pointer;color:var(--body);font-size:17px;line-height:1;display:grid;place-items:center;
+}
+.cf-close:hover{border-color:var(--forest);color:var(--forest)}
+.cf-body{padding:22px 28px 28px}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cf-field{margin-top:16px;display:block}
+.cf-field label{display:block;font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink);margin-bottom:7px}
+.cf-field .opt{color:var(--muted);font-weight:400;letter-spacing:0;text-transform:none;font-size:12.5px}
+.cf-field input,.cf-field select,.cf-field textarea{
+  width:100%;font-family:var(--font-body);font-size:15.5px;color:var(--ink);background:var(--paper);
+  border:1px solid var(--rule);border-radius:3px;padding:11px 12px;line-height:1.5;
+}
+.cf-field textarea{min-height:112px;resize:vertical}
+.cf-field input:focus,.cf-field select:focus,.cf-field textarea:focus{outline:3px solid var(--forest-600);outline-offset:1px;border-color:var(--forest-600)}
+.cf-field input[aria-invalid="true"],.cf-field textarea[aria-invalid="true"],.cf-field select[aria-invalid="true"]{border-color:#8C2F2F}
+.cf-err{display:block;font-size:13px;color:#8C2F2F;margin-top:6px;min-height:0}
+.cf-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.cf-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:24px;padding-top:20px;border-top:1px solid var(--rule)}
+.cf-note{font-size:13px;color:var(--muted);margin-top:14px}
+.cf-status{padding:14px 16px;border-radius:3px;font-size:15px;line-height:1.6;margin-top:18px}
+.cf-status.ok{background:var(--tint);border-left:3px solid var(--forest);color:var(--forest-800)}
+.cf-status.bad{background:#F7ECEC;border-left:3px solid #8C2F2F;color:#6B2020}
+.cf-linkbtn{background:none;border:0;padding:0;font:inherit;color:var(--sage);cursor:pointer;text-decoration:none}
+.cf-linkbtn:hover{color:#fff;text-decoration:underline}
+@media (max-width:620px){.cf-row{grid-template-columns:1fr}.cf-head,.cf-body{padding-left:20px;padding-right:20px}}
+
+/* ---------- responsive ---------- */
+@media (max-width:1000px){
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .portrait{max-width:340px;aspect-ratio:4/5;min-height:0;margin-inline:auto}
+  .proof-grid{grid-template-columns:repeat(2,1fr)}
+  .pov-grid,.closing-in{grid-template-columns:1fr}
+  .cards,.work,.rec{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .navtoggle{display:block}
+  .mainnav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--rule);flex-direction:column;align-items:stretch;gap:0;padding:6px var(--gut) 16px}
+  .mainnav.open{display:flex}
+  .mainnav a,.mainnav button{padding:12px 0;border-bottom:1px solid var(--rule);text-align:left;width:100%}
+  .masthead-in{position:relative}
+  .tlabel{min-height:0}
+  .track-nodes{grid-template-columns:1fr;gap:0}
+  .tnode{grid-template-columns:28px minmax(0,1fr) 16px;gap:0 14px;align-items:start;padding:12px 10px 22px;margin-left:0;border-left:0;border-radius:5px;min-height:56px}
+  .tnode:last-child{padding-bottom:12px}
+  .tnode::before{display:block;left:23px;right:auto;top:26px;width:2px;height:100%;background:var(--sage)}
+  .tnode:hover,.tnode:focus-visible{background:var(--paper-alt)}
+  .tnode.is-open{background:var(--tint)}
+  .tchev{display:block;align-self:center;width:9px;height:9px;border-right:2px solid var(--green-mid);border-bottom:2px solid var(--green-mid);transform:rotate(-45deg);transition:transform .2s}
+  .tnode.is-open .tchev{transform:rotate(45deg);border-color:var(--forest)}
+
+/* accordion panel, rendered in the flow of the list on narrow screens */
+  .track{margin-top:26px}
+  .panel.inline{position:relative;margin:0 0 0 52px;padding:22px 20px 24px;border-left-width:3px}
+  .panel.inline::before{content:"";position:absolute;left:-32px;top:0;bottom:-26px;width:2px;background:var(--sage)}
+  .panel.inline[data-last]::before{display:none}
+  .panel.inline .quote{font-size:20px;max-width:none}
+  .panel.inline .meta{gap:10px 0;flex-direction:column}
+
+  .tlabel,.tstage{margin-top:0;max-width:none}
+  .tstage{margin-top:4px}
+  .cards,.work,.rec,.proof-grid,.pillars{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  body{font-size:16px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+}
+
+
+/* ================= CASE STUDY ================= */
+.crumbs{font-size:13px;color:var(--muted);padding-top:26px}
+.crumbs a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule)}
+.crumbs a:hover{color:var(--forest-600);border-bottom-color:var(--forest-600)}
+.crumbs span{margin:0 8px;color:var(--sage)}
+
+.case-hero{background:var(--paper-alt);border-bottom:1px solid var(--rule)}
+.case-hero .inner{
+  padding-block:clamp(28px,3.5vw,44px) clamp(46px,6vw,72px);
+  display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);
+  gap:clamp(28px,4vw,64px);align-items:center;
+}
+.nb{white-space:nowrap}
+.case-hero h1{margin-top:8px;font-size:clamp(30px,3.5vw,45px);max-width:24ch;text-wrap:balance;hyphens:none}
+
+/* one supporting paragraph, labelled, rather than a subtitle plus a boxed summary */
+.brief{margin-top:26px;max-width:56ch;font-size:18px;line-height:1.62;color:var(--body)}
+.jump{margin-top:30px}
+.jump a{
+  display:inline-flex;align-items:center;gap:9px;font-size:15px;font-weight:700;color:var(--forest);
+  text-decoration:none;padding-bottom:4px;border-bottom:2px solid var(--forest);transition:color .18s,border-color .18s;
+}
+.jump a span{font-size:15px;transition:transform .18s ease-out}
+.jump a:hover,.jump a:focus-visible{color:var(--green-mid);border-bottom-color:var(--green-mid)}
+.jump a:hover span{transform:translateY(3px)}
+
+/* the credibility asset earns the second column */
+/* the credibility asset runs dark against the light hero so it carries weight */
+.proofcard{
+  display:block;align-self:center;background:var(--black);border:1px solid var(--black);
+  border-top:3px solid var(--sage);
+  border-radius:3px;padding:26px 28px 24px;text-decoration:none;
+  transition:border-color .18s,transform .18s ease-out,box-shadow .18s;
+}
+.proofcard:hover,.proofcard:focus-visible{
+  border-color:var(--sage);transform:translateY(-2px);
+  box-shadow:0 12px 34px rgba(10,14,12,.22);
+}
+.pc-k{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sage)}
+.pc-h{display:block;margin-top:10px;font-family:var(--font-display);font-size:23px;line-height:1.2;color:#FFFFFF}
+.pc-b{display:block;margin-top:12px;font-size:14.5px;line-height:1.58;color:var(--on-black-mute)}
+.pc-m{display:block;margin-top:16px;padding-top:14px;border-top:1px solid var(--rule-dark);
+  font-size:12.5px;font-weight:700;letter-spacing:.05em;color:var(--sage)}
+.proofcard:hover .pc-m,.proofcard:focus-visible .pc-m{color:#FFFFFF}
+
+
+
+
+
+/* prose sections */
+.chap{padding-block:clamp(48px,6vw,76px)}
+.chap.band{background:var(--paper-alt);border-block:1px solid var(--rule)}
+.chap-grid{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:clamp(28px,4vw,58px);align-items:center}
+/* no artifact: heading and prose split the width as an editorial spread */
+.chap.solo .chap-grid{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:center}
+.chap.solo .chap-head{position:sticky;top:96px}
+/* section intro that has prose but no artifact beside it */
+.bandhead{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,4vw,58px);align-items:center}
+.bandhead h2{max-width:15ch}
+.bandhead .lede,.bandhead .body{margin-top:0;max-width:60ch}
+.bandhead .body p:first-child{margin-top:0}
+.bandhead .body p+p{margin-top:16px}
+.bandhead .body .btnrow{margin-top:28px}
+.chap.on-dark .body{color:var(--on-black-mute)}
+.chap.solo .body{margin-top:0;max-width:60ch}
+/* flipped chapters put the evidence first, breaking the repeating rhythm */
+.chap.flip .chap-grid{grid-template-columns:380px minmax(0,1fr)}
+.chap.flip .chap-grid > div{order:2}
+.chap.flip .chap-grid > figure{order:1}
+.chap.solo h2{max-width:15ch}
+.chap h2{max-width:22ch}
+.chap .body{margin-top:20px;max-width:62ch}
+.chap .body p+p{margin-top:16px}
+.chap .body ul{margin:16px 0 0;padding:0;list-style:none}
+.chap .body li{position:relative;padding-left:20px;margin-top:10px;line-height:1.65}
+.chap .body li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:1px;background:var(--green-mid)}
+
+/* point boxes: the list, broken out of the prose column */
+.pointgrid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px;
+  margin:clamp(30px,3.6vw,46px) 0 0;padding:0;list-style:none;
+}
+.point{
+  background:var(--paper);border:1px solid var(--rule);border-top:3px solid var(--d2);border-radius:3px;
+  padding:20px 22px 22px;font-size:15px;line-height:1.58;color:var(--ink);
+}
+.point:nth-child(4n+1){border-top-color:var(--d4)}
+.point:nth-child(4n+2){border-top-color:var(--d3)}
+.point:nth-child(4n+3){border-top-color:var(--d2)}
+.point:nth-child(4n+4){border-top-color:var(--d1)}
+
+/* evidence */
+.evidence{border:1px solid var(--rule);background:var(--paper);border-radius:3px;overflow:hidden}
+.evidence .ph{position:static;aspect-ratio:4/3}
+.evidence .shot{background:var(--sage-100);position:relative;line-height:0}
+.evidence .shot img{width:100%;height:auto;display:block}
+.evidence figcaption{padding:14px 16px;font-size:13.5px;line-height:1.6;color:var(--muted);border-top:1px solid var(--rule)}
+.evidence figcaption b{display:block;color:var(--ink);font-size:13.5px;margin-bottom:4px}
+
+/* outcomes */
+.results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:36px}
+.result{background:var(--paper);padding:26px 28px 28px}
+.result h3{font-family:var(--font-body);font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--forest-600)}
+.ritem{margin-top:16px;padding-top:16px;border-top:1px solid var(--rule)}
+.result h3 + .ritem{border-top:0;padding-top:0;margin-top:14px}
+.rt{font-size:15.5px;font-weight:700;color:var(--ink);line-height:1.35;margin:0}
+.rd{font-size:14.5px;line-height:1.6;color:var(--muted);margin:6px 0 0}
+.rd a{color:var(--forest-600)}
+
+
+/* recognition */
+.awards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:32px}
+.award{border:1px solid var(--rule);border-left:3px solid var(--green-mid);padding:20px 22px;background:var(--paper)}
+.award .nm{font-family:var(--font-display);font-size:19px;color:var(--ink)}
+.award .yr{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.award p{margin-top:11px;font-size:15px;line-height:1.6;color:var(--muted)}
+
+
+/* ================= INFOGRAPHICS ================= */
+:root{--d1:#DCE6E2;--d2:#A9BFB8;--d3:#4A6C5E;--d4:#1D3B32}
+.figcap{margin-top:22px;padding-top:18px;border-top:1px solid var(--rule);font-size:14px;line-height:1.65;color:var(--muted)}
+.illus{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--forest-600);background:var(--tint);padding:3px 8px;border-radius:2px;margin-bottom:10px}
+
+/* method rail */
+.method{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:38px;position:relative}
+.mstep{position:relative;padding-top:44px}
+.mstep::before{content:"";position:absolute;left:0;right:-10px;top:15px;height:2px;background:var(--d2)}
+.mstep:last-child::before{right:50%}
+.mstep .num{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;
+  background:var(--forest);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700;z-index:1}
+.mstep h3{font-size:16px;line-height:1.3;font-family:var(--font-display);font-weight:400}
+.mstep p{margin-top:7px;font-size:13.5px;line-height:1.55;color:var(--muted)}
+
+/* content matrix */
+.matrix{margin-top:12px;border:1px solid var(--rule);border-radius:3px;overflow:hidden;font-size:12.5px}
+.matrix table{width:100%;border-collapse:collapse;table-layout:fixed}
+.matrix th,.matrix td{padding:9px 8px;text-align:center;border:1px solid var(--rule);line-height:1.35}
+.matrix thead th{background:var(--paper-alt);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.matrix tbody th{text-align:left;background:var(--paper-alt);font-weight:400;color:var(--ink);font-size:12.5px}
+.matrix .lv3{background:var(--d3);color:#fff}
+.matrix .lv2{background:var(--d2);color:var(--forest-800)}
+.matrix .lv1{background:var(--d1);color:var(--forest-800)}
+.matrix .lv0{background:var(--paper);color:var(--faint,#9aa39d)}
+.mkey{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:12px;font-size:12.5px;color:var(--muted)}
+.mkey span{display:flex;align-items:center;gap:6px}
+.mkey i{width:12px;height:12px;border-radius:2px;display:block}
+
+/* colored result + readiness cards */
+.result:nth-child(1){border-top:3px solid var(--d4)}
+.result:nth-child(2){border-top:3px solid var(--d3)}
+.result:nth-child(3){border-top:3px solid var(--d2)}
+.result:nth-child(4){border-top:3px solid var(--d1)}
+
+@media (max-width:900px){
+  .method{grid-template-columns:1fr;gap:0}
+  .mstep{padding:0 0 26px 48px}
+  .mstep::before{left:15px;right:auto;top:32px;bottom:0;width:2px;height:auto}
+  .mstep:last-child::before{display:none}
+  .mstep .num{left:0;top:0}
+  .matrix{font-size:11px}
+  .matrix th,.matrix td{padding:6px 4px}
+}
+
+/* one full-width statement used instead of a card grid, set as a centred
+   pull quote. No rule, no box: weight, scale, and colour carry it. */
+/* full-bleed belly band closing a chapter */
+.statementband{background:var(--black);padding-block:clamp(48px,6vw,84px);margin-top:clamp(44px,5vw,72px)}
+.chap.hasband{padding-bottom:0;border-bottom:0}
+.chapstatement{
+  margin:0 auto;text-align:center;max-width:38ch;
+  font-family:var(--font-display);font-weight:700;
+  font-size:clamp(24px,3.2vw,40px);line-height:1.26;letter-spacing:-.015em;
+  color:var(--sage);text-wrap:balance;
+}
+
+/* placeholder flag for unconfirmed detail */
+.todo{background:#FFF6E5;border-bottom:1px dashed #B08900;color:#6B5300;padding:0 3px}
+
+@media (max-width:900px){
+  .case-hero .inner{grid-template-columns:1fr;gap:0}
+  .proofcard{margin-top:30px}
+  .chap-grid,.chap.flip .chap-grid,.chap.solo .chap-grid,.bandhead{grid-template-columns:1fr}
+  .bandhead h2{max-width:20ch}
+  .bandhead .lede,.bandhead .body{margin-top:20px}
+  .chap.solo .chap-head{position:static}
+  .chap.solo h2{max-width:20ch}
+  .chap.solo .body{margin-top:20px}
+  .chap.flip .chap-grid > div,.chap.flip .chap-grid > figure{order:0}
+  .results,.awards,          .evidence{max-width:520px}
+}
+
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="masthead">
+  <div class="masthead-in">
+    <a class="brand" href="#" data-link="home">Robin Japar<span>Content infrastructure &amp; AI readiness</span></a>
+    <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="mainnav">Menu</button>
+    <nav class="mainnav" id="mainnav" aria-label="Primary"></nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="shell">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="#" data-link="home">Home</a><span aria-hidden="true">/</span>ServiceNow employee experience taxonomy
+    </nav>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="case-hero" aria-labelledby="case-h">
+    <div class="shell inner">
+      <div class="hero-main">
+        <p class="eyebrow">Enterprise case study</p>
+        <h1 id="case-h">Designing the taxonomy behind a <span class="nb">ServiceNow-showcased</span> global employee experience</h1>
+        <p class="brief">I designed the employee-centered taxonomy behind a unified ServiceNow Employee Center experience for a global biopharmaceutical organization, using content analysis, search behavior, and user validation to organize information around how employees actually look for help.</p>
+      </div>
+
+      <a class="proofcard" href="https://www.servicenow.com/community/employee-slate-and-employee/4-key-employee-center-deployment-tips-by-a-global/ta-p/2863910" target="_blank" rel="noopener noreferrer">
+        <span class="pc-k">Publicly validated</span>
+        <span class="pc-h">Featured by ServiceNow</span>
+        <span class="pc-b">ServiceNow published the taxonomy approach as part of its Employee Center deployment guidance.</span>
+        <span class="pc-m">ServiceNow Community <span aria-hidden="true">&middot;</span> March 2024 <span aria-hidden="true">&#8599;</span></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ METHOD ============ -->
+  <section class="section" aria-labelledby="meth-h">
+    <div class="shell">
+      <p class="eyebrow">The approach</p>
+      <h2 id="meth-h">Five phases, each one gating the next.</h2>
+      <div class="method" id="method"></div>
+    </div>
+  </section>
+
+  <div id="chapters"></div>
+
+  <!-- ============ BRIDGE TO THE SERVICE CASE ============ -->
+  <section class="section" style="background:var(--paper-alt);border-block:1px solid var(--rule)" aria-labelledby="bridge-h">
+    <div class="shell">
+      <div class="bandhead">
+        <div>
+          <p class="eyebrow">What came next</p>
+          <h2 id="bridge-h">The taxonomy solved one problem. The engagement revealed a bigger one.</h2>
+        </div>
+        <div class="body">
+        <p>Across this engagement and others, I saw the same pattern: organizations needed more than a hierarchy. They needed help implementing it, connecting content, training owners, measuring performance, and governing the structure after launch.</p>
+        <p>I used those recurring gaps to build a more complete enterprise taxonomy consulting model.</p>
+          <div class="btnrow"><a class="btn" href="#" data-link="caseTaxonomyService">See how the service was built</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="shell">
+    <div class="foot-grid">
+      <div>
+        <p class="sig">Robin Japar</p>
+        <p class="tag">I make enterprise content understandable to people, manageable by organizations, and consumable by AI.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul id="foot-nav"></ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#" data-link="linkedin">LinkedIn profile</a></li>
+          <li><button type="button" class="cf-linkbtn" data-cf-open>Contact form</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; <span id="yr"></span> Robin Japar.</span>
+      <span>Enterprise content infrastructure, experience strategy, and AI readiness.</span>
+    </div>
+  </div>
+</footer>
+<div class="cf-backdrop" id="cf-backdrop" data-open="false"></div>
+<div class="cf-dialog" id="cf-dialog" role="dialog" aria-modal="true" aria-labelledby="cf-title" hidden>
+  <div class="cf-head">
+    <div>
+      <h2 id="cf-title">Start a conversation</h2>
+      <p>I work with organizations navigating enterprise content transformation, ServiceNow experiences, AI readiness, knowledge strategy, and complex digital programs.</p>
+    </div>
+    <button type="button" class="cf-close" id="cf-close" aria-label="Close contact form">&times;</button>
+  </div>
+  <div class="cf-body">
+    <form id="cf-form" novalidate>
+      <div class="cf-hp"><label for="cf-company-url">Leave this field empty</label><input id="cf-company-url" name="company_url" tabindex="-1" autocomplete="off"></div>
+      <div class="cf-row">
+        <div class="cf-field"><label for="cf-name">Name</label><input id="cf-name" name="name" required autocomplete="name"><span class="cf-err" id="err-cf-name"></span></div>
+        <div class="cf-field"><label for="cf-email">Work email</label><input id="cf-email" name="email" type="email" required autocomplete="email"><span class="cf-err" id="err-cf-email"></span></div>
+      </div>
+      <div class="cf-row">
+        <div class="cf-field"><label for="cf-org">Organization</label><input id="cf-org" name="organization" required autocomplete="organization"><span class="cf-err" id="err-cf-org"></span></div>
+        <div class="cf-field"><label for="cf-type">Opportunity type</label>
+          <select id="cf-type" name="opportunity_type" required>
+            <option value="">Select one</option>
+            <option>Enterprise leadership roles</option>
+            <option>Advisory and consulting engagements</option>
+            <option>ServiceNow experience and content transformation</option>
+            <option>AEM experience and content transformation</option>
+            <option>Speaking, workshops, and thought leadership</option>
+          </select><span class="cf-err" id="err-cf-type"></span></div>
+      </div>
+      <div class="cf-field"><label for="cf-msg">What are you working on</label><textarea id="cf-msg" name="message" required></textarea><span class="cf-err" id="err-cf-msg"></span></div>
+      <div class="cf-row">
+        <div class="cf-field"><label for="cf-timing">Desired timing <span class="opt">optional</span></label><input id="cf-timing" name="timing" placeholder="This quarter, next quarter, exploring"></div>
+        <div class="cf-field"><label for="cf-link">LinkedIn or project link <span class="opt">optional</span></label><input id="cf-link" name="link" type="url" placeholder="https://"></div>
+      </div>
+      <div class="cf-actions">
+        <button type="submit" class="btn" id="cf-submit">Send message</button>
+        <button type="button" class="btn alt" data-cf-close>Cancel</button>
+      </div>
+      <p class="cf-note">I read everything that comes through and reply to relevant inquiries, usually within a few business days.</p>
+      <div id="cf-status" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</div>
+<div class="cf-backdrop" id="rr-backdrop" data-open="false" hidden></div>
+<div class="cf-dialog" id="rr-dialog" role="dialog" aria-modal="true" aria-labelledby="rr-title" hidden>
+  <div class="cf-head">
+    <div>
+      <p class="cf-eyebrow">Resume request</p>
+      <h2 id="rr-title">Request my resume</h2>
+      <p>I share my resume directly rather than posting it publicly. Tell me a little about the role and I will send it over.</p>
+    </div>
+    <button type="button" class="cf-close" id="rr-close" aria-label="Close resume request form">&times;</button>
+  </div>
+  <div class="cf-body">
+    <form id="rr-form" novalidate>
+      <div class="cf-hp"><label for="rr-company-url">Leave this field empty</label><input id="rr-company-url" name="company_url" tabindex="-1" autocomplete="off"></div>
+      <div class="cf-row">
+        <div class="cf-field"><label for="rr-name">Your name</label><input id="rr-name" name="name" required autocomplete="name"><span class="cf-err" id="err-rr-name"></span></div>
+        <div class="cf-field"><label for="rr-role">Your role</label><input id="rr-role" name="requester_role" required placeholder="Recruiter, hiring manager, talent partner"><span class="cf-err" id="err-rr-role"></span></div>
+      </div>
+      <div class="cf-row">
+        <div class="cf-field"><label for="rr-position">Position you are recruiting for</label><input id="rr-position" name="position" required><span class="cf-err" id="err-rr-position"></span></div>
+        <div class="cf-field"><label for="rr-company">Company the role sits with</label><input id="rr-company" name="company" required autocomplete="organization"><span class="cf-err" id="err-rr-company"></span></div>
+      </div>
+      <div class="cf-row">
+        <div class="cf-field"><label for="rr-email">Email</label><input id="rr-email" name="email" type="email" required autocomplete="email"><span class="cf-err" id="err-rr-email"></span></div>
+        <div class="cf-field"><label for="rr-contact">Phone or LinkedIn <span class="opt">optional</span></label><input id="rr-contact" name="other_contact"></div>
+      </div>
+      <div class="cf-field"><label for="rr-notes">Anything else about the role <span class="opt">optional</span></label><textarea id="rr-notes" name="notes"></textarea></div>
+      <div class="cf-actions">
+        <button type="submit" class="btn" id="rr-submit">Send request</button>
+        <button type="button" class="btn alt" data-rr-close>Cancel</button>
+      </div>
+      <p class="cf-note">Requests come straight to me. I reply to relevant enquiries, usually within a few business days.</p>
+      <div id="rr-status" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</div>
+<script>
+const PAGES = {
+  home:        "index.html",
+  work:        "index.html#work",
+  about:       "about.html",
+  contact:     "index.html",
+  linkedin:    "https://www.linkedin.com/in/robin-japar",
+  caseFlash:           "work-flash-vendor-transition.html",
+  casePersonalization: "work-enterprise-personalization.html",
+  caseScorecard:       "work-executive-ux-scorecard.html",
+  caseTaxonomy:        "work-servicenow-employee-experience-taxonomy.html",
+  caseOffering:        "work-taxonomy-consulting-service.html",
+  caseTaxonomyService: "work-taxonomy-consulting-service.html",
+  caseFriction:        "work-friction-mapping-framework.html"
+};
+
+const NAV = [
+  ["home","Home"],["about","About"],["contact","Contact"]
+];
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function resolveLinks(){
+  document.querySelectorAll("[data-link]").forEach(a=>{
+    const k = a.getAttribute("data-link");
+    if(PAGES[k]) a.setAttribute("href", PAGES[k]);
+  });
+  /* Served directly as static files. Internal links are already relative
+     filenames, so only external links need handling. */
+  document.querySelectorAll("a[href]").forEach(function(a){
+    var h = a.getAttribute("href") || "";
+    if(h.charAt(0) === "#" || a.hasAttribute("target")) return;
+    if(/^https?:/i.test(h)){
+      a.setAttribute("target","_blank");
+      a.setAttribute("rel","noopener noreferrer");
+    }
+  });
+}
+
+$("#mainnav").innerHTML = NAV.map(([k,l])=>
+  k === "contact"
+    ? `<button type="button" data-cf-open>${l}</button>`
+    : `<a href="${PAGES[k]}" data-link="${k}">${l}</a>`
+).join("");
+$("#foot-nav").innerHTML = NAV.filter(([k])=>k!=="contact")
+  .map(([k,l])=>`<li><a href="${PAGES[k]}" data-link="${k}">${l}</a></li>`).join("");
+
+
+/* ============================================================
+   PROJECT OBJECT
+   Matches the recommended project schema. Every section on this
+   page renders from this object, so a new case study is a new
+   object rather than new markup.
+   Fields marked TODO need Robin's confirmation before publishing.
+   ============================================================ */
+const TODO = t => `<span class="todo" title="Needs confirmation before publishing">${t}</span>`;
+
+const PROJECT = {
+  projectTitle:"Designing the taxonomy behind a ServiceNow-showcased global employee experience",
+  slug:"servicenow-employee-experience-taxonomy",
+
+  /* Enterprise environment is the business and operating context.
+     It is deliberately NOT the technology list. */
+  enterpriseEnvironment:"A global biopharmaceutical organization moving away from a heavily customized portal toward a unified Employee Center, with content produced by autonomous departmental teams across a complex and expanding ecosystem.",
+  industry:"Biopharmaceutical",
+  businessChallenge:"Employees could not find information that already existed. Requests, articles, quick links, and communications were each produced and organized by the department that owned them. The structure followed reporting lines, not employee need.",
+
+  /* Platform and tech stack is the technology, kept separate by design. */
+  platformsAndTechStack:["ServiceNow Employee Center","ServiceNow Knowledge","ServiceNow Request Catalog","Production search logs","Card sorting and tree testing tools"],
+
+  role:"Taxonomy Consultant",
+  roleNote:"Delivered the taxonomy work hands on, while holding the position of Director of Global UX/UI Design and Content Consulting.",
+  scopeAndScale:"Global, cross-departmental",
+  usersAndStakeholders:"Employees across every department, departmental content owners, service owners across HR, IT, and facilities, and the Employee Center implementation team.",
+  platformHeadline:"ServiceNow Employee Center Pro",
+  businessObjective:"One employee-centered taxonomy spanning every content type and every department.",
+  primaryOutcome:"Employees started finding what was already there, on a structure ServiceNow later published as a deployment model.",
+  primaryOutcomeCite:{phrase:"published as a deployment model", url:"https://www.servicenow.com/community/employee-slate-and-employee/4-key-employee-center-deployment-tips-by-a-global/ta-p/2863910"},
+
+  chapters:[
+    {
+      id:"problem", h:"The systemic problem",
+      title:"The task was not redesigning navigation. It was building a taxonomy that could scale.",
+      body:[
+        "Employees do not think in departments. They think in tasks, and a single task routinely crosses three or four departmental boundaries. Reorganizing a menu would not have fixed that. The work required a cross-departmental hierarchy capable of bringing multiple content types together around topics that were meaningful to employees rather than to the teams publishing them."
+      ],
+      evidence:{img:"assets/tax-05-content-inventory-analysis.jpg", cap:"Content inventory analysis",
+        desc:"Content from every departmental source, mapped for duplication and relationships, then resolved through a single taxonomy into structured topic groups.",
+        alt:"Content inventory analysis. On the left, five departmental sources feed a scattered field of documents, many flagged as duplicates and loosely connected by dotted relationship lines. All of them converge on a single central taxonomy node, which resolves on the right into four ordered topic groups each holding related content."}
+    },
+    {
+      id:"discovered", h:"Understand the content environment",
+      title:"I started with what employees were actually searching for, not what teams had published.",
+      body:[
+        "The first phase was evidence gathering. I reviewed the content inventory, examined production search logs and available user data, and identified gaps, duplication, and relationships between content that no existing structure expressed.",
+        "The search logs were the most useful artifact. They showed the words employees genuinely used, which were frequently not the words any department had published under. That gap between employee language and internal language became the core design problem."
+      ],
+      evidence:{img:"assets/tax-06-search-task-analysis.jpg", cap:"Search and task analysis",
+        desc:"Production search behavior and analytics resolved into task clusters, then mapped to the content available to answer each one.",
+        alt:"Search and task analysis. Employee queries from five departmental sources, alongside usage analytics, converge on a single search analysis point. From there they resolve into clusters of related tasks, which map to four groups of content organized by topic."}
+    },
+    {
+      id:"framed", h:"Model employee needs",
+      title:"The content matrix turned search behavior into a structure teams could agree on.",
+      body:[
+        "I mapped the tasks employees were trying to complete against the content available to support them. In one view, the matrix exposed gaps, thin coverage, duplication, and places where a single department was carrying the entire experience.",
+        "That evidence changed the conversation. Instead of debating whether content was \u201Cfindable,\u201D stakeholders could see exactly where the experience was breaking down.",
+        "I used those patterns to group content around common employee tasks rather than departmental ownership, creating the foundation for topics and subtopics aligned with user intent."
+      ],
+      diagram:`
+        <span class="illus">Illustrative</span>
+        <div class="matrix">
+          <table>
+            <caption class="sr-only">Illustrative content matrix mapping employee tasks against the departments and content types that hold relevant content.</caption>
+            <thead><tr><th scope="col">Employee task</th><th scope="col">Requests</th><th scope="col">Articles</th><th scope="col">Quick links</th><th scope="col">Comms</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Starting a new role</th><td class="lv3">HR, IT</td><td class="lv2">HR</td><td class="lv2">IT</td><td class="lv1">HR</td></tr>
+              <tr><th scope="row">Working abroad</th><td class="lv2">HR</td><td class="lv3">HR, Payroll</td><td class="lv0">none</td><td class="lv1">HR</td></tr>
+              <tr><th scope="row">Equipment problem</th><td class="lv3">IT, Facilities</td><td class="lv2">IT</td><td class="lv1">IT</td><td class="lv0">none</td></tr>
+              <tr><th scope="row">Pay question</th><td class="lv2">Payroll</td><td class="lv2">Payroll</td><td class="lv0">none</td><td class="lv1">Payroll</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mkey">
+          <span><i style="background:var(--d3)"></i>Multiple departments</span>
+          <span><i style="background:var(--d2)"></i>One department</span>
+          <span><i style="background:var(--d1)"></i>Thin coverage</span>
+          <span><i style="background:var(--paper);border:1px solid var(--rule)"></i>Gap</span>
+        </div>`,
+      diagramCap:"Every employee task, against the content actually available to answer it. Gaps and single-source dependencies become visible in one view."
+    },
+    {
+      id:"designed", h:"Design the unified taxonomy",
+      title:"I organized the experience around employee intent, not departmental ownership.",
+      body:[
+        "The content matrix showed where employees were trying to complete a single task across content owned by multiple departments. I used those patterns to design a shared hierarchy built around employee language and intent.",
+        "Instead of forcing HR, IT, Payroll, Facilities, and other teams into separate navigation paths, the taxonomy brought their content together under the topics employees actually needed. A single topic could contain requests, articles, quick links, and communications from wherever the answer lived.",
+        "That structure became the foundation for navigation, search, personalization, and ongoing governance."
+      ],
+      diagram:`
+        <span class="illus">Illustrative</span>
+        <svg viewBox="0 0 560 300" role="img" aria-labelledby="tx-t tx-d" xmlns="http://www.w3.org/2000/svg">
+          <title id="tx-t">Sample topic hierarchy</title>
+          <desc id="tx-d">A single employee topic branching into subtopics, each of which draws content from more than one department, showing how one hierarchy spans departmental boundaries.</desc>
+          <g font-family="Lato,sans-serif">
+            <rect x="180" y="8" width="200" height="38" rx="3" fill="#1D3B32"/>
+            <text x="280" y="32" font-size="14" fill="#FFFFFF" text-anchor="middle" font-family="Fraunces,Georgia,serif">Starting a new role</text>
+            <path d="M280 46 v22 M100 68 h360 M100 68 v20 M280 68 v20 M460 68 v20" stroke="#A9BFB8" stroke-width="2" fill="none"/>
+            <rect x="20" y="88" width="160" height="34" rx="3" fill="#4A6C5E"/>
+            <text x="100" y="110" font-size="13" fill="#FFFFFF" text-anchor="middle">Your first week</text>
+            <rect x="200" y="88" width="160" height="34" rx="3" fill="#4A6C5E"/>
+            <text x="280" y="110" font-size="13" fill="#FFFFFF" text-anchor="middle">Pay and benefits</text>
+            <rect x="380" y="88" width="160" height="34" rx="3" fill="#4A6C5E"/>
+            <text x="460" y="110" font-size="13" fill="#FFFFFF" text-anchor="middle">Tools and access</text>
+            <path d="M100 122 v18 M280 122 v18 M460 122 v18" stroke="#A9BFB8" stroke-width="2"/>
+            <rect x="20" y="140" width="160" height="70" rx="3" fill="#FCFDFC" stroke="#DCE3DF"/>
+            <text x="34" y="162" font-size="12" fill="#1D3B32">HR &middot; article</text>
+            <text x="34" y="180" font-size="12" fill="#4A6C5E">Facilities &middot; request</text>
+            <text x="34" y="198" font-size="12" fill="#6A6A66">HR &middot; comms</text>
+            <rect x="200" y="140" width="160" height="70" rx="3" fill="#FCFDFC" stroke="#DCE3DF"/>
+            <text x="214" y="162" font-size="12" fill="#1D3B32">Payroll &middot; article</text>
+            <text x="214" y="180" font-size="12" fill="#4A6C5E">HR &middot; request</text>
+            <rect x="380" y="140" width="160" height="70" rx="3" fill="#FCFDFC" stroke="#DCE3DF"/>
+            <text x="394" y="162" font-size="12" fill="#1D3B32">IT &middot; request</text>
+            <text x="394" y="180" font-size="12" fill="#4A6C5E">IT &middot; quick link</text>
+            <text x="394" y="198" font-size="12" fill="#6A6A66">Facilities &middot; article</text>
+            <text x="20" y="248" font-size="12.5" fill="#6A6A66">One topic. Three subtopics. Content from four departments.</text>
+          </g>
+        </svg>`,
+      diagramCap:"Employees should not have to know which department owns the answer."
+    },
+    {
+      id:"validated", h:"Validate with users",
+      title:"I tested the taxonomy against one question: can employees find what they need?",
+      body:[
+        "Once the draft hierarchy was in place, I tested it with employees rather than relying on stakeholder opinion alone.",
+        "Card sorting and feedback helped shape the structure, while tree testing showed whether people could navigate it without visual design cues masking weaknesses in the hierarchy. When employees could not find something, I refined the structure and tested again.",
+        "Mobile ethnography added context by showing how employees actually looked for information during their work, not just in a test scenario."
+      ],
+      evidence:{img:"assets/tax-07-taxonomy-tree-test.jpg", cap:"Taxonomy tree test",
+        desc:"Tree testing isolated the taxonomy itself, making it possible to see where the hierarchy supported findability and where it needed refinement.",
+        alt:"Taxonomy tree test. Card sorting, stakeholder feedback, and task completion results feed a topic hierarchy at the center, where search behavior and analytics test each path. Paths employees completed successfully are marked, and the refined structure emerges on the right. Mobile ethnography loops findings back into the next round."}
+    },
+    {
+      id:"led", h:"Support adoption and governance",
+      title:"A taxonomy only works if people know how to sustain it.",
+      body:[
+        "Preparing the taxonomy for launch meant more than finalizing the hierarchy. I worked with content owners and departmental stakeholders to define how the structure would be applied, maintained, and governed over time.",
+        "That required a shift in ownership. Departments had to move from organizing content around their own structures to contributing to a shared employee-centered model. Making that tradeoff explicit, and showing teams what they gained in return, helped turn workshop alignment into adoption in production.",
+        "The goal was simple: create a taxonomy that would remain useful after the project ended."
+      ]
+    }
+  ],
+
+  results:[
+    {k:"Experience results", items:[
+      {t:"Discovery", d:"Employees began leaving feedback on resources that had been on the portal all along. ServiceNow reported the same outcome independently."},
+      {t:"Task-based topics", d:"Organized around what employees were trying to do, not which department published it."},
+      {t:"One structure", d:"Requests, articles, quick links, and communications under a single hierarchy."}
+    ]},
+    {k:"Capability results", items:[
+      {t:"A scalable foundation", d:"A unified Employee Center experience across a complex global organization."},
+      {t:"A validated hierarchy", d:"Supporting navigation, search, and personalization."},
+      {t:"A repeatable method", d:"Became part of NewRocket's taxonomy consulting service."}
+    ]},
+    {k:"Validation", items:[
+      {t:"Published by ServiceNow", d:"The first of four Employee Center deployment tips. <a href='https://www.servicenow.com/community/employee-slate-and-employee/4-key-employee-center-deployment-tips-by-a-global/ta-p/2863910' target='_blank' rel='noopener noreferrer'>Read the article</a>"},
+      {t:"Tree tested", d:"Findability measured rather than assumed."},
+      {t:"Confirmed with power users", d:"Card sorting, usability testing, and mobile ethnography."}
+    ]},
+    {k:"What this led to", items:[
+      {t:"A recurring gap", d:"Enterprises needed more than a topic hierarchy."},
+      {t:"A business case", d:"For a full-service offering covering implementation and governance."},
+      {t:"A productized capability", d:"A direct line from this delivery work to an enterprise service."}
+    ]}
+  ],
+
+
+  method:[
+    {t:"Understand the content environment", d:"Content inventory, production search logs, gaps, duplication, and the tasks employees were trying to complete."},
+    {t:"Model employee needs", d:"A content matrix grouping search behavior and content around common tasks, away from departmental language."},
+    {t:"Design the unified taxonomy", d:"A hierarchical topic structure connecting information across departments and content types."},
+    {t:"Validate with users", d:"Card sorting, usability testing, and mobile ethnography with power users, plus tree testing to measure findability without visual design cues."},
+    {t:"Support adoption and governance", d:"Implementation readiness, content owner alignment, and expectations for ongoing taxonomy management."}
+  ],
+
+  awards:[],
+
+};
+
+
+/* ---- narrative chapters, each optionally paired with evidence ---- */
+$("#chapters").innerHTML = PROJECT.chapters.map((c,i)=>`
+  <section class="chap${(c.evidence||c.diagram) ? (i % 2 === 0 ? " band" : " flip") : " solo on-dark"}${c.statement ? " hasband" : ""}" id="${c.id}" aria-labelledby="h-${c.id}">
+    <div class="shell chap-grid">
+      ${(c.evidence||c.diagram) ? `
+      <div>
+        <p class="eyebrow">${esc(c.h)}</p>
+        <h2 id="h-${c.id}">${esc(c.title)}</h2>
+        <div class="body">${c.body.map(p=>`<p>${esc(p)}</p>`).join("")}</div>
+      </div>` : `
+      <div class="chap-head">
+        <p class="eyebrow">${esc(c.h)}</p>
+        <h2 id="h-${c.id}">${esc(c.title)}</h2>
+      </div>
+      <div class="body">${c.body.map(p=>`<p>${esc(p)}</p>`).join("")}</div>`}
+      ${c.evidence ? `
+      <figure class="evidence" style="margin:0">
+        <div class="shot"><img src="${c.evidence.img}" alt="${esc(c.evidence.alt)}" data-fallback="${esc(c.evidence.cap)}" loading="lazy"></div>
+        <figcaption><b>${esc(c.evidence.cap)}</b>${esc(c.evidence.desc)}</figcaption>
+      </figure>` : c.diagram ? `
+      <figure style="margin:0">
+        ${c.diagram}
+        <figcaption style="margin-top:12px;font-size:13.5px;line-height:1.6;color:var(--muted)">${esc(c.diagramCap)}</figcaption>
+      </figure>` : ""}
+    </div>
+    ${c.points ? `<div class="shell"><ul class="pointgrid">${
+      c.points.map(p=>`<li class="point">${esc(p)}</li>`).join("")
+    }</ul></div>` : ""}
+    ${c.statement ? `<div class="statementband"><div class="shell"><p class="chapstatement">${esc(c.statement)}</p></div></div>` : ""}
+  </section>`).join("");
+
+$("#method").innerHTML = PROJECT.method.map((m,i)=>
+  `<div class="mstep"><span class="num" aria-hidden="true">${i+1}</span><h3>${esc(m.t)}</h3><p>${esc(m.d)}</p></div>`).join("");
+
+/* missing evidence assets fall back to a labelled placeholder */
+document.querySelectorAll("[data-fallback]").forEach(img=>{
+  img.addEventListener("error", function(){
+    const f=document.createElement("div");
+    f.className="ph";
+    f.innerHTML = "<strong>Asset needed</strong><span>"+esc(this.getAttribute("src"))+"<br>"+esc(this.dataset.fallback)+"</span>";
+    this.replaceWith(f);
+  });
+});
+
+/* mobile nav */
+const tog = $("#navtoggle"), nv = $("#mainnav");
+tog.addEventListener("click", ()=>{
+  const open = nv.classList.toggle("open");
+  tog.setAttribute("aria-expanded", open ? "true":"false");
+});
+
+/* ============================================================
+   CONTACT MODAL
+   A static page cannot send mail on its own. Point CF_ENDPOINT at a
+   form relay whose destination inbox is configured in that service's
+   dashboard. Never put the destination address in this file: anything
+   here is public page source and gets harvested.
+   ============================================================ */
+const CF_ENDPOINT = "";   // e.g. "https://formspree.io/f/xxxxxxx"
+
+(function(){
+  const bd=$("#cf-backdrop"), dlg=$("#cf-dialog"), form=$("#cf-form"),
+        statusEl=$("#cf-status"), submit=$("#cf-submit");
+  let lastFocus=null;
+
+  const FIELDS=[["cf-name","Enter your name"],["cf-email","Enter a valid work email"],
+                ["cf-org","Enter your organization"],["cf-type","Choose an opportunity type"],
+                ["cf-msg","Tell me briefly what you are working on"]];
+
+  function open(trigger){
+    lastFocus=trigger||document.activeElement;
+    bd.dataset.open="true"; dlg.hidden=false;
+    // absolute placement keeps the dialog reachable inside a tall Wix iframe,
+    // where position:fixed would anchor to the full page rather than the viewport
+    const y = window.scrollY + Math.max(24, window.innerHeight*0.08);
+    dlg.style.top = y + "px";
+    const doc = document.documentElement;
+    bd.style.height = Math.max(doc.scrollHeight, dlg.offsetTop + dlg.offsetHeight + 80) + "px";
+    // a dialog taller than the viewport must align to its top, or the header scrolls off
+    const tall = dlg.offsetHeight > window.innerHeight * 0.9;
+    dlg.scrollIntoView({block: tall ? "start" : "center", behavior: reduceMotion ? "auto" : "smooth"});
+    setTimeout(()=>$("#cf-name").focus(), reduceMotion?0:260);
+    document.addEventListener("keydown", onKey, true);
+  }
+  function close(){
+    bd.dataset.open="false"; dlg.hidden=true;
+    document.removeEventListener("keydown", onKey, true);
+    if(lastFocus) lastFocus.focus();
+  }
+  function onKey(e){
+    if(e.key==="Escape"){ e.preventDefault(); close(); return; }
+    if(e.key!=="Tab") return;
+    const f=[...dlg.querySelectorAll('button,input,select,textarea,a[href]')].filter(el=>!el.disabled && el.offsetParent!==null);
+    if(!f.length) return;
+    const first=f[0], last=f[f.length-1];
+    if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
+  }
+  function setErr(id,msg){
+    const el=document.getElementById(id), out=document.getElementById("err-"+id);
+    if(!el||!out) return;
+    out.textContent=msg||"";
+    if(msg) el.setAttribute("aria-invalid","true"); else el.removeAttribute("aria-invalid");
+  }
+  function validate(){
+    let ok=true, firstBad=null;
+    FIELDS.forEach(([id,msg])=>{
+      const el=document.getElementById(id);
+      const val=(el.value||"").trim();
+      let bad = !val;
+      if(!bad && id==="cf-email") bad = !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val);
+      setErr(id, bad?msg:"");
+      if(bad){ ok=false; if(!firstBad) firstBad=el; }
+    });
+    if(firstBad) firstBad.focus();
+    return ok;
+  }
+
+  document.querySelectorAll("[data-cf-open]").forEach(b=>b.addEventListener("click",e=>{e.preventDefault(); open(e.currentTarget);}));
+  document.querySelectorAll("[data-cf-close]").forEach(b=>b.addEventListener("click",close));
+  $("#cf-close").addEventListener("click",close);
+  bd.addEventListener("click",close);
+
+  form.addEventListener("submit", async e=>{
+    e.preventDefault();
+    statusEl.className=""; statusEl.textContent="";
+    if(form.company_url.value){ close(); return; }   // honeypot tripped
+    if(!validate()) return;
+    if(!CF_ENDPOINT){
+      statusEl.className="cf-status bad";
+      statusEl.textContent="The form endpoint is not configured yet, so this message was not sent. Set CF_ENDPOINT in the page script.";
+      return;
+    }
+    submit.disabled=true; submit.textContent="Sending";
+    try{
+      const res = await fetch(CF_ENDPOINT,{
+        method:"POST", headers:{Accept:"application/json"}, body:new FormData(form)
+      });
+      if(!res.ok) throw new Error(res.status);
+      form.reset();
+      statusEl.className="cf-status ok";
+      statusEl.textContent="Message sent. Thank you, I will be in touch.";
+    }catch(err){
+      statusEl.className="cf-status bad";
+      statusEl.textContent="Something went wrong sending that. Please try again, or reach me through LinkedIn.";
+    }finally{
+      submit.disabled=false; submit.textContent="Send message";
+    }
+  });
+})();
+
+
+$("#yr").textContent = new Date().getFullYear();
+resolveLinks();
+
+/* ============================================================
+   RESUME REQUEST MODAL
+   The resume is not posted publicly, so this captures who is asking
+   before it is sent. Point RR_ENDPOINT at a form relay and set the
+   destination inbox inside that service's dashboard. The address is
+   deliberately absent from this file: page source is public and gets
+   scraped by address harvesters.
+   ============================================================ */
+(function () {
+  var RR_ENDPOINT = "";
+  var $ = function (s) { return document.querySelector(s); };
+  var bd = $("#rr-backdrop"), dlg = $("#rr-dialog"), form = $("#rr-form"),
+      statusEl = $("#rr-status"), submit = $("#rr-submit");
+  if (!bd || !dlg || !form) return;
+  var lastFocus = null;
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var FIELDS = [["rr-name", "Enter your name"], ["rr-role", "Enter your role"],
+                ["rr-position", "Enter the position"], ["rr-company", "Enter the company"],
+                ["rr-email", "Enter a valid email"]];
+
+  function openDlg(trigger) {
+    lastFocus = trigger || document.activeElement;
+    bd.dataset.open = "true"; bd.hidden = false; dlg.hidden = false;
+    var top = window.scrollY + Math.max(24, window.innerHeight * 0.08);
+    dlg.style.top = top + "px";
+    var doc = document.documentElement;
+    bd.style.height = Math.max(doc.scrollHeight, dlg.offsetTop + dlg.offsetHeight + 80) + "px";
+    var tall = dlg.offsetHeight > window.innerHeight * 0.9;
+    dlg.scrollIntoView({ block: tall ? "start" : "center", behavior: reduce ? "auto" : "smooth" });
+    setTimeout(function () { $("#rr-name").focus(); }, reduce ? 0 : 260);
+    document.addEventListener("keydown", onKey, true);
+  }
+  function closeDlg() {
+    bd.dataset.open = "false"; bd.hidden = true; dlg.hidden = true;
+    document.removeEventListener("keydown", onKey, true);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e) {
+    if (e.key === "Escape") { e.preventDefault(); closeDlg(); return; }
+    if (e.key !== "Tab") return;
+    var f = dlg.querySelectorAll('a[href],button:not([disabled]),input,select,textarea');
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+
+  document.addEventListener("click", function (e) {
+    var open = e.target.closest("[data-rr-open]");
+    if (open) { e.preventDefault(); openDlg(open); return; }
+    if (e.target.closest("[data-rr-close]") || e.target === $("#rr-close") || e.target === bd) closeDlg();
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (form.company_url && form.company_url.value) return;
+    var ok = true;
+    FIELDS.forEach(function (pair) {
+      var el = $("#" + pair[0]), err = $("#err-" + pair[0]);
+      var bad = !el.value.trim() || (el.type === "email" && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(el.value));
+      if (err) err.textContent = bad ? pair[1] : "";
+      el.setAttribute("aria-invalid", bad ? "true" : "false");
+      if (bad && ok) { el.focus(); ok = false; }
+    });
+    if (!ok) return;
+    statusEl.className = "cf-status";
+    if (!RR_ENDPOINT) {
+      statusEl.className = "cf-status bad";
+      statusEl.textContent = "This form is not connected yet. Set RR_ENDPOINT in the page source to a form relay before publishing.";
+      return;
+    }
+    submit.disabled = true;
+    statusEl.textContent = "Sending...";
+    fetch(RR_ENDPOINT, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
+      .then(function (r) { if (!r.ok) throw new Error(); form.reset();
+        statusEl.className = "cf-status good";
+        statusEl.textContent = "Thank you. I will send my resume shortly."; })
+      .catch(function () { statusEl.className = "cf-status bad";
+        statusEl.textContent = "Something went wrong. Please email me instead."; })
+      .then(function () { submit.disabled = false; });
+  });
+})();
+</script>
+</body>
+</html>

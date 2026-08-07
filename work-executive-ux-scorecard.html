@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Turning UX data into an executive scorecard | Robin Japar</title>
+<meta name="description" content="UX performance data existed across the enterprise but told no single story. I defined which data mattered and how executives should read it.">
+<link rel="canonical" href="https://www.japarofcontent.com/work/executive-ux-scorecard">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#1D3B32">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Robin Japar">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Robin Japar">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://www.japarofcontent.com/work/executive-ux-scorecard">
+<meta property="og:title" content="Turning UX data into an executive scorecard | Robin Japar">
+<meta property="og:description" content="UX performance data existed across the enterprise but told no single story. I defined which data mattered and how executives should read it.">
+<meta property="og:image" content="https://www.japarofcontent.com/assets/social-card.jpg">
+<meta property="og:image:alt" content="Robin Japar, enterprise content strategy and AI readiness">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Turning UX data into an executive scorecard | Robin Japar">
+<meta name="twitter:description" content="UX performance data existed across the enterprise but told no single story. I defined which data mattered and how executives should read it.">
+<meta name="twitter:image" content="https://www.japarofcontent.com/assets/social-card.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://www.japarofcontent.com/#robin",
+      "name": "Robin Japar",
+      "jobTitle": "Enterprise content strategy, experience architecture, and AI readiness leader",
+      "url": "https://www.japarofcontent.com/",
+      "sameAs": [
+        "https://www.linkedin.com/in/robin-japar"
+      ],
+      "knowsAbout": [
+        "Enterprise content strategy",
+        "Content design",
+        "Taxonomy",
+        "Information architecture",
+        "Content modeling",
+        "Headless CMS",
+        "Adobe Experience Manager",
+        "ServiceNow Employee Center",
+        "Personalization",
+        "UX research",
+        "Customer journey analysis",
+        "Content governance",
+        "AI readiness",
+        "Service design"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.japarofcontent.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Executive UX scorecard",
+          "item": "https://www.japarofcontent.com/work/executive-ux-scorecard"
+        }
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://www.japarofcontent.com/work/executive-ux-scorecard#work",
+      "url": "https://www.japarofcontent.com/work/executive-ux-scorecard",
+      "name": "Turning UX operations data into an executive performance story",
+      "headline": "Turning UX operations data into an executive performance story",
+      "about": [
+        "Information design",
+        "UX analytics",
+        "Executive reporting",
+        "Data visualization",
+        "Content strategy",
+        "Performance measurement"
+      ],
+      "abstract": "Designed a monthly executive CX scorecard that turned scattered UX operations data into one readable performance story, with automated analytics reporting replacing manual data entry.",
+      "author": {
+        "@id": "https://www.japarofcontent.com/#robin"
+      },
+      "creator": {
+        "@id": "https://www.japarofcontent.com/#robin"
+      },
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://www.japarofcontent.com/#site"
+      }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+
+
+/* ============================================================
+   DESIGN TOKENS
+   Sourced from the Wix site theme: base black/white,
+   accents deep forest, sage, mid green, cream.
+   ============================================================ */
+:root{
+  /* BASE - white, black, neutral ramp. These carry the page. */
+  --paper:#FCFDFC;
+  --paper-alt:#F2F5F3;
+  --black:#000000;
+  --black-soft:#101010;
+  --rule:#DCE3DF;
+  --rule-dark:#2B2B2B;
+  --ink:#000000;
+  --body:#3E3E3B;
+  --muted:#6A6A66;
+  --on-black:#EDEDE9;
+  --on-black-mute:#B0B0AA;
+
+  /* ACCENT - restrained. Never used as a page background. */
+  --forest-900:#0F2019;
+  --forest-800:#163026;
+  --forest:#1D3B32;
+  --forest-600:#2F5648;
+  --green-mid:#4A6C5E;
+  --sage:#A9BFB8;
+  --sage-100:#DCE6E2;
+  --tint:#E6EBE8;
+  --band:#F2F5F3;
+
+  --font-display:"Fraunces",Georgia,"Times New Roman",serif;
+  --font-body:"Lato",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+
+  --shell:1200px;
+  --gut:clamp(20px,5vw,64px);
+  --sec:clamp(64px,9vw,120px);
+}
+
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--body);
+  font-family:var(--font-body);font-size:17px;font-weight:400;line-height:1.72;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;display:block;height:auto}
+h1,h2,h3,h4{font-family:var(--font-display);color:var(--ink);font-weight:400;margin:0;text-wrap:balance}
+h1{font-size:clamp(35px,5.4vw,64px);line-height:1.08;letter-spacing:-.02em}
+h2{font-size:clamp(28px,3.7vw,44px);line-height:1.15;letter-spacing:-.015em}
+h3{font-size:clamp(20px,2.1vw,25px);line-height:1.28;letter-spacing:-.008em}
+h4{font-size:18px;line-height:1.35}
+p{margin:0}
+a{color:var(--forest-600)}
+
+.shell{max-width:var(--shell);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:var(--sec)}
+.stack>*+*{margin-top:var(--s,1rem)}
+
+.skip{position:absolute;left:-9999px;top:0;background:var(--forest);color:#fff;padding:12px 20px;z-index:200}
+.skip:focus{left:12px;top:12px}
+
+.eyebrow{
+  font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--forest-600);margin:0 0 20px;
+}
+.on-dark .eyebrow{color:var(--sage)}
+.lede{font-size:clamp(18px,1.9vw,20.5px);line-height:1.66;color:var(--body);text-wrap:pretty}
+.on-dark{background:var(--black);color:var(--on-black)}
+.on-dark h2,.on-dark h3,.on-dark h4{color:#FFFFFF}
+.on-dark .lede{color:var(--on-black-mute)}
+
+
+/* ---------- header ---------- */
+.masthead{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.masthead-in{display:flex;align-items:center;justify-content:space-between;gap:20px;max-width:var(--shell);margin:0 auto;padding:14px var(--gut)}
+.brand{font-family:var(--font-display);font-size:19px;color:var(--ink);text-decoration:none;letter-spacing:-.01em;line-height:1.2}
+.brand span{display:block;font-family:var(--font-body);font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.mainnav{display:flex;align-items:center;gap:clamp(14px,2vw,28px)}
+.mainnav a,.mainnav button{font-family:var(--font-body);font-size:14px;color:var(--body);text-decoration:none;padding:6px 0;border:0;border-bottom:2px solid transparent;background:none;cursor:pointer;line-height:inherit}
+.mainnav a:hover,.mainnav button:hover,.mainnav a:focus-visible,.mainnav button:focus-visible{color:var(--forest-600);border-bottom-color:var(--sage)}
+.mainnav a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--forest)}
+.navtoggle{display:none;background:none;border:1px solid var(--rule);border-radius:4px;padding:9px 13px;font-family:var(--font-body);font-size:13px;color:var(--ink);cursor:pointer}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-block;font-family:var(--font-body);font-size:14.5px;font-weight:700;
+  cursor:pointer;line-height:1.5;text-align:center;-webkit-appearance:none;appearance:none;
+  letter-spacing:.02em;text-decoration:none;padding:14px 28px;border-radius:2px;
+  border:2px solid var(--forest);background:var(--forest);color:#fff;transition:background .18s ease-out,color .18s,border-color .18s,transform .18s ease-out;
+}
+/* One rule governs both variants:
+   secondary fills with the primary's resting colour,
+   primary shifts to a clearly different accent tone.
+   Every button also lifts, so the change is felt as well as seen. */
+.btn:hover,.btn:focus-visible{
+  background:#fff;border-color:var(--forest);color:var(--forest);
+  transform:translateY(-2px);
+}
+.btn:active{transform:translateY(0)}
+
+.btn.alt{background:transparent;color:var(--forest);border-color:var(--forest)}
+.btn.alt:hover,.btn.alt:focus-visible{
+  background:var(--forest);border-color:var(--forest);color:#fff;
+  transform:translateY(-2px);
+}
+
+.on-dark .btn{background:var(--paper);border-color:var(--paper);color:var(--black)}
+.on-dark .btn:hover,.on-dark .btn:focus-visible{
+  background:transparent;border-color:var(--paper);color:var(--paper);
+  transform:translateY(-2px);
+}
+.on-dark .btn.alt{background:transparent;color:var(--paper);border-color:var(--sage)}
+.on-dark .btn.alt:hover,.on-dark .btn.alt:focus-visible{
+  background:var(--paper);border-color:var(--paper);color:var(--black);
+  transform:translateY(-2px);
+}
+.btnrow{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+
+/* focus */
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--forest-600);outline-offset:3px}
+.on-dark a:focus-visible,.on-dark button:focus-visible{outline-color:var(--sage)}
+
+/* ---------- hero ---------- */
+.hero{background:var(--paper);border-bottom:1px solid var(--rule)}
+.hero-grid{display:grid;grid-template-columns:1.28fr .72fr;gap:clamp(32px,5vw,72px);align-items:stretch;padding-block:clamp(56px,7vw,96px)}
+.hero p.lede{margin-top:26px}
+.portrait{position:relative;border-radius:3px;overflow:hidden;background:var(--sage-100);min-height:430px}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.ph{
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  background:var(--sage-100);color:var(--forest);text-align:center;padding:24px;
+  font-family:var(--font-body);font-size:13px;line-height:1.6;
+}
+.ph[hidden]{display:none}
+.ph strong{font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.portrait figcaption{
+  position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(15,32,25,.86));
+  color:#EEF2F0;font-size:12.5px;line-height:1.5;padding:34px 18px 14px;
+}
+
+/* ---------- proof bar ---------- */
+.proof{background:var(--black);color:var(--on-black)}
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule-dark)}
+.metric{background:var(--black);padding:clamp(28px,4vw,42px) clamp(16px,2.4vw,30px)}
+.metric .val{font-family:var(--font-display);font-size:clamp(34px,4.4vw,52px);line-height:1;color:#FFFFFF;font-weight:300;letter-spacing:-.02em}
+.metric .lbl{font-size:14px;line-height:1.6;color:var(--on-black-mute);margin-top:14px;max-width:30ch}
+
+/* ---------- systems graphic (signature) ---------- */
+.systems{border:1px solid var(--rule-dark);border-radius:3px;padding:clamp(20px,3vw,34px);background:var(--black-soft)}
+.chain{display:grid;grid-template-columns:1fr;gap:0;--dot-y:22px}
+.node{position:relative;padding:15px 0 15px 26px;background:none;border:0;border-radius:0}
+.node::before{
+  content:"";position:absolute;left:-5px;top:var(--dot-y);width:9px;height:9px;border-radius:50%;
+  background:var(--sage);border:1px solid var(--black);z-index:1;
+}
+/* rail segment: runs from this dot centre to the next dot centre.
+   offset by the dot centre, then 100% of node height lands exactly on the next one. */
+.node::after{
+  content:"";position:absolute;left:-1px;top:calc(var(--dot-y) + 5.5px);width:1px;height:100%;
+  background:var(--green-mid);z-index:0;
+}
+.node:last-child{padding-bottom:0}
+.node:last-child::after{display:none}
+.node:last-child::before{background:var(--tint)}
+.node .n-t{font-family:var(--font-display);font-size:18px;color:#FFFFFF;line-height:1.2}
+.node .n-d{font-size:13px;line-height:1.55;color:var(--on-black-mute);margin-top:5px}
+.chain-cap{font-size:13px;color:var(--sage);margin-top:18px;border-top:1px solid var(--rule-dark);padding-top:16px}
+
+/* ---------- pov ---------- */
+.pov-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,66px);align-items:start}
+.pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule-dark);margin-top:34px;border:1px solid var(--rule-dark)}
+.pillar{background:var(--black);padding:22px 20px}
+.pillar h4{color:#FFFFFF;font-size:17px}
+.pillar p{font-size:14px;line-height:1.6;color:var(--on-black-mute);margin-top:7px}
+
+/* ---------- progression ---------- */
+.tchev{display:none}
+.tnode:hover .tlabel,.tnode:focus-visible .tlabel{color:var(--ink)}
+.tnode:hover .tdot,.tnode:focus-visible .tdot{transform:scale(1.18);border-color:var(--forest);border-width:3px}
+.tnode:hover .tdot i,.tnode:focus-visible .tdot i{background:var(--forest);transform:scale(1.15)}
+.track{position:relative;margin-top:44px}
+.track-line{display:none}
+.track-nodes{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.tnode{
+  background:none;border:0;padding:0 6px 0 0;text-align:left;cursor:pointer;font-family:var(--font-body);
+  display:grid;align-content:start;justify-items:start;width:100%;position:relative;
+}
+.tnode::before{
+  content:"";position:absolute;left:14px;right:-22px;top:13px;height:2px;
+  background:var(--sage);z-index:0;
+}
+.tnode:last-child::before{display:none}
+.tdot{position:relative;z-index:1;width:28px;height:28px;border-radius:50%;background:var(--paper);border:2px solid var(--green-mid);display:grid;place-items:center;transition:transform .18s ease-out,border-color .18s,border-width .18s,background .18s}
+.tdot i{width:9px;height:9px;border-radius:50%;background:var(--green-mid);display:block;transition:transform .18s ease-out,background .18s;font-style:normal}
+.tnode.is-open .tdot{border-color:var(--forest);background:var(--forest);transform:scale(1.16)}
+.tnode.is-open .tdot i{background:var(--tint)}
+.tnode.is-open:hover .tdot{transform:scale(1.24)}
+.tlabel{font-size:13px;line-height:1.45;color:var(--muted);margin-top:14px;max-width:16ch;display:block;min-height:2.9em}
+.tnode.is-open .tlabel{color:var(--ink);font-weight:700}
+.tstage{font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--forest-600);display:block;margin-top:10px}
+.panel{
+  margin-top:44px;background:var(--band);border:1px solid var(--rule);border-left:4px solid var(--forest);
+  border-radius:0;padding:clamp(24px,3.4vw,38px);
+}
+.panel .quote{font-family:var(--font-display);font-size:clamp(20px,2.5vw,27px);line-height:1.34;color:var(--ink);max-width:34ch}
+.panel .proofpt{margin-top:18px;max-width:62ch}
+.panel .meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:22px;font-size:13.5px;color:var(--muted)}
+.panel .meta b{color:var(--ink);font-weight:700}
+
+/* ---------- capabilities ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:44px}
+.card{background:var(--paper);padding:clamp(22px,2.6vw,30px)}
+.card .idx{font-size:11.5px;font-weight:700;letter-spacing:.14em;color:var(--forest-600);text-transform:uppercase}
+.card h3{margin-top:12px;font-size:21px}
+.card p{margin-top:11px;font-size:15.5px;line-height:1.62;color:var(--muted)}
+
+/* ---------- featured work ---------- */
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.6vw,30px);margin-top:44px}
+.wcard{display:flex;flex-direction:column;border:1px solid var(--rule);border-radius:3px;overflow:hidden;background:var(--paper)}
+.wthumb{aspect-ratio:16/10;background:var(--sage-100);position:relative;border-bottom:1px solid var(--rule)}
+.wthumb img{width:100%;height:100%;object-fit:cover}
+.wbody{padding:clamp(20px,2.4vw,26px);display:flex;flex-direction:column;flex:1}
+.wtag{font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--forest-600)}
+.wcard h3{margin-top:12px;font-size:21px}
+.wfields{margin-top:18px;border-top:1px solid var(--rule);padding-top:16px;display:grid;gap:11px}
+.field{display:grid;grid-template-columns:88px minmax(0,1fr);gap:12px;font-size:14px;line-height:1.55}
+.field dt{font-weight:700;color:var(--ink);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;padding-top:2px}
+.field dd{margin:0;color:var(--muted)}
+.wai{margin-top:16px;background:var(--tint);border-left:3px solid var(--green-mid);padding:13px 15px;font-size:14px;line-height:1.6;color:var(--forest-800)}
+.wai b{display:block;font-size:11px;letter-spacing:.11em;text-transform:uppercase;margin-bottom:5px;color:var(--forest)}
+.wlink{margin-top:auto;padding-top:20px;font-size:14.5px;font-weight:700;color:var(--forest-600);text-decoration:none;display:inline-block}
+.wlink:hover{text-decoration:underline}
+
+/* ---------- recognition ---------- */
+.rec{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule-dark);border:1px solid var(--rule-dark);margin-top:44px}
+.rcol{background:var(--black);padding:24px 20px}
+.rcol h3{font-size:19px;color:#FFFFFF}
+.rcol ul{margin:14px 0 0;padding:0;list-style:none}
+.rcol li{font-size:14px;line-height:1.55;color:var(--on-black-mute);padding-left:16px;position:relative;margin-top:9px}
+.rcol li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:1px;background:var(--green-mid)}
+
+/* ---------- closing ---------- */
+.closing{background:var(--paper-alt);border-top:1px solid var(--rule)}
+.closing-in{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(28px,5vw,64px);align-items:center}
+
+/* ---------- footer ---------- */
+.foot{background:var(--black);color:var(--on-black-mute);padding-block:52px 34px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+.foot h4{color:#FFFFFF;font-family:var(--font-body);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:700}
+.foot ul{list-style:none;margin:14px 0 0;padding:0}
+.foot li{margin-top:9px}
+.foot a{color:var(--on-black-mute);text-decoration:none;font-size:14.5px}
+.foot a:hover{color:#fff;text-decoration:underline}
+.foot .sig{font-family:var(--font-display);font-size:22px;color:#FFFFFF}
+.foot .tag{font-size:14.5px;margin-top:10px;max-width:40ch;color:var(--on-black-mute)}
+.foot-base{border-top:1px solid var(--rule-dark);margin-top:38px;padding-top:20px;font-size:12.5px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+
+/* ---------- contact modal ---------- */
+.cf-backdrop{position:absolute;inset:0;background:rgba(10,14,12,.62);z-index:300;display:none}
+.cf-backdrop[data-open="true"]{display:block}
+.cf-dialog{
+  position:absolute;left:50%;transform:translateX(-50%);width:min(620px,calc(100vw - 32px));
+  background:var(--paper);border:1px solid var(--rule);border-radius:4px;z-index:301;
+  box-shadow:0 24px 70px rgba(10,14,12,.28);
+}
+.cf-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;padding:26px 28px 0}
+.cf-head h2{font-size:26px}
+.cf-head p{font-size:15px;color:var(--muted);margin-top:9px;max-width:46ch}
+.cf-close{
+  background:none;border:1px solid var(--rule);border-radius:3px;width:34px;height:34px;flex:0 0 34px;
+  cursor:pointer;color:var(--body);font-size:17px;line-height:1;display:grid;place-items:center;
+}
+.cf-close:hover{border-color:var(--forest);color:var(--forest)}
+.cf-body{padding:22px 28px 28px}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cf-field{margin-top:16px;display:block}
+.cf-field label{display:block;font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink);margin-bottom:7px}
+.cf-field .opt{color:var(--muted);font-weight:400;letter-spacing:0;text-transform:none;font-size:12.5px}
+.cf-field input,.cf-field select,.cf-field textarea{
+  width:100%;font-family:var(--font-body);font-size:15.5px;color:var(--ink);background:var(--paper);
+  border:1px solid var(--rule);border-radius:3px;padding:11px 12px;line-height:1.5;
+}
+.cf-field textarea{min-height:112px;resize:vertical}
+.cf-field input:focus,.cf-field select:focus,.cf-field textarea:focus{outline:3px solid var(--forest-600);outline-offset:1px;border-color:var(--forest-600)}
+.cf-field input[aria-invalid="true"],.cf-field textarea[aria-invalid="true"],.cf-field select[aria-invalid="true"]{border-color:#8C2F2F}
+.cf-err{display:block;font-size:13px;color:#8C2F2F;margin-top:6px;min-height:0}
+.cf-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.cf-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:24px;padding-top:20px;border-top:1px solid var(--rule)}
+.cf-note{font-size:13px;color:var(--muted);margin-top:14px}
+.cf-status{padding:14px 16px;border-radius:3px;font-size:15px;line-height:1.6;margin-top:18px}
+.cf-status.ok{background:var(--tint);border-left:3px solid var(--forest);color:var(--forest-800)}
+.cf-status.bad{background:#F7ECEC;border-left:3px solid #8C2F2F;color:#6B2020}
+.cf-linkbtn{background:none;border:0;padding:0;font:inherit;color:var(--sage);cursor:pointer;text-decoration:none}
+.cf-linkbtn:hover{color:#fff;text-decoration:underline}
+@media (max-width:620px){.cf-row{grid-template-columns:1fr}.cf-head,.cf-body{padding-left:20px;padding-right:20px}}
+
+/* ---------- responsive ---------- */
+@media (max-width:1000px){
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .portrait{max-width:340px;aspect-ratio:4/5;min-height:0;margin-inline:auto}
+  .proof-grid{grid-template-columns:repeat(2,1fr)}
+  .pov-grid,.closing-in{grid-template-columns:1fr}
+  .cards,.work,.rec{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .navtoggle{display:block}
+  .mainnav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--rule);flex-direction:column;align-items:stretch;gap:0;padding:6px var(--gut) 16px}
+  .mainnav.open{display:flex}
+  .mainnav a,.mainnav button{padding:12px 0;border-bottom:1px solid var(--rule);text-align:left;width:100%}
+  .masthead-in{position:relative}
+  .tlabel{min-height:0}
+  .track-nodes{grid-template-columns:1fr;gap:0}
+  .tnode{grid-template-columns:28px minmax(0,1fr) 16px;gap:0 14px;align-items:start;padding:12px 10px 22px;margin-left:0;border-left:0;border-radius:5px;min-height:56px}
+  .tnode:last-child{padding-bottom:12px}
+  .tnode::before{display:block;left:23px;right:auto;top:26px;width:2px;height:100%;background:var(--sage)}
+  .tnode:hover,.tnode:focus-visible{background:var(--paper-alt)}
+  .tnode.is-open{background:var(--tint)}
+  .tchev{display:block;align-self:center;width:9px;height:9px;border-right:2px solid var(--green-mid);border-bottom:2px solid var(--green-mid);transform:rotate(-45deg);transition:transform .2s}
+  .tnode.is-open .tchev{transform:rotate(45deg);border-color:var(--forest)}
+
+/* accordion panel, rendered in the flow of the list on narrow screens */
+  .track{margin-top:26px}
+  .panel.inline{position:relative;margin:0 0 0 52px;padding:22px 20px 24px;border-left-width:3px}
+  .panel.inline::before{content:"";position:absolute;left:-32px;top:0;bottom:-26px;width:2px;background:var(--sage)}
+  .panel.inline[data-last]::before{display:none}
+  .panel.inline .quote{font-size:20px;max-width:none}
+  .panel.inline .meta{gap:10px 0;flex-direction:column}
+
+  .tlabel,.tstage{margin-top:0;max-width:none}
+  .tstage{margin-top:4px}
+  .cards,.work,.rec,.proof-grid,.pillars{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  body{font-size:16px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+}
+
+
+/* ================= CASE STUDY ================= */
+.crumbs{font-size:13px;color:var(--muted);padding-top:26px}
+.crumbs a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule)}
+.crumbs a:hover{color:var(--forest-600);border-bottom-color:var(--forest-600)}
+.crumbs span{margin:0 8px;color:var(--sage)}
+
+.case-hero{background:var(--paper-alt);border-bottom:1px solid var(--rule)}
+.case-hero .inner{
+  padding-block:clamp(28px,3.5vw,44px) clamp(46px,6vw,72px);
+  display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);
+  gap:clamp(28px,4vw,64px);align-items:center;
+}
+.nb{white-space:nowrap}
+.case-hero h1{margin-top:8px;font-size:clamp(30px,3.5vw,45px);text-wrap:pretty;hyphens:none}
+
+/* one supporting paragraph, labelled, rather than a subtitle plus a boxed summary */
+.brief{margin-top:26px;font-size:18px;line-height:1.62;color:var(--body);text-wrap:pretty}
+.jump a span{font-size:15px;transition:transform .18s ease-out}
+
+/* the credibility asset earns the second column */
+/* the award runs dark against the light hero so it carries weight */
+.proofcard{
+  display:block;align-self:center;background:var(--black);border:1px solid var(--black);
+  border-top:3px solid var(--sage);
+  border-radius:3px;padding:26px 28px 24px;text-decoration:none;
+}
+.pc-k{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sage)}
+.pc-h{display:block;margin-top:10px;font-family:var(--font-display);font-size:23px;line-height:1.2;color:#FFFFFF}
+.pc-b{display:block;margin-top:12px;font-size:14.5px;line-height:1.58;color:var(--on-black-mute)}
+.pc-m{display:block;margin-top:16px;padding-top:14px;border-top:1px solid var(--rule-dark);
+  font-size:12.5px;font-weight:700;letter-spacing:.05em;color:var(--sage)}
+
+
+
+
+
+/* prose sections */
+.chap{padding-block:clamp(48px,6vw,76px)}
+.chap.band{background:var(--paper-alt);border-block:1px solid var(--rule)}
+.chap-grid{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:clamp(28px,4vw,58px);align-items:center}
+/* no artifact: heading and prose split the width as an editorial spread */
+.chap.solo .chap-grid{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:center}
+.chap.solo .chap-head{position:static}
+/* section intro that has prose but no artifact beside it */
+.bandhead{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,4vw,58px);align-items:center}
+.bandhead h2{max-width:none;text-wrap:pretty}
+.bandhead .lede,.bandhead .body{margin-top:0;max-width:none}
+.bandhead .body p:first-child{margin-top:0}
+.bandhead .body p+p{margin-top:16px}
+.bandhead .body .btnrow{margin-top:28px}
+.chap.on-dark .body{color:var(--on-black-mute)}
+.chap.solo .body{margin-top:0;max-width:60ch}
+/* flipped chapters put the evidence first, breaking the repeating rhythm */
+.chap.flip .chap-grid{grid-template-columns:380px minmax(0,1fr)}
+.chap.flip .chap-grid > div{order:2}
+.chap.flip .chap-grid > figure{order:1}
+.chap.solo h2{max-width:none}
+.chap h2{max-width:none;text-wrap:pretty}
+.chap .body{margin-top:20px;max-width:62ch}
+.chap .body p+p{margin-top:16px}
+.chap .body ul{margin:16px 0 0;padding:0;list-style:none}
+.chap .body li{position:relative;padding-left:20px;margin-top:10px;line-height:1.65}
+.chap .body li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:1px;background:var(--green-mid)}
+
+/* point boxes: the list, broken out of the prose column */
+.pointgrid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px;
+  margin:clamp(30px,3.6vw,46px) 0 0;padding:0;list-style:none;
+}
+.point{
+  background:var(--paper);border:1px solid var(--rule);border-top:3px solid var(--d2);border-radius:3px;
+  padding:20px 22px 22px;font-size:15px;line-height:1.58;color:var(--ink);
+}
+.point:nth-child(4n+1){border-top-color:var(--d4)}
+.point:nth-child(4n+2){border-top-color:var(--d3)}
+.point:nth-child(4n+3){border-top-color:var(--d2)}
+.point:nth-child(4n+4){border-top-color:var(--d1)}
+
+/* evidence */
+.evidence{border:1px solid var(--rule);background:var(--paper);border-radius:3px;overflow:hidden}
+.evidence .ph{position:static;aspect-ratio:4/3}
+.evidence .shot{background:var(--sage-100);position:relative;line-height:0}
+.evidence .shot img{width:100%;height:auto;display:block}
+.evidence figcaption{padding:14px 16px;font-size:13.5px;line-height:1.6;color:var(--muted);border-top:1px solid var(--rule)}
+.evidence figcaption b{display:block;color:var(--ink);font-size:13.5px;margin-bottom:4px}
+
+/* outcomes */
+.result h3 + 
+
+/* recognition */
+.awards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:32px}
+.award{border:1px solid var(--rule);border-left:3px solid var(--green-mid);padding:20px 22px;background:var(--paper)}
+.award .nm{font-family:var(--font-display);font-size:19px;color:var(--ink)}
+.award .yr{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.award p{margin-top:11px;font-size:15px;line-height:1.6;color:var(--muted)}
+
+
+/* ================= INFOGRAPHICS ================= */
+:root{--d1:#DCE6E2;--d2:#A9BFB8;--d3:#4A6C5E;--d4:#1D3B32}
+.figband{border-block:1px solid var(--rule-dark)}
+.figwrap{margin:34px 0 0;background:var(--paper);border-radius:4px;padding:clamp(18px,2.4vw,30px)}
+.figwrap svg{width:100%;height:auto;display:block}
+.figcap{margin-top:22px;padding-top:18px;border-top:1px solid var(--rule);font-size:14px;line-height:1.65;color:var(--muted)}
+.illus{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--forest-600);background:var(--tint);padding:3px 8px;border-radius:2px;margin-bottom:10px}
+
+/* method rail */
+.method{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:38px;position:relative}
+.mstep{position:relative;padding-top:46px}
+/* connector runs dot centre to dot centre; the last step has nothing to connect to */
+.mstep::before{content:"";position:absolute;left:16px;right:-26px;top:15px;height:2px;background:var(--d2)}
+.mstep:last-child::before{display:none}
+.mstep .num{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;
+  background:var(--forest);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700;z-index:1}
+.mstep h3{margin:0;font-size:16px;line-height:1.3;font-family:var(--font-display);font-weight:400}
+.mstep p{margin-top:10px;font-size:13.5px;line-height:1.6;color:var(--muted)}
+
+/* content matrix */
+.matrix{margin-top:12px;border:1px solid var(--rule);border-radius:3px;overflow:hidden;font-size:12.5px}
+.matrix table{width:100%;border-collapse:collapse;table-layout:fixed}
+.matrix th,.matrix td{padding:9px 8px;text-align:center;border:1px solid var(--rule);line-height:1.35}
+.matrix thead th{background:var(--paper-alt);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.matrix tbody th{text-align:left;background:var(--paper-alt);font-weight:400;color:var(--ink);font-size:12.5px}
+.matrix .lv3{background:var(--d3);color:#fff}
+.matrix .lv2{background:var(--d2);color:var(--forest-800)}
+.matrix .lv1{background:var(--d1);color:var(--forest-800)}
+.matrix .lv0{background:var(--paper);color:var(--faint,#9aa39d)}
+.mkey{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:12px;font-size:12.5px;color:var(--muted)}
+.mkey span{display:flex;align-items:center;gap:6px}
+.mkey i{width:12px;height:12px;border-radius:2px;display:block}
+
+/* colored result + readiness cards */
+.result:nth-child(1){border-top:3px solid var(--d4)}
+.result:nth-child(2){border-top:3px solid var(--d3)}
+.result:nth-child(3){border-top:3px solid var(--d2)}
+.result:nth-child(4){border-top:3px solid var(--d1)}
+
+@media (max-width:900px){
+  .method{grid-template-columns:1fr;gap:0}
+  .mstep{padding:0 0 26px 48px}
+  .mstep::before{left:15px;right:auto;top:32px;bottom:0;width:2px;height:auto}
+  .mstep:last-child::before{display:none}
+  .mstep .num{left:0;top:0}
+  .matrix{font-size:11px}
+  .matrix th,.matrix td{padding:6px 4px}
+}
+
+/* placeholder flag for unconfirmed detail */
+.todo{background:#FFF6E5;border-bottom:1px dashed #B08900;color:#6B5300;padding:0 3px}
+
+@media (max-width:900px){
+  .case-hero .inner{grid-template-columns:1fr;gap:0}
+  .proofcard{margin-top:30px}
+  .chap-grid,.chap.flip .chap-grid,.chap.solo .chap-grid,.bandhead{grid-template-columns:1fr}
+  .bandhead .lede,.bandhead .body{margin-top:20px}
+  .chap.solo .chap-head{position:static}
+  .chap.solo .body{margin-top:20px}
+  .chap.flip .chap-grid > div,.chap.flip .chap-grid > figure{order:0}
+  .results,.ai-grid,.awards,          .evidence{max-width:520px}
+}
+
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+
+/* ===== page-specific ===== */
+.metriccard{background:var(--black);border-radius:3px;padding:28px 30px 26px;align-self:center}
+.mc-n{display:block;font-family:var(--font-display);font-size:clamp(44px,5vw,62px);line-height:1;color:var(--paper);letter-spacing:-.02em}
+.mc-k{display:block;margin-top:14px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sage)}
+.mc-b{display:block;margin-top:12px;font-size:14.5px;line-height:1.58;color:var(--on-black-mute)}
+.mc-m{display:block;margin-top:16px;padding-top:14px;border-top:1px solid var(--rule-dark);font-size:12.5px;letter-spacing:.04em;color:var(--sage)}
+
+/* when a chapter carries metrics, copy sits under the heading and metrics take the right column */
+.chap.statright .chap-grid{grid-template-columns:minmax(0,1.3fr) minmax(230px,.7fr)}
+.chap.statright .chap-head{position:static}
+.chap.statright .chap-head .body{margin-top:24px;max-width:62ch}
+/* metrics sit centred against the copy rather than pinned to the top */
+.chap.statright .chap-grid{align-items:center}
+.chap.statright .chapstat.side{align-self:center;margin-top:0}
+
+/* short chapter headings travel with the reading position */
+.chap .chap-head{position:static}
+/* and carry the chapter's hard numbers where there are any */
+.chapstat{margin:30px 0 0;border-top:1px solid var(--rule)}
+.chapstat > div{padding:16px 0;border-bottom:1px solid var(--rule)}
+.chapstat dt{font-family:var(--font-display);font-size:34px;line-height:1;color:var(--forest);letter-spacing:-.02em}
+.chapstat dd{margin:8px 0 0;font-size:14px;line-height:1.5;color:var(--muted);max-width:26ch}
+.chap.on-dark .chapstat{border-top-color:var(--rule-dark)}
+.chap.on-dark .chapstat > div{border-bottom-color:var(--rule-dark)}
+.chap.on-dark .chapstat dt{color:var(--sage)}
+.chap.on-dark .chapstat dd{color:var(--on-black-mute)}
+
+/* stacked section head: copy reads directly beneath the heading */
+.stackhead h2{max-width:none;text-wrap:pretty}
+
+.headrow{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(240px,.75fr);gap:clamp(28px,4vw,58px);align-items:start;margin-top:24px}
+/* a lede sitting directly under the heading needs its own gap;
+   one inside .headrow is already spaced by the row */
+.stackhead > .lede{margin-top:24px;max-width:none}
+.headrow .lede{margin-top:0;max-width:58ch}
+
+/* bridge: heading, copy, action across three columns on one centre line */
+.bridge-row{display:grid;grid-template-columns:2fr 2fr 1fr;gap:clamp(24px,3vw,48px);align-items:center}
+.bridge-row h2{margin-top:6px;font-size:clamp(24px,2.6vw,34px);max-width:none;text-wrap:pretty}
+.bridge-copy{margin:0;font-size:clamp(16px,1.5vw,17.5px);line-height:1.62;color:var(--body);text-wrap:pretty}
+.bridge-row .btnrow{margin:0;justify-content:flex-start}
+.bridge-row .btn{white-space:nowrap}
+@media (max-width:980px){.bridge-row{grid-template-columns:1fr;gap:22px}}
+
+.method-close{
+  margin:clamp(38px,4.4vw,58px) auto 0;padding-top:28px;border-top:1px solid var(--rule);
+  text-align:center;max-width:44ch;
+  font-family:var(--font-display);font-size:clamp(19px,2.1vw,25px);line-height:1.38;
+  color:var(--forest);text-wrap:balance;
+}
+
+/* the offering as a narrative progression: three beats on one rail */
+.beats{margin-top:clamp(34px,4vw,52px);display:grid;gap:clamp(30px,3.6vw,46px)}
+.beat{position:relative;padding-left:34px}
+.beat::before{content:"";position:absolute;left:5px;top:22px;bottom:-46px;width:1px;background:var(--sage-100)}
+.beat:last-child::before{display:none}
+.beat-dot{position:absolute;left:0;top:9px;width:11px;height:11px;border-radius:50%;
+  background:var(--paper);border:2px solid var(--green-mid)}
+.beat:last-child .beat-dot{background:var(--forest);border-color:var(--forest)}
+.beat h3{margin:0;font-family:var(--font-display);font-size:clamp(21px,2.3vw,27px);
+  line-height:1.28;color:var(--ink);text-wrap:pretty}
+.beat-d{margin:14px 0 0;font-size:16.5px;line-height:1.68;color:var(--body);text-wrap:pretty}
+.beat-add{margin:18px 0 0;padding-left:16px;border-left:2px solid var(--forest);
+  font-size:16px;line-height:1.6;color:var(--forest-900);text-wrap:pretty}
+.beat-add span,.beat-became span{
+  display:block;font-family:var(--font-body);font-size:10.5px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--green-mid);margin-bottom:6px;
+}
+.beat-became{margin:16px 0 0;font-family:var(--font-display);font-size:17.5px;
+  line-height:1.4;color:var(--muted)}
+.beat-close{
+  margin:0 auto;text-align:center;max-width:42ch;
+  font-family:var(--font-display);font-weight:400;
+  font-size:clamp(22px,2.8vw,34px);line-height:1.3;letter-spacing:-.012em;
+  color:var(--sage);text-wrap:balance;
+}
+@media (max-width:600px){.beat{padding-left:26px}}
+
+/* lifecycle: the three phases the offering came to cover */
+.lifecycle{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.phase{border:1px solid var(--rule);border-radius:3px;background:var(--paper);display:flex;flex-direction:column}
+.phase.added{border-color:var(--d3)}
+.ph-top{padding:16px 20px;border-bottom:1px solid var(--rule);display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.phase.added .ph-top{background:var(--tint);border-bottom-color:var(--d1)}
+.ph-n{font-family:var(--font-display);font-size:15px;color:var(--muted)}
+.phase.added .ph-n{color:var(--forest)}
+.ph-tag{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.phase.added .ph-tag{color:var(--forest)}
+.ph-body{padding:18px 20px 20px}
+.ph-h{font-family:var(--font-display);font-size:20px;line-height:1.25;color:var(--ink)}
+.ph-l{margin:14px 0 0;padding:0;list-style:none}
+.ph-l li{position:relative;padding-left:20px;margin-top:9px;font-size:14px;line-height:1.5;color:var(--body)}
+.ph-l li::before{content:"";position:absolute;left:0;top:8px;width:10px;height:2px;background:var(--d1)}
+.phase.added .ph-l li::before{background:var(--d3)}
+
+/* the offering, phase by phase */
+.offering 
+
+/* header groups everything that identifies the phase: number, name, timing, status */
+.pcard.added .pcard.added .ph-meta > span{display:block;margin-top:3px;font-size:10.5px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted)}
+.pcard.added .ph-meta > span{color:var(--forest)}
+
+.ph-grid h4{font-family:var(--font-body);font-size:11px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted);margin:0}
+.ph-grid ul{margin:14px 0 0;padding:0;list-style:none}
+.ph-grid li{position:relative;padding-left:20px;margin-top:10px;font-size:15px;line-height:1.55;color:var(--ink)}
+.ph-grid li::before{content:"";position:absolute;left:0;top:9px;width:10px;height:2px;background:var(--d2)}
+
+/* the outcome is the payoff, so it gets the emphasis and absorbs the uneven list length */
+.pcard.added .ph-gets li::before{background:var(--d3)}
+
+/* the demand, counted */
+.demandsec .lost{
+  display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1.05fr);
+  gap:clamp(20px,3vw,40px);align-items:center;
+  margin-top:clamp(30px,3.6vw,44px);padding:30px 34px;background:var(--black);border-radius:3px;
+}
+.lost-n{font-family:var(--font-display);font-size:clamp(52px,6vw,76px);line-height:.86;color:var(--paper);margin:0}
+.lost-t{font-family:var(--font-display);font-size:clamp(19px,2.1vw,25px);line-height:1.3;color:var(--paper);margin:0;text-wrap:pretty}
+.lost-d{margin:0;font-size:15px;line-height:1.66;color:var(--on-black-mute);text-wrap:pretty;
+  padding-left:clamp(20px,3vw,40px);border-left:1px solid var(--rule-dark)}
+
+.clusters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,2.6vw,32px);margin-top:clamp(20px,2.6vw,32px)}
+.cl{border:1px solid var(--rule);border-radius:3px;background:var(--paper);display:flex;flex-direction:column}
+.cl-head{padding:26px 28px 22px;flex:1}
+.cl-n{font-family:var(--font-display);font-size:clamp(44px,5vw,58px);line-height:1;color:var(--forest);letter-spacing:-.02em}
+.cl-n span{display:block;margin-top:8px;font-family:var(--font-body);font-size:12px;font-weight:700;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.cl-head h3{margin-top:20px;font-size:clamp(21px,2.2vw,26px);line-height:1.25}
+.cl-d{margin-top:10px;font-size:15.5px;line-height:1.6;color:var(--muted)}
+/* the insight the evidence adds up to, as a full-bleed belly band */
+.statementband{background:var(--black);padding-block:clamp(48px,6vw,84px);margin-top:clamp(44px,5vw,72px)}
+.section.hasband{padding-bottom:0;border-bottom:0}
+.demand-close{
+  margin:0 auto;text-align:center;max-width:38ch;
+  font-family:var(--font-display);font-weight:400;
+  font-size:clamp(24px,3.2vw,40px);line-height:1.26;letter-spacing:-.015em;
+  color:var(--sage);text-wrap:balance;
+}
+.cl-became{
+  margin:0;padding:16px 28px;background:var(--tint);border-top:1px solid var(--rule);
+  font-family:var(--font-display);font-size:18px;color:var(--forest);display:flex;align-items:baseline;gap:12px;
+}
+.cl-became span{font-family:var(--font-body);font-size:10.5px;font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--forest-600)}
+
+
+/* sourced value case */
+.vgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--rule-dark);border:1px solid var(--rule-dark);margin-top:38px}
+.vcell{background:var(--black);padding:22px 22px 24px}
+.v-n{font-family:var(--font-display);font-size:30px;line-height:1;color:var(--paper);letter-spacing:-.02em}
+.v-d{margin-top:11px;font-size:14px;line-height:1.55;color:var(--on-black-mute)}
+.v-s{margin-top:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sage)}
+
+@media (max-width:900px){
+  .headrow,.clusters{grid-template-columns:1fr}
+  .vgrid{grid-template-columns:1fr}
+  .demandsec .lost{grid-template-columns:1fr;gap:14px}
+  .lost-d{padding-left:0;border-left:0;padding-top:14px;border-top:1px solid var(--rule-dark)}
+        .ph-meta > span{display:inline;margin-left:10px}
+    .chap .chap-head{position:static}
+  .chap.statright .chap-grid{grid-template-columns:1fr}
+  .chap.statright .chap-grid{align-items:start}
+  .chap.statright .chapstat.side{align-self:center;margin-top:0}
+  .chapstat{margin-top:22px}
+}
+
+
+/* provenance note under a caption: always its own line, always quieter */
+.nda{
+  display:block;margin-top:10px;padding-top:9px;border-top:1px dashed var(--rule);
+  font-size:12.5px;line-height:1.55;color:var(--muted);font-weight:400;
+}
+
+/* the full scorecard beside its reading notes */
+.scorewrap{display:grid;gap:clamp(28px,4vw,56px);margin-top:clamp(34px,4vw,52px);align-items:start}
+@media (min-width:900px){.scorewrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.sc-full{margin:0}
+.sc-full .shot{max-height:none}
+.sc-notes{display:grid;gap:26px;position:sticky;top:90px}
+.sc-note h3{margin:0;font-family:var(--font-display);font-size:clamp(19px,2vw,23px);line-height:1.3;color:var(--ink)}
+.sc-note p{margin:10px 0 0;font-size:16px;line-height:1.66;color:var(--body);text-wrap:pretty}
+@media (max-width:900px){.sc-notes{position:static}}
+
+/* the executive question reuses the demand cards without a count */
+.demandsec .cl-head h3{margin-top:0}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="masthead">
+  <div class="masthead-in">
+    <a class="brand" href="#" data-link="home">Robin Japar<span>Content infrastructure &amp; AI readiness</span></a>
+    <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="mainnav">Menu</button>
+    <nav class="mainnav" id="mainnav" aria-label="Primary"></nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="shell">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="#" data-link="home">Home</a><span aria-hidden="true">/</span>Executive UX scorecard
+    </nav>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <header class="case-hero">
+    <div class="shell inner">
+      <div>
+        <p class="eyebrow" style="margin-bottom:0">Enterprise case study</p>
+        <h1 id="case-h">Turning UX operations data into an executive performance story</h1>
+        <p class="brief">UX performance data existed across the enterprise, but leadership still lacked one clear view of how experience operations were performing against the year&rsquo;s goals. I defined which data told that story, how it should be visualized for executive comprehension, and how automated analysis could turn reporting into actionable insight.</p>
+      </div>
+
+      <div class="proofcard" style="cursor:default">
+        <span class="pc-k">Recognized</span>
+        <span class="pc-h">Digital Transformation Award</span>
+        <span class="pc-b">For driving digital transformation through the automation of analytics data for machine learning and analytics reporting, replacing manual data entry.</span>
+        <span class="pc-m">July 2019</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ THE EXECUTIVE QUESTION ============ -->
+  <section class="section demandsec hasband" style="background:var(--paper);border-top:1px solid var(--rule)" aria-labelledby="q-h">
+    <div class="shell">
+      <div class="stackhead">
+        <p class="eyebrow">The executive question</p>
+        <h2 id="q-h">Leadership did not need more data. They needed one clear answer.</h2>
+        <p class="lede">Every month produced more performance data across the UX ecosystem, but no single source showed whether the organization was actually delivering against the goals set for the year. The scorecard had to connect those signals into one coherent executive view.</p>
+      </div>
+
+      <div class="lost">
+        <p class="lost-n">1</p>
+        <p class="lost-t">question shaped the entire scorecard</p>
+        <p class="lost-d">Are UX operations achieving the goals set for the year, and where does leadership need to act? Every measure, visualization, and insight had to help answer that question.</p>
+      </div>
+
+      <div class="clusters">
+        <article class="cl">
+          <div class="cl-head">
+            <h3>What already existed</h3>
+            <p class="cl-d">Journey analytics, voice of customer, channel performance, project status, and customer research, each useful in isolation but incomplete as an executive story.</p>
+          </div>
+        </article>
+        <article class="cl">
+          <div class="cl-head">
+            <h3>What was missing</h3>
+            <p class="cl-d">A single view that connected performance back to annual goals, explained what was driving the results, and showed where leadership attention was needed.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="statementband">
+      <div class="shell">
+        <p class="demand-close">The opportunity was to turn reporting into interpretation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW I BUILT IT ============ -->
+  <section class="section offering" aria-labelledby="build-h">
+    <div class="shell">
+      <div class="stackhead">
+        <p class="eyebrow">How I built it</p>
+        <h2 id="build-h">I started from the question, not the dashboard.</h2>
+        <p class="lede">A scorecard assembled from whatever data happens to be available reports activity. To explain performance, the structure has to be decided before the visuals are, which meant starting with what leadership needed to decide and working backward to the measures.</p>
+      </div>
+
+      <div class="beats">
+        <article class="beat">
+          <span class="beat-dot" aria-hidden="true"></span>
+          <h3>First, I asked what leadership needed to decide.</h3>
+          <p class="beat-d">I gathered requirements directly from stakeholders and executives rather than inferring them from existing reports. That established which questions the scorecard was accountable for answering, and which were somebody else's to answer.</p>
+          <p class="beat-became"><span>This became</span>the scope of what belonged on the page</p>
+        </article>
+        <article class="beat">
+          <span class="beat-dot" aria-hidden="true"></span>
+          <h3>Then, I organized data that lived in separate tools.</h3>
+          <p class="beat-d">Analytics, research, channel, and project data were held by different organizations in different systems. I pulled them into one place and mapped each available measure against the requirement it could actually support.</p>
+          <p class="beat-add"><span>What I decided</span>Measures that answered none of the executive questions were cut, however easy they were to report.</p>
+          <p class="beat-became"><span>This became</span>one dataset instead of a dozen reports</p>
+        </article>
+        <article class="beat">
+          <span class="beat-dot" aria-hidden="true"></span>
+          <h3>Finally, I specified how each measure should be seen.</h3>
+          <p class="beat-d">Choosing the right number is only half the decision. How it is drawn determines whether a reader sees performance, or just a figure. I wrote a content strategy brief for the visualization of every piece of data in the scorecard, then worked directly with designers to build it.</p>
+          <p class="beat-add"><span>What I decided</span>Every measure had to show its target beside it, so a reader could see the gap without doing arithmetic.</p>
+          <p class="beat-became"><span>This became</span>a scorecard that reads as an argument</p>
+        </article>
+      </div>
+
+      <figure class="evidence" style="margin:clamp(38px,4.4vw,58px) 0 0">
+        <button class="zoom" type="button"><img src="assets/score-02-process.webp" width="1500" height="1232" loading="lazy" decoding="async" alt="Five working boards: requirements collected from stakeholders and executives, visual research into scorecard examples, a data dump organized across tools, data mapped against requirements, and a content strategy brief covering every panel of the scorecard."></button>
+        <figcaption>
+          <b>The working boards behind the scorecard</b>
+          Requirements, visual research, the data inventory, the mapping of data to requirements, and the content strategy brief written for the visualization of each piece of data.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ THE SEQUENCE ============ -->
+  <section class="section" style="background:var(--paper-alt);border-block:1px solid var(--rule)" aria-labelledby="seq-h">
+    <div class="shell">
+      <p class="eyebrow">The sequence of comprehension</p>
+      <h2 id="seq-h">The scorecard is ordered the way an executive reads.</h2>
+      <div class="method">
+        <div class="mstep"><span class="num" aria-hidden="true">1</span><h3>Objective</h3><p>What we said we would achieve this year.</p></div>
+        <div class="mstep"><span class="num" aria-hidden="true">2</span><h3>Performance</h3><p>Where the numbers actually landed against it.</p></div>
+        <div class="mstep"><span class="num" aria-hidden="true">3</span><h3>Context</h3><p>Channel behavior and project status that explain the movement.</p></div>
+        <div class="mstep"><span class="num" aria-hidden="true">4</span><h3>Analysis</h3><p>What the pattern means, written rather than left to inference.</p></div>
+        <div class="mstep"><span class="num" aria-hidden="true">5</span><h3>Maturity</h3><p>How far the experience is from where it needs to be.</p></div>
+        <div class="mstep"><span class="num" aria-hidden="true">6</span><h3>Concerns</h3><p>The friction and risk worth executive attention.</p></div>
+        <div class="mstep"><span class="num" aria-hidden="true">7</span><h3>Action</h3><p>The improvements to prioritize next.</p></div>
+      </div>
+      <p class="method-close">A leader who stops reading after the first screen should still know whether the year is on track.</p>
+    </div>
+  </section>
+
+  <!-- ============ THE ARTIFACT ============ -->
+  <section class="section" aria-labelledby="art-h">
+    <div class="shell">
+      <div class="stackhead">
+        <p class="eyebrow">The artifact</p>
+        <h2 id="art-h">One page, read top to bottom, that answers the year.</h2>
+        <p class="lede">The scorecard runs as a single scrolling page rather than a set of tabs, so the argument holds its order. A reader cannot reach the recommendations without passing the performance that justifies them.</p>
+      </div>
+      <div class="scorewrap">
+        <figure class="evidence sc-full">
+          <button class="zoom" type="button"><img src="assets/score-01-scorecard-full.webp" width="760" height="2745" loading="lazy" decoding="async" alt="The full monthly journey scorecard, running from the journey header and weighting, through journey KPIs, digital channel share and project timeline, human assistance analysis, CX maturity scale and strategies, to points of customer friction and marketplace insights."></button>
+          <figcaption>
+            <b>Monthly CX journey scorecard</b>
+            The complete page, from annual objective through to recommended action.
+            <span class="nda">Sample data. Figures shown are illustrative, not reported results.</span>
+          </figcaption>
+        </figure>
+        <div class="sc-notes">
+          <div class="sc-note"><h3>Performance against intent</h3><p>Every KPI carries its target beside the current value, so the gap is visible without calculation. The trend sits underneath, because direction changes what a gap means.</p></div>
+          <div class="sc-note"><h3>Comparison across journeys</h3><p>Journeys share one index and one scale, which makes them comparable at a glance and makes an outlier obvious.</p></div>
+          <div class="sc-note"><h3>Interpretation, written</h3><p>Where a pattern needs explaining, the scorecard says so in words. Analysis is not left for the reader to infer from a chart.</p></div>
+          <div class="sc-note"><h3>Attention, directed</h3><p>The page ends on friction and recommended strategies, so the last thing a reader sees is what to do about it.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSE-UPS ============ -->
+  <section class="chap band" aria-labelledby="cu1-h">
+    <div class="shell chap-grid">
+      <div>
+        <p class="eyebrow">Performance against target</p>
+        <h2 id="cu1-h">A number on its own does not tell a leader anything.</h2>
+        <div class="body">
+          <p>Each journey KPI shows the current score, the target beneath it, the month-over-month change, and six months of trend. Four pieces of information in one component, because any one of them alone invites the wrong conclusion.</p>
+          <p>A score of 56 percent means nothing until you know the target was 53 percent and the line has been climbing for two months.</p>
+        </div>
+      </div>
+      <figure class="evidence" style="margin:0">
+        <button class="zoom" type="button"><img src="assets/score-03-journey-kpis.webp" width="762" height="791" loading="lazy" decoding="async" alt="Journey KPI panel showing current scores for happiness, engagement, adoption, retention and task completion, each with target and month-over-month change, above six-month trend lines."></button>
+        <figcaption><b>Journey KPIs</b>Current score, target, change, and trend in one view.<span class="nda">Sample data.</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="chap flip" aria-labelledby="cu2-h">
+    <div class="shell chap-grid">
+      <figure class="evidence" style="margin:0">
+        <button class="zoom" type="button"><img src="assets/score-04-cross-journey.webp" width="761" height="763" loading="lazy" decoding="async" alt="Radial cross-journey view with a central index score against goal, five journeys arranged around it, each showing its component measures and a month-over-month change with a one-line explanation."></button>
+        <figcaption><b>Cross-journey index</b>Five journeys on one scale, each with the reason it moved.<span class="nda">Sample data.</span></figcaption>
+      </figure>
+      <div>
+        <p class="eyebrow">Comparison</p>
+        <h2 id="cu2-h">Five journeys, one scale, and a reason attached to every movement.</h2>
+        <div class="body">
+          <p>The index sits at the center with the annual goal beside it. Each journey radiates out with its own component measures, so a reader can see both the whole and the part without switching views.</p>
+          <p>Every movement carries a one-line explanation. That was deliberate: a percentage change invites a question, and the scorecard should answer it in place rather than generate a follow-up meeting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chap band" aria-labelledby="cu3-h">
+    <div class="shell chap-grid">
+      <div>
+        <p class="eyebrow">From analysis to action</p>
+        <h2 id="cu3-h">The page ends where the decisions start.</h2>
+        <div class="body">
+          <p>The maturity scale places the current experience against where it needs to be across five pillars, which turns an abstract quality conversation into a position on a chart.</p>
+          <p>Underneath it, the friction points and improvement strategies are stated plainly. By the time a reader reaches them, the evidence for each one has already been laid out above.</p>
+        </div>
+      </div>
+      <figure class="evidence" style="margin:0">
+        <button class="zoom" type="button"><img src="assets/score-06-analysis.webp" width="758" height="826" loading="lazy" decoding="async" alt="Strategies for improvement, points of customer friction with supporting figures and a customer quote, and consumer and marketplace insights drawn from research."></button>
+        <figcaption><b>Friction and recommended strategies</b>Where the experience breaks down, and what to do about it.<span class="nda">Sample data.</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ AUTOMATION ============ -->
+  <section class="chap solo on-dark" aria-labelledby="auto-h">
+    <div class="shell chap-grid">
+      <div class="chap-head">
+        <p class="eyebrow">Making it run</p>
+        <h2 id="auto-h">A monthly report that depends on manual data entry does not survive.</h2>
+      </div>
+      <div class="body">
+        <p>The scorecard had to be produced every month, from data owned by several different organizations. Assembled by hand, it would have been abandoned within a quarter, or worse, published late and wrong.</p>
+        <p>I worked to automate the analytics data behind it, removing the manual entry step and feeding machine learning and analytics reporting from the same pipeline. That is what the Digital Transformation Award recognized, and it is the reason the scorecard became a standing part of performance governance rather than a one-off deck.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING ============ -->
+  <section class="section" style="background:var(--paper-alt);border-block:1px solid var(--rule)" aria-labelledby="close-h">
+    <div class="shell">
+      <div class="bridge-row">
+        <div>
+          <p class="eyebrow">What it changed</p>
+          <h2 id="close-h">Reporting became governance.</h2>
+        </div>
+        <p class="bridge-copy">The scorecard gave leadership a single place to see whether the year was on track, and a defensible basis for prioritizing what came next. The same instinct, deciding what evidence belongs in front of a decision-maker, runs through the taxonomy and journey work as well.</p>
+        <div class="btnrow"><button class="btn" type="button" data-cf-open>Start a conversation</button></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="shell">
+    <div class="foot-grid">
+      <div>
+        <p class="sig">Robin Japar</p>
+        <p class="tag">I make enterprise content understandable to people, manageable by organizations, and consumable by AI.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul id="foot-nav"></ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#" data-link="linkedin">LinkedIn profile</a></li>
+          <li><button type="button" class="cf-linkbtn" data-cf-open>Contact form</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; <span id="yr"></span> Robin Japar.</span>
+      <span>Enterprise content infrastructure, experience strategy, and AI readiness.</span>
+    </div>
+  </div>
+</footer>
+<div class="cf-backdrop" id="cf-backdrop" data-open="false"></div>
+<div class="cf-dialog" id="cf-dialog" role="dialog" aria-modal="true" aria-labelledby="cf-title" hidden>
+  <div class="cf-head">
+    <div>
+      <h2 id="cf-title">Start a conversation</h2>
+      <p>I work with organizations navigating enterprise content transformation, ServiceNow experiences, AI readiness, knowledge strategy, and complex digital programs.</p>
+    </div>
+    <button type="button" class="cf-close" id="cf-close" aria-label="Close contact form">&times;</button>
+  </div>
+  <div class="cf-body">
+    <form id="cf-form" novalidate>
+      <div class="cf-hp"><label for="cf-company-url">Leave this field empty</label><input id="cf-company-url" name="company_url" tabindex="-1" autocomplete="off"></div>
+      <div class="cf-row">
+        <div class="cf-field"><label for="cf-name">Name</label><input id="cf-name" name="name" required autocomplete="name"><span class="cf-err" id="err-cf-name"></span></div>
+        <div class="cf-field"><label for="cf-email">Work email</label><input id="cf-email" name="email" type="email" required autocomplete="email"><span class="cf-err" id="err-cf-email"></span></div>
+      </div>
+      <div class="cf-row">
+        <div class="cf-field"><label for="cf-org">Organization</label><input id="cf-org" name="organization" required autocomplete="organization"><span class="cf-err" id="err-cf-org"></span></div>
+        <div class="cf-field"><label for="cf-type">Opportunity type</label>
+          <select id="cf-type" name="opportunity_type" required>
+            <option value="">Select one</option>
+            <option>Enterprise leadership roles</option>
+            <option>Advisory and consulting engagements</option>
+            <option>ServiceNow experience and content transformation</option>
+            <option>AEM experience and content transformation</option>
+            <option>Speaking, workshops, and thought leadership</option>
+          </select><span class="cf-err" id="err-cf-type"></span></div>
+      </div>
+      <div class="cf-field"><label for="cf-msg">What are you working on</label><textarea id="cf-msg" name="message" required></textarea><span class="cf-err" id="err-cf-msg"></span></div>
+      <div class="cf-row">
+        <div class="cf-field"><label for="cf-timing">Desired timing <span class="opt">optional</span></label><input id="cf-timing" name="timing" placeholder="This quarter, next quarter, exploring"></div>
+        <div class="cf-field"><label for="cf-link">LinkedIn or project link <span class="opt">optional</span></label><input id="cf-link" name="link" type="url" placeholder="https://"></div>
+      </div>
+      <div class="cf-actions">
+        <button type="submit" class="btn" id="cf-submit">Send message</button>
+        <button type="button" class="btn alt" data-cf-close>Cancel</button>
+      </div>
+      <p class="cf-note">I read everything that comes through and reply to relevant inquiries, usually within a few business days.</p>
+      <div id="cf-status" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</div>
+<div class="cf-backdrop" id="rr-backdrop" data-open="false" hidden></div>
+<div class="cf-dialog" id="rr-dialog" role="dialog" aria-modal="true" aria-labelledby="rr-title" hidden>
+  <div class="cf-head">
+    <div>
+      <p class="cf-eyebrow">Resume request</p>
+      <h2 id="rr-title">Request my resume</h2>
+      <p>I share my resume directly rather than posting it publicly. Tell me a little about the role and I will send it over.</p>
+    </div>
+    <button type="button" class="cf-close" id="rr-close" aria-label="Close resume request form">&times;</button>
+  </div>
+  <div class="cf-body">
+    <form id="rr-form" novalidate>
+      <div class="cf-hp"><label for="rr-company-url">Leave this field empty</label><input id="rr-company-url" name="company_url" tabindex="-1" autocomplete="off"></div>
+      <div class="cf-row">
+        <div class="cf-field"><label for="rr-name">Your name</label><input id="rr-name" name="name" required autocomplete="name"><span class="cf-err" id="err-rr-name"></span></div>
+        <div class="cf-field"><label for="rr-role">Your role</label><input id="rr-role" name="requester_role" required placeholder="Recruiter, hiring manager, talent partner"><span class="cf-err" id="err-rr-role"></span></div>
+      </div>
+      <div class="cf-row">
+        <div class="cf-field"><label for="rr-position">Position you are recruiting for</label><input id="rr-position" name="position" required><span class="cf-err" id="err-rr-position"></span></div>
+        <div class="cf-field"><label for="rr-company">Company the role sits with</label><input id="rr-company" name="company" required autocomplete="organization"><span class="cf-err" id="err-rr-company"></span></div>
+      </div>
+      <div class="cf-row">
+        <div class="cf-field"><label for="rr-email">Email</label><input id="rr-email" name="email" type="email" required autocomplete="email"><span class="cf-err" id="err-rr-email"></span></div>
+        <div class="cf-field"><label for="rr-contact">Phone or LinkedIn <span class="opt">optional</span></label><input id="rr-contact" name="other_contact"></div>
+      </div>
+      <div class="cf-field"><label for="rr-notes">Anything else about the role <span class="opt">optional</span></label><textarea id="rr-notes" name="notes"></textarea></div>
+      <div class="cf-actions">
+        <button type="submit" class="btn" id="rr-submit">Send request</button>
+        <button type="button" class="btn alt" data-rr-close>Cancel</button>
+      </div>
+      <p class="cf-note">Requests come straight to me. I reply to relevant enquiries, usually within a few business days.</p>
+      <div id="rr-status" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</div>
+<script>
+const PAGES = {
+  home:        "index.html",
+  work:        "index.html#work",
+  about:       "about.html",
+  contact:     "index.html",
+  linkedin:    "https://www.linkedin.com/in/robin-japar",
+  caseFlash:           "work-flash-vendor-transition.html",
+  casePersonalization: "work-enterprise-personalization.html",
+  caseScorecard:       "work-executive-ux-scorecard.html",
+  caseTaxonomy:        "work-servicenow-employee-experience-taxonomy.html",
+  caseOffering:        "work-taxonomy-consulting-service.html",
+  caseTaxonomyService: "work-taxonomy-consulting-service.html",
+  caseFriction:        "work-friction-mapping-framework.html"
+};
+
+const NAV = [
+  ["home","Home"],["about","About"],["contact","Contact"]
+];
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function resolveLinks(){
+  document.querySelectorAll("[data-link]").forEach(a=>{
+    const k = a.getAttribute("data-link");
+    if(PAGES[k]) a.setAttribute("href", PAGES[k]);
+  });
+  /* Served directly as static files. Internal links are already relative
+     filenames, so only external links need handling. */
+  document.querySelectorAll("a[href]").forEach(function(a){
+    var h = a.getAttribute("href") || "";
+    if(h.charAt(0) === "#" || a.hasAttribute("target")) return;
+    if(/^https?:/i.test(h)){
+      a.setAttribute("target","_blank");
+      a.setAttribute("rel","noopener noreferrer");
+    }
+  });
+}
+
+
+$("#mainnav").innerHTML = NAV.map(([k,l])=>
+  k === "contact"
+    ? `<button type="button" data-cf-open>${l}</button>`
+    : `<a href="${PAGES[k]}" data-link="${k}">${l}</a>`
+).join("");
+$("#foot-nav").innerHTML = NAV.filter(([k])=>k!=="contact")
+  .map(([k,l])=>`<li><a href="${PAGES[k]}" data-link="${k}">${l}</a></li>`).join("");
+
+
+
+
+/* ============================================================
+   PROJECT OBJECT
+   Same schema as every other case study. A new case is a new
+   object, not new markup.
+   Fields marked TODO need confirmation before publishing.
+   ============================================================ */
+const TODO = t => `<span class="todo" title="Needs confirmation before publishing">${t}</span>`;
+
+const tog = $("#navtoggle"), nv = $("#mainnav");
+tog.addEventListener("click", ()=>{
+  const open = nv.classList.toggle("open");
+  tog.setAttribute("aria-expanded", open ? "true":"false");
+});
+
+/* ============================================================
+   CONTACT MODAL
+   A static page cannot send mail on its own. Point CF_ENDPOINT at a
+   form relay whose destination inbox is configured in that service's
+   dashboard. Never put the destination address in this file: anything
+   here is public page source and gets harvested.
+   ============================================================ */
+const CF_ENDPOINT = "";   // e.g. "https://formspree.io/f/xxxxxxx"
+
+(function(){
+  const bd=$("#cf-backdrop"), dlg=$("#cf-dialog"), form=$("#cf-form"),
+        statusEl=$("#cf-status"), submit=$("#cf-submit");
+  let lastFocus=null;
+
+  const FIELDS=[["cf-name","Enter your name"],["cf-email","Enter a valid work email"],
+                ["cf-org","Enter your organization"],["cf-type","Choose an opportunity type"],
+                ["cf-msg","Tell me briefly what you are working on"]];
+
+  function open(trigger){
+    lastFocus=trigger||document.activeElement;
+    bd.dataset.open="true"; dlg.hidden=false;
+    // absolute placement keeps the dialog reachable inside a tall Wix iframe,
+    // where position:fixed would anchor to the full page rather than the viewport
+    const y = window.scrollY + Math.max(24, window.innerHeight*0.08);
+    dlg.style.top = y + "px";
+    const doc = document.documentElement;
+    bd.style.height = Math.max(doc.scrollHeight, dlg.offsetTop + dlg.offsetHeight + 80) + "px";
+    // a dialog taller than the viewport must align to its top, or the header scrolls off
+    const tall = dlg.offsetHeight > window.innerHeight * 0.9;
+    dlg.scrollIntoView({block: tall ? "start" : "center", behavior: reduceMotion ? "auto" : "smooth"});
+    setTimeout(()=>$("#cf-name").focus(), reduceMotion?0:260);
+    document.addEventListener("keydown", onKey, true);
+  }
+  function close(){
+    bd.dataset.open="false"; dlg.hidden=true;
+    document.removeEventListener("keydown", onKey, true);
+    if(lastFocus) lastFocus.focus();
+  }
+  function onKey(e){
+    if(e.key==="Escape"){ e.preventDefault(); close(); return; }
+    if(e.key!=="Tab") return;
+    const f=[...dlg.querySelectorAll('button,input,select,textarea,a[href]')].filter(el=>!el.disabled && el.offsetParent!==null);
+    if(!f.length) return;
+    const first=f[0], last=f[f.length-1];
+    if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
+  }
+  function setErr(id,msg){
+    const el=document.getElementById(id), out=document.getElementById("err-"+id);
+    if(!el||!out) return;
+    out.textContent=msg||"";
+    if(msg) el.setAttribute("aria-invalid","true"); else el.removeAttribute("aria-invalid");
+  }
+  function validate(){
+    let ok=true, firstBad=null;
+    FIELDS.forEach(([id,msg])=>{
+      const el=document.getElementById(id);
+      const val=(el.value||"").trim();
+      let bad = !val;
+      if(!bad && id==="cf-email") bad = !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val);
+      setErr(id, bad?msg:"");
+      if(bad){ ok=false; if(!firstBad) firstBad=el; }
+    });
+    if(firstBad) firstBad.focus();
+    return ok;
+  }
+
+  document.querySelectorAll("[data-cf-open]").forEach(b=>b.addEventListener("click",e=>{e.preventDefault(); open(e.currentTarget);}));
+  document.querySelectorAll("[data-cf-close]").forEach(b=>b.addEventListener("click",close));
+  $("#cf-close").addEventListener("click",close);
+  bd.addEventListener("click",close);
+
+  form.addEventListener("submit", async e=>{
+    e.preventDefault();
+    statusEl.className=""; statusEl.textContent="";
+    if(form.company_url.value){ close(); return; }   // honeypot tripped
+    if(!validate()) return;
+    if(!CF_ENDPOINT){
+      statusEl.className="cf-status bad";
+      statusEl.textContent="The form endpoint is not configured yet, so this message was not sent. Set CF_ENDPOINT in the page script.";
+      return;
+    }
+    submit.disabled=true; submit.textContent="Sending";
+    try{
+      const res = await fetch(CF_ENDPOINT,{
+        method:"POST", headers:{Accept:"application/json"}, body:new FormData(form)
+      });
+      if(!res.ok) throw new Error(res.status);
+      form.reset();
+      statusEl.className="cf-status ok";
+      statusEl.textContent="Message sent. Thank you, I will be in touch.";
+    }catch(err){
+      statusEl.className="cf-status bad";
+      statusEl.textContent="Something went wrong sending that. Please try again, or reach me through LinkedIn.";
+    }finally{
+      submit.disabled=false; submit.textContent="Send message";
+    }
+  });
+})();
+
+
+
+$("#yr").textContent = new Date().getFullYear();
+resolveLinks();
+
+/* ============================================================
+   RESUME REQUEST MODAL
+   The resume is not posted publicly, so this captures who is asking
+   before it is sent. Point RR_ENDPOINT at a form relay and set the
+   destination inbox inside that service's dashboard. The address is
+   deliberately absent from this file: page source is public and gets
+   scraped by address harvesters.
+   ============================================================ */
+(function () {
+  var RR_ENDPOINT = "";
+  var $ = function (s) { return document.querySelector(s); };
+  var bd = $("#rr-backdrop"), dlg = $("#rr-dialog"), form = $("#rr-form"),
+      statusEl = $("#rr-status"), submit = $("#rr-submit");
+  if (!bd || !dlg || !form) return;
+  var lastFocus = null;
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var FIELDS = [["rr-name", "Enter your name"], ["rr-role", "Enter your role"],
+                ["rr-position", "Enter the position"], ["rr-company", "Enter the company"],
+                ["rr-email", "Enter a valid email"]];
+
+  function openDlg(trigger) {
+    lastFocus = trigger || document.activeElement;
+    bd.dataset.open = "true"; bd.hidden = false; dlg.hidden = false;
+    var top = window.scrollY + Math.max(24, window.innerHeight * 0.08);
+    dlg.style.top = top + "px";
+    var doc = document.documentElement;
+    bd.style.height = Math.max(doc.scrollHeight, dlg.offsetTop + dlg.offsetHeight + 80) + "px";
+    var tall = dlg.offsetHeight > window.innerHeight * 0.9;
+    dlg.scrollIntoView({ block: tall ? "start" : "center", behavior: reduce ? "auto" : "smooth" });
+    setTimeout(function () { $("#rr-name").focus(); }, reduce ? 0 : 260);
+    document.addEventListener("keydown", onKey, true);
+  }
+  function closeDlg() {
+    bd.dataset.open = "false"; bd.hidden = true; dlg.hidden = true;
+    document.removeEventListener("keydown", onKey, true);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e) {
+    if (e.key === "Escape") { e.preventDefault(); closeDlg(); return; }
+    if (e.key !== "Tab") return;
+    var f = dlg.querySelectorAll('a[href],button:not([disabled]),input,select,textarea');
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+
+  document.addEventListener("click", function (e) {
+    var open = e.target.closest("[data-rr-open]");
+    if (open) { e.preventDefault(); openDlg(open); return; }
+    if (e.target.closest("[data-rr-close]") || e.target === $("#rr-close") || e.target === bd) closeDlg();
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (form.company_url && form.company_url.value) return;
+    var ok = true;
+    FIELDS.forEach(function (pair) {
+      var el = $("#" + pair[0]), err = $("#err-" + pair[0]);
+      var bad = !el.value.trim() || (el.type === "email" && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(el.value));
+      if (err) err.textContent = bad ? pair[1] : "";
+      el.setAttribute("aria-invalid", bad ? "true" : "false");
+      if (bad && ok) { el.focus(); ok = false; }
+    });
+    if (!ok) return;
+    statusEl.className = "cf-status";
+    if (!RR_ENDPOINT) {
+      statusEl.className = "cf-status bad";
+      statusEl.textContent = "This form is not connected yet. Set RR_ENDPOINT in the page source to a form relay before publishing.";
+      return;
+    }
+    submit.disabled = true;
+    statusEl.textContent = "Sending...";
+    fetch(RR_ENDPOINT, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
+      .then(function (r) { if (!r.ok) throw new Error(); form.reset();
+        statusEl.className = "cf-status good";
+        statusEl.textContent = "Thank you. I will send my resume shortly."; })
+      .catch(function () { statusEl.className = "cf-status bad";
+        statusEl.textContent = "Something went wrong. Please email me instead."; })
+      .then(function () { submit.disabled = false; });
+  });
+})();
+</script>
+</body>
+</html>
