@@ -103,6 +103,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/work-pagination.css">
 <style>
 
 
@@ -480,9 +481,6 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
   font-size:12.5px;font-weight:700;letter-spacing:.05em;color:var(--forest-600)}
 
 
-
-
-
 /* prose sections */
 .chap{padding-block:clamp(48px,6vw,76px)}
 .chap.band{background:var(--paper-alt);border-block:1px solid var(--rule)}
@@ -818,49 +816,6 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 }
 
 
-/* ---------- project pagination (case studies only) ----------
-   Circular arrow controls either side of the six project numbers, the
-   familiar pagination pattern. Forest circle, sage arrow. */
-.projnav{border-top:1px solid var(--rule);background:var(--paper)}
-.projnav .shell{padding-block:clamp(30px,3.8vw,46px)}
-.projnav-row{display:flex;align-items:center;justify-content:center;gap:clamp(10px,1.6vw,22px)}
-.projnav-arrow{
-  flex:none;width:48px;height:48px;border-radius:50%;background:var(--forest);
-  display:flex;align-items:center;justify-content:center;text-decoration:none;
-  transition:background-color .18s ease,transform .18s ease;
-}
-.projnav-arrow svg{width:19px;height:19px;stroke:var(--sage);fill:none;
-  stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:stroke .18s ease}
-.projnav-arrow:hover,.projnav-arrow:focus-visible{background:var(--forest-800);transform:translateY(-2px)}
-.projnav-arrow:hover svg,.projnav-arrow:focus-visible svg{stroke:#FFFFFF}
-.projnav-nums{display:flex;align-items:center;gap:clamp(4px,1vw,14px)}
-.projnav-num{
-  min-width:40px;height:40px;padding:0 6px;border-radius:2px;
-  display:flex;align-items:center;justify-content:center;text-decoration:none;
-  font-family:var(--font-body);font-size:14px;font-weight:700;letter-spacing:.08em;
-  color:var(--muted);transition:color .18s ease,background-color .18s ease;
-}
-.projnav-num:hover,.projnav-num:focus-visible{color:var(--forest);background:var(--tint)}
-.projnav-num[aria-current="page"]{
-  color:var(--forest);background:var(--tint);
-  box-shadow:inset 0 -2px 0 var(--forest);
-}
-.projnav-allrow{text-align:center;margin-top:clamp(10px,1.4vw,16px)}
-.projnav-all{
-  display:inline-block;padding:11px 18px;
-  font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:.16em;
-  text-transform:uppercase;text-decoration:none;color:var(--forest-600);
-  transition:color .18s ease;
-}
-.projnav-all:hover,.projnav-all:focus-visible{color:var(--forest);text-decoration:underline;text-underline-offset:4px}
-@media (max-width:560px){
-  /* keep all eight controls on one line down to 320px */
-  .projnav-row{gap:6px}
-  .projnav-arrow{width:42px;height:42px}
-  .projnav-arrow svg{width:17px;height:17px}
-  .projnav-nums{gap:1px}
-  .projnav-num{min-width:31px;height:38px;padding:0 2px;font-size:13px;letter-spacing:.04em}
-}
 </style>
 </head>
 <body>
@@ -969,23 +924,8 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
   </section>
 
 
-  <nav class="projnav" aria-label="Case study pagination">
-    <div class="shell">
-      <div class="projnav-row">
-        <a class="projnav-arrow" href="work-servicenow-employee-experience-taxonomy.html" aria-label="Previous project: Designing Enterprise Taxonomy" title="Designing Enterprise Taxonomy"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5 8 12l7 7"/></svg></a>
-        <div class="projnav-nums">
-          <a class="projnav-num" href="work-flash-vendor-transition.html" title="Rebuilding a High-Performing Content Team"><span class="sr-only">Project </span>01</a>
-          <a class="projnav-num" href="work-enterprise-personalization.html" title="Designing Enterprise Personalization"><span class="sr-only">Project </span>02</a>
-          <a class="projnav-num" href="work-executive-ux-scorecard.html" title="Designing an Executive UX Scorecard"><span class="sr-only">Project </span>03</a>
-          <a class="projnav-num" href="work-servicenow-employee-experience-taxonomy.html" title="Designing Enterprise Taxonomy"><span class="sr-only">Project </span>04</a>
-          <a class="projnav-num" href="work-taxonomy-consulting-service.html" aria-current="page" title="Building a Full-Service Taxonomy Offering"><span class="sr-only">Project </span>05</a>
-          <a class="projnav-num" href="work-friction-mapping-framework.html" title="Inventing Friction Mapping"><span class="sr-only">Project </span>06</a>
-        </div>
-        <a class="projnav-arrow" href="work-friction-mapping-framework.html" aria-label="Next project: Inventing Friction Mapping" title="Inventing Friction Mapping"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7"/></svg></a>
-      </div>
-      <div class="projnav-allrow"><a class="projnav-all" href="index.html#work">All work</a></div>
-    </div>
-  </nav>
+  <div data-work-pagination data-current="work-taxonomy-consulting-service.html"></div>
+  <script src="assets/work-pagination.js" defer></script>
 </main>
 
 <footer class="foot">

@@ -1,0 +1,60 @@
+/* ---------- project pagination (case studies only) ----------
+   Circular arrow controls either side of the project numbers, the
+   familiar pagination pattern. Forest circle, sage arrow.
+
+   Moved out of the individual work pages into one shared file so the
+   markup in assets/work-pagination.js and the styling here are
+   maintained together. Colour, type, and spacing are unchanged from
+   the original per-page implementation. Tokens (--forest, --sage,
+   --rule, --tint, --muted, --paper, --font-body) come from each
+   page's own :root block, so this file inherits the site theme
+   rather than redefining it. */
+.projnav{border-top:1px solid var(--rule);background:var(--paper)}
+.projnav .shell{padding-block:clamp(30px,3.8vw,46px)}
+.projnav-row{display:flex;align-items:center;justify-content:center;gap:clamp(10px,1.6vw,22px)}
+.projnav-arrow{
+  flex:none;width:48px;height:48px;border-radius:50%;background:var(--forest);
+  display:flex;align-items:center;justify-content:center;text-decoration:none;
+  transition:background-color .18s ease,transform .18s ease;
+}
+.projnav-arrow svg{width:19px;height:19px;stroke:var(--sage);fill:none;
+  stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:stroke .18s ease}
+.projnav-arrow:hover,.projnav-arrow:focus-visible{background:var(--forest-800);transform:translateY(-2px)}
+.projnav-arrow:hover svg,.projnav-arrow:focus-visible svg{stroke:#FFFFFF}
+.projnav-nums{display:flex;align-items:center;gap:clamp(4px,1vw,14px)}
+.projnav-num{
+  min-width:40px;height:40px;padding:0 6px;border-radius:2px;
+  display:flex;align-items:center;justify-content:center;text-decoration:none;
+  font-family:var(--font-body);font-size:14px;font-weight:700;letter-spacing:.08em;
+  color:var(--muted);transition:color .18s ease,background-color .18s ease;
+}
+.projnav-num:hover,.projnav-num:focus-visible{color:var(--forest);background:var(--tint)}
+.projnav-num[aria-current="page"]{
+  color:var(--forest);background:var(--tint);
+  box-shadow:inset 0 -2px 0 var(--forest);
+}
+.projnav-allrow{text-align:center;margin-top:clamp(10px,1.4vw,16px)}
+.projnav-all{
+  display:inline-block;padding:11px 18px;
+  font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;text-decoration:none;color:var(--forest-600);
+  transition:color .18s ease;
+}
+.projnav-all:hover,.projnav-all:focus-visible{color:var(--forest);text-decoration:underline;text-underline-offset:4px}
+@media (max-width:560px){
+  /* keep the two arrows and all seven numbers on one line */
+  .projnav-row{gap:6px}
+  .projnav-arrow{width:42px;height:42px}
+  .projnav-arrow svg{width:17px;height:17px}
+  .projnav-nums{gap:1px}
+  .projnav-num{min-width:31px;height:38px;padding:0 2px;font-size:13px;letter-spacing:.04em}
+}
+@media (max-width:400px){
+  /* Seven numbers plus two arrows no longer fit one line inside the
+     gutters on a 320px screen. Rather than shrink the numbers below a
+     usable touch target, the arrows hold the outer edges and the
+     number row drops beneath them at full width. Nothing is hidden. */
+  .projnav-row{flex-wrap:wrap;justify-content:space-between;row-gap:16px}
+  .projnav-nums{order:3;flex:0 0 100%;justify-content:center;gap:4px}
+  .projnav-num{min-width:36px;height:40px;padding:0 4px;font-size:13px;letter-spacing:.06em}
+}
