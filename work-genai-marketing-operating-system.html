@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Designing a GenAI marketing operating system | Robin Japar</title>
-<meta name="description" content="I designed a GenAI marketing operating system from free and readily available AI tools: reusable prompts, machine-readable brand guidance, structured handoffs, human-in-the-loop reviews, and quality gates.">
+<meta name="description" content="I designed a GenAI marketing operating system that turned senior marketing judgment into a repeatable workflow the team could use across research, strategy, creative development, production, and review.">
 <link rel="canonical" href="https://www.japarofcontent.com/work/genai-marketing-operating-system">
 <link rel="icon" href="assets/favicon.ico" sizes="any">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -17,12 +17,12 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://www.japarofcontent.com/work/genai-marketing-operating-system">
 <meta property="og:title" content="Designing a GenAI marketing operating system | Robin Japar">
-<meta property="og:description" content="I designed a GenAI marketing operating system from free and readily available AI tools: reusable prompts, machine-readable brand guidance, structured handoffs, human-in-the-loop reviews, and quality gates.">
+<meta property="og:description" content="I designed a GenAI marketing operating system that turned senior marketing judgment into a repeatable workflow the team could use across research, strategy, creative development, production, and review.">
 <meta property="og:image" content="https://www.japarofcontent.com/assets/social-card.jpg">
 <meta property="og:image:alt" content="Robin Japar, enterprise content strategy and AI readiness">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Designing a GenAI marketing operating system | Robin Japar">
-<meta name="twitter:description" content="I designed a GenAI marketing operating system from free and readily available AI tools: reusable prompts, machine-readable brand guidance, structured handoffs, human-in-the-loop reviews, and quality gates.">
+<meta name="twitter:description" content="I designed a GenAI marketing operating system that turned senior marketing judgment into a repeatable workflow the team could use across research, strategy, creative development, production, and review.">
 <meta name="twitter:image" content="https://www.japarofcontent.com/assets/social-card.jpg">
 <script type="application/ld+json">
 {
@@ -583,70 +583,26 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 .gm-os .node.is-human:last-child::before{width:12px;height:12px;left:-6.5px;top:calc(var(--dot-y) + 2px);border-radius:1px;background:var(--black);border:2px solid var(--sage)}
 .gm-os .node.is-human .n-d{font-style:normal;font-weight:700;color:var(--sage);letter-spacing:.02em}
 .gm-os figcaption{margin-top:14px}
+.gm-os .node{padding:10px 0 10px 24px}
+.gm-os ol{--dot-y:21px}
 
 /* ============ 2. THE CHALLENGE: the decision landscape ============ */
 .gm-dmap{margin:clamp(40px,4.8vw,64px) 0 0;border:1px solid var(--rule);background:var(--paper);padding:clamp(26px,3.4vw,44px) clamp(18px,3vw,40px) clamp(24px,3vw,36px)}
-.gm-dmap-top{text-align:center}
-.gm-conds{list-style:none;margin:12px auto 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));max-width:720px}
-.gm-conds li{margin:0 8px;text-align:center;font-size:14px;font-weight:700;letter-spacing:.01em;color:var(--ink);line-height:1.35;padding:11px 10px;border:1px solid var(--rule);background:var(--paper-alt);display:grid;place-items:center}
-.gm-merge{display:block;width:100%;max-width:720px;height:40px;margin:0 auto}
-.gm-merge path{fill:none;stroke:var(--sage);stroke-width:1.5;vector-effect:non-scaling-stroke}
-.gm-dgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(190px,250px) minmax(0,1fr);align-items:stretch}
+.gm-dgrid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(210px,270px);align-items:stretch;max-width:860px;margin:0 auto}
+.gm-dhead{text-align:right;padding-right:34px;margin-bottom:12px}
 .gm-dq{list-style:none;margin:0;padding:0;display:grid;gap:12px;align-content:center}
 .gm-dq.l{padding-right:34px}
-.gm-dq.r{padding-left:34px}
 .gm-dq li{position:relative;border:1px dashed var(--green-mid);border-radius:2px;padding:13px 18px;
   font-family:var(--font-display);font-size:clamp(16px,1.55vw,19px);line-height:1.3;color:var(--ink);background:var(--paper)}
 .gm-dq.l li{text-align:right}
 .gm-dq li::after{content:"";position:absolute;top:50%;width:34px;border-top:1px dashed var(--green-mid)}
 .gm-dq.l li::after{left:100%}
-.gm-dq.r li::after{right:100%}
 .gm-core{background:var(--forest);color:#fff;border-radius:2px;display:grid;align-content:center;justify-items:center;text-align:center;padding:26px 18px}
 .gm-core .gm-key{color:var(--sage)}
 .gm-core strong{display:block;margin-top:10px;font-family:var(--font-display);font-weight:400;font-size:clamp(24px,2.5vw,30px);line-height:1.15;color:#fff}
-.gm-dkey{margin-top:clamp(22px,2.6vw,30px);padding-top:16px;border-top:1px solid var(--rule);text-align:center}
-
-/* ============ 3. THE OPERATING MODEL: a stage specification ============ */
-.gm-opm{margin-top:clamp(36px,4.4vw,56px)}
-.gm-opm-head,.gm-opm-row{display:grid;grid-template-columns:40px minmax(0,150px) minmax(0,170px) minmax(0,1fr) minmax(0,180px) 138px;column-gap:clamp(14px,1.8vw,26px);align-items:center}
-.gm-opm-head{padding-bottom:12px;border-bottom:1px solid var(--forest)}
-.gm-opm-head span{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--forest-600)}
-.gm-opm ol{list-style:none;margin:0;padding:0}
-.gm-opm-row{position:relative;padding:18px 0;border-bottom:1px solid var(--rule)}
-.gm-opm-num{position:relative;align-self:stretch;display:flex;align-items:center}
-.gm-opm-num::before{content:"";position:absolute;left:15px;top:-19px;bottom:-19px;width:2px;background:var(--sage)}
-.gm-opm-row:first-child .gm-opm-num::before{top:50%}
-.gm-opm-num i{position:relative;z-index:1;width:32px;height:32px;border-radius:50%;background:var(--forest);color:#fff;display:grid;place-items:center;font-style:normal;font-size:12.5px;font-weight:700}
-.gm-opm-row h3{font-size:20px;line-height:1.2}
-.gm-opm-row > h3{grid-column:2;grid-row:1}
-.gm-opm-row > .gm-opm-job{grid-column:4;grid-row:1}
-.gm-opm-row > .gm-io.gi{grid-column:3;grid-row:1}
-.gm-opm-row > .gm-io.go{grid-column:5;grid-row:1}
-.gm-opm-row > .gm-rev{grid-column:6;grid-row:1}
-.gm-opm-row > .gm-opm-num{grid-column:1;grid-row:1}
-.gm-opm-job{font-size:15.5px;line-height:1.55;color:var(--body)}
-.gm-chip{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;line-height:1.35;padding:7px 11px;border-radius:2px}
-.gm-chip.in{border:1px solid var(--rule);color:var(--muted);background:var(--paper)}
-.gm-chip.out{background:var(--tint);color:var(--forest-800);font-weight:700;border:1px solid var(--sage-100)}
-.gm-chip .io{font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green-mid)}
-.gm-rev{position:relative;align-self:stretch;display:flex;align-items:center;padding-left:26px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--forest);line-height:1.35}
-.gm-rev::before{content:"";position:absolute;left:6px;top:-19px;bottom:-19px;border-left:1px dashed var(--green-mid)}
-.gm-opm-row:first-child .gm-rev::before{top:0}
-.gm-rev b{position:absolute;left:0;top:50%;width:13px;height:13px;margin-top:-6.5px;background:var(--paper-alt);border:2px solid var(--forest);border-radius:1px}
-.gm-opm-row.gate{background:var(--tint);border-bottom:1px solid var(--sage)}
-.gm-opm-row.gate .gm-opm-num i{border-radius:3px;background:var(--forest-800)}
-.gm-opm-row.gate .gm-rev b{background:var(--forest)}
-.gm-opm-row.gate .gm-rev::before{bottom:50%}
-.gm-opm-row.gate .gm-opm-num::before{bottom:50%}
-.gm-opm-row .gm-rev.none{color:transparent}
 
 /* ============ 4. ONE WORKFLOW IN PRACTICE: nine controlled stages ============ */
-.gm-practice{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,4.4vw,64px);align-items:start;margin-top:26px}
-.gm-practice ul.gm-dash{margin-top:18px}
-ul.gm-dash{list-style:none;margin:0;padding:0}
-ul.gm-dash li{position:relative;padding-left:22px;margin-top:10px;font-size:16.5px;line-height:1.6}
-ul.gm-dash li::before{content:"";position:absolute;left:0;top:.82em;width:11px;height:1px;background:var(--green-mid)}
-ul.gm-dash li b{color:var(--ink)}
+.gm-practice{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,4.4vw,64px);align-items:center;margin-top:26px}
 .gm-outputs{margin:0}
 .gm-outputs .pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:12px;align-items:end;background:var(--sage-100);padding:12px}
 .gm-outputs .zoom{padding:0;background:transparent;cursor:zoom-in;position:relative;display:block;width:100%;line-height:0;border:0}
@@ -659,42 +615,13 @@ ul.gm-dash li b{color:var(--ink)}
 .gm-outputs figcaption b{display:block;color:var(--ink);margin-bottom:4px}
 .gm-outputs figcaption .nda{display:block;margin-top:6px;color:var(--green-mid)}
 
-.gm-nine{margin:clamp(40px,4.8vw,60px) 0 0}
-.gm-lead{font-family:var(--font-display);font-size:clamp(20px,2.2vw,26px);line-height:1.3;color:var(--ink);margin-bottom:22px}
-.gm-phases{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));column-gap:1px;margin-bottom:10px}
-.gm-ph{font-size:10.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--forest-600);padding:0 2px 9px;border-bottom:3px solid var(--c)}
-.gm-ph.p1{grid-column:1;--c:var(--d2)}
-.gm-ph.p2{grid-column:2;--c:var(--green-mid)}
-.gm-ph.p3{grid-column:3 / 7;--c:var(--forest-600)}
-.gm-ph.p4{grid-column:7;--c:var(--forest-800)}
-.gm-ph.p5{grid-column:8 / 10;--c:var(--forest);color:var(--forest)}
-.gm-stages{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
-.gm-st{position:relative;background:var(--paper);padding:18px 14px 16px;display:flex;flex-direction:column;min-height:264px}
-.gm-st:not(:last-child)::after{content:"";position:absolute;right:-6px;top:25px;width:9px;height:9px;background:var(--paper);border-top:1px solid var(--green-mid);border-right:1px solid var(--green-mid);transform:rotate(45deg);z-index:2}
-.gm-st-n{font-family:var(--font-display);font-size:30px;line-height:1;color:var(--green-mid);letter-spacing:-.02em}
-.gm-st-ph{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.gm-st h3{margin-top:12px;font-size:17px;line-height:1.2;hyphens:manual}
-.gm-st-out{margin-top:12px;font-size:13px;line-height:1.45;color:var(--body)}
-.gm-st-out b{display:block;font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green-mid);margin-bottom:3px}
-.gm-st-rev{margin:12px 0 14px;display:flex;align-items:center;gap:7px;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--forest);line-height:1.3}
-.gm-st-rev::before{content:"";width:9px;height:9px;flex:none;border:2px solid var(--forest);border-radius:1px}
-.gm-st-tool{margin-top:auto;padding-top:12px;transform:translateY(0);border-top:1px solid var(--rule);font-size:12.5px;font-style:italic;color:var(--muted);line-height:1.35}
-.gm-st-tool span{display:block;font-style:normal;font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green-mid);margin-bottom:2px}
-.gm-st.human{background:var(--forest)}
-.gm-st.human .gm-st-n{color:var(--sage)}
-.gm-st.human h3{color:#fff}
-.gm-st.human .gm-st-out{color:var(--on-black)}
-.gm-st.human .gm-st-out b,.gm-st.human .gm-st-tool span{color:var(--sage)}
-.gm-st.human .gm-st-tool{border-top-color:var(--forest-600);color:#fff;font-style:normal;font-weight:700}
-.gm-st:nth-child(7)::after{background:var(--paper)}
-.gm-st.human:not(:last-child)::after{background:var(--forest);border-color:var(--sage)}
-.gm-split{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));column-gap:1px;margin-top:12px}
-.gm-split span{font-size:12.5px;line-height:1.45;padding-top:10px;color:var(--muted)}
-.gm-split .ai{grid-column:1 / 8;border-top:1px solid var(--green-mid)}
-.gm-split .hu{grid-column:8 / 10;border-top:3px solid var(--forest);padding-top:8px;color:var(--forest);font-weight:700}
-.gm-nine-after{margin-top:26px;max-width:64ch;font-size:17px;line-height:1.7}
 
-/* ============ 5. WORKFLOW ARCHITECTURE: artifacts that carry context ============ */
+/* ============ 3. THE OPERATING SYSTEM: artifacts that carry context ============ */
+/* the challenge closes on a black statement band; a hairline separates it from this black section */
+/* belly bands either side of the black system section use the portfolio's forest green */
+.statementband.gm-green{background:var(--forest);border-block:1px solid var(--forest-600)}
+.statementband.gm-green .demand-close{color:#fff}
+.statementband.gm-after-band{margin-top:clamp(56px,6.5vw,88px)}
 .gm-arch{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(32px,5vw,76px);align-items:start}
 .gm-arch-text{position:sticky;top:104px}
 .gm-arch-text .gm-body{margin-top:22px;color:var(--on-black-mute)}
@@ -703,6 +630,13 @@ ul.gm-dash li b{color:var(--ink)}
 .gm-sheet{position:relative;background:var(--paper);border-radius:2px;padding:14px 18px 16px}
 .gm-sheet .gm-key{color:var(--green-mid)}
 .on-dark .gm-sheet h3{color:var(--ink);font-size:19px;margin-top:5px}
+.gm-sheet.gm-gate-sheet{background:var(--forest);border:2px solid var(--sage);margin:0}
+.gm-sheet.gm-gate-sheet .gm-key{color:var(--sage)}
+.on-dark .gm-sheet.gm-gate-sheet h3{color:#fff}
+.gm-gate-sub{display:block;margin-top:6px;font-size:13px;line-height:1.45;color:var(--on-black)}
+.gm-spec-t{display:block;margin-top:6px;font-family:var(--font-display);font-weight:400;font-size:18px;line-height:1.35;color:var(--ink)}
+.gm-ctxout-tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+.gm-ctxout-tags li{font-size:13.5px;color:#fff;border:1px solid var(--forest-600);background:var(--forest-800);border-radius:2px;padding:7px 12px}
 .gm-sheet .ln{display:block;height:1px;background:var(--rule);margin-top:9px}
 .gm-sheet .ln+.ln{width:78%}
 .gm-sheet .ln+.ln+.ln{width:56%}
@@ -721,7 +655,7 @@ ul.gm-dash li b{color:var(--ink)}
 .gm-tags li{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;line-height:1.4;color:var(--on-black);border:1px solid var(--rule-dark);border-radius:2px;padding:4px 9px}
 .gm-tags li.lk{border-color:var(--green-mid);color:#fff}
 .gm-tags li.lk .gm-lock{color:var(--sage)}
-.gm-hand{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:14px;padding:6px 0 10px;min-height:72px}
+.gm-hand{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:14px;padding:6px 0 8px;min-height:44px}
 .gm-hand-line{position:relative}
 .gm-hand-line::before{content:"";position:absolute;left:19px;top:0;bottom:8px;width:1px;background:var(--sage)}
 .gm-hand-line::after{content:"";position:absolute;left:15px;bottom:6px;width:8px;height:8px;border-right:1px solid var(--sage);border-bottom:1px solid var(--sage);transform:rotate(45deg)}
@@ -770,48 +704,32 @@ ul.gm-dash li b{color:var(--ink)}
 .gm-ctxout ol li{background:var(--forest-800);padding:10px 10px;font-size:13px;line-height:1.3;color:var(--on-black)}
 .gm-ctxout ol li b{display:block;font-size:10px;letter-spacing:.12em;color:var(--sage);margin-bottom:3px}
 
-/* ============ 7. GOVERNANCE: rules scoped onto the workflow ============ */
-.gm-gov{position:relative;margin-top:clamp(52px,5.6vw,72px);border:1px solid var(--forest-600);border-radius:3px;padding:clamp(40px,4.4vw,52px) clamp(16px,2.6vw,32px) clamp(20px,2.6vw,28px)}
-.gm-gov-frame{position:absolute;top:-15px;left:clamp(12px,2vw,24px);right:clamp(12px,2vw,24px);display:flex}
-.gm-gov-frame p{background:var(--paper);padding:3px 12px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;font-family:var(--font-display);font-size:clamp(16px,1.6vw,19px);line-height:1.3;color:var(--ink)}
-.gm-gov-frame .gm-key{font-size:10.5px}
-.gm-g9{display:grid;grid-template-columns:minmax(0,300px) repeat(9,minmax(0,1fr));column-gap:0;position:relative}
-.gm-g9 > .gt{grid-column:9 / 11;grid-row:1 / span 3;background:var(--tint);border-left:1px solid var(--sage);z-index:0}
-.gm-g9 > *:not(.gt){position:relative;z-index:1}
-.gm-gh{list-style:none;margin:0;padding:0}
-.gm-gh > li.lbl{grid-column:1;align-self:end;padding:0 20px 16px 0}
-.gm-gh > li.st{position:relative;padding:14px 4px 16px 6px;font-size:12.5px;line-height:1.35;color:var(--muted)}
-.gm-gh > li.st::before{content:"";position:absolute;left:19px;width:100%;top:27px;height:1px;background:var(--sage)}
-.gm-gh > li.st:nth-child(10)::before{display:none}
-.gm-gh .n{position:relative;z-index:1;display:grid;place-items:center;width:27px;height:27px;border-radius:50%;border:1.5px solid var(--green-mid);background:var(--paper);font-size:11.5px;font-weight:700;color:var(--forest);margin-bottom:9px}
-.gm-gh > li.st:nth-child(2){grid-column:2;grid-row:1}
-.gm-gh > li.st:nth-child(3){grid-column:3;grid-row:1}
-.gm-gh > li.st:nth-child(4){grid-column:4;grid-row:1}
-.gm-gh > li.st:nth-child(5){grid-column:5;grid-row:1}
-.gm-gh > li.st:nth-child(6){grid-column:6;grid-row:1}
-.gm-gh > li.st:nth-child(7){grid-column:7;grid-row:1}
-.gm-gh > li.st:nth-child(8){grid-column:8;grid-row:1}
-.gm-gh > li.st:nth-child(9){grid-column:9;grid-row:1}
-.gm-gh > li.st:nth-child(10){grid-column:10;grid-row:1}
-.gm-gh > li.gate{color:var(--forest);font-weight:700}
-.gm-gh li.gate .n{background:var(--forest);border-color:var(--forest);color:#fff;border-radius:3px}
-.gm-rules{list-style:none;margin:0;padding:0}
-.gm-rule{border-top:1px solid var(--rule)}
-.gm-rule p{grid-column:1;grid-row:1;padding:16px 24px 18px 0;font-family:var(--font-display);font-size:clamp(16px,1.5vw,18px);line-height:1.34;color:var(--ink)}
-.gm-rule .bar{grid-column:var(--S) / var(--E);grid-row:1;align-self:center;height:6px;margin:0 8px 0 6px;border-radius:3px;background:var(--forest-600)}
-.gm-rule .bar.thin{height:2px;background:var(--sage)}
-.gm-rule .locks{grid-column:3 / 5;grid-row:1;align-self:center;display:grid;grid-template-columns:1fr 1fr;align-items:center;margin:0 8px 0 6px}
-.gm-rule .bar.lockseg{grid-column:3 / 5}
-.gm-rule .locks span{display:flex;align-items:center;justify-content:center;color:var(--forest)}
-.gm-rule .locks .gm-lock{width:14px;height:15px;padding:2px;box-sizing:content-box;border-radius:50%}
-.gm-rule .locks span b{font-weight:700;background:var(--paper);padding-right:4px}
-.gm-rule .locks .gm-lock{background:var(--paper);box-shadow:0 0 0 3px var(--paper)}
-.gm-rule .scope{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.gm-gfoot{border-top:1px solid var(--rule)}
-.gm-gfoot span{grid-row:1;padding:14px 8px 4px;font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--forest);line-height:1.4}
-.gm-gfoot span.h{grid-column:9 / 11}
-.gm-gfoot span.l{grid-column:1 / 9;padding-left:0;font-weight:400;letter-spacing:0;text-transform:none;font-size:12.5px;color:var(--muted)}
-.gm-glegend{display:none}
+/* ============ 6. GOVERNANCE: where each control applies ============ */
+.gm-gov-copy{margin-top:26px;max-width:68ch}
+.gm-mx{margin:clamp(40px,4.8vw,60px) 0 0;border:1px solid var(--rule);background:var(--paper);border-radius:3px;padding:clamp(22px,2.8vw,32px) clamp(18px,2.6vw,32px) clamp(20px,2.4vw,26px)}
+.gm-mx-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px 28px;margin-bottom:22px}
+.gm-mx-top h3{font-size:clamp(20px,2vw,24px)}
+.gm-mx-key{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 20px}
+.gm-mx-key li{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+.gm-mx-t{width:100%;border-collapse:collapse;table-layout:fixed}
+.gm-mx-t th,.gm-mx-t td{padding:0}
+.gm-mx-t thead th{vertical-align:bottom;padding:0 4px 14px;border-bottom:1px solid var(--forest);text-align:center}
+.gm-mx-t thead th.mx-rh{width:27%;text-align:left;padding-left:0}
+.mx-n{display:grid;place-items:center;width:26px;height:26px;margin:0 auto 8px;border-radius:50%;border:1.5px solid var(--green-mid);font-size:11.5px;font-weight:700;color:var(--forest)}
+.mx-sn{display:block;font-size:12.5px;line-height:1.3;color:var(--muted)}
+.gm-mx-t thead th.ap .mx-n{background:var(--forest);border-color:var(--forest);color:#fff;border-radius:3px}
+.gm-mx-t thead th.ap .mx-sn{color:var(--forest);font-weight:700}
+.gm-mx-t tbody th{text-align:left;font-family:var(--font-display);font-weight:400;font-size:clamp(15.5px,1.45vw,17.5px);line-height:1.3;color:var(--ink);padding:13px 16px 13px 0;border-bottom:1px solid var(--rule)}
+.gm-mx-t tbody td{text-align:center;vertical-align:middle;height:52px;border-bottom:1px solid var(--rule);border-left:1px solid var(--rule)}
+.gm-mx-t tbody tr:last-child th,.gm-mx-t tbody tr:last-child td{border-bottom:0}
+.gm-mx-t .ap{background:var(--tint)}
+.gm-mx-t thead th.ap{padding-top:12px}
+.mx-dot{display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--forest-600);vertical-align:middle}
+.mx-ring{display:inline-block;width:13px;height:13px;border-radius:50%;border:2px solid var(--forest-600);vertical-align:middle}
+.mx-chk{display:inline-block;width:20px;height:20px;vertical-align:middle}
+.mx-chk path{fill:none;stroke:var(--forest);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.gm-mx .gm-lock{width:13px;height:14px;color:var(--forest);vertical-align:middle}
+.gm-mx-legend{display:none}
 
 /* ============ 8. TEAM ENABLEMENT: the real playbook, annotated ============ */
 .gm-pb{margin:clamp(40px,4.8vw,60px) 0 0}
@@ -822,8 +740,6 @@ ul.gm-dash li b{color:var(--ink)}
 .gm-pb-sub{min-width:1040px;font-family:Arial,var(--font-body);font-size:12.5px;color:#1F2933;padding:8px 12px;border-bottom:1px solid #D5DBE1}
 .gm-pb table{border-collapse:collapse;table-layout:fixed;width:100%;min-width:1040px;font-family:Arial,var(--font-body);font-size:12.5px;line-height:1.42;color:#1F2933}
 .gm-pb th{background:#17324D;color:#fff;font-weight:700;text-align:left;vertical-align:bottom;padding:9px 10px;border-right:1px solid #2C4A66;font-size:12px;line-height:1.3}
-.gm-pb th .mk{display:inline-grid;place-items:center;width:19px;height:19px;border-radius:50%;background:var(--sage);color:#17324D;font-size:11px;font-weight:700;margin:0 0 6px;font-family:var(--font-body)}
-.gm-pb th .mk+span{display:block}
 .gm-pb td{vertical-align:top;padding:10px;border-right:1px solid #E1E6EA;border-bottom:1px solid #E1E6EA}
 .gm-pb td .step{display:block;color:#007F82;font-weight:700;font-size:11px;letter-spacing:.04em;margin-bottom:3px}
 .gm-pb td.stage{color:#17324D;font-weight:700}
@@ -832,14 +748,6 @@ ul.gm-dash li b{color:var(--ink)}
 .gm-pb tr.ghost td{opacity:.34}
 .gm-pb-fade{position:absolute;left:0;right:0;bottom:0;height:86px;background:linear-gradient(rgba(255,255,255,0),#FFFFFF 88%);pointer-events:none}
 .gm-pb-hint{display:none;margin-top:10px;font-size:12.5px;color:var(--muted)}
-.gm-pb-legend{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
-.gm-pb-legend li{background:var(--paper);padding:16px 18px;display:grid;grid-template-columns:24px minmax(0,1fr);column-gap:10px;align-items:start}
-.gm-pb-legend .mk{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--forest);color:#fff;font-size:11.5px;font-weight:700}
-.gm-pb-legend strong{display:block;font-family:var(--font-display);font-weight:400;font-size:17.5px;line-height:1.28;color:var(--ink)}
-.gm-pb-legend span.col{display:block;margin-top:4px;font-size:12.5px;color:var(--muted)}
-.gm-pb-legend li.intro{background:var(--forest);color:#fff;display:block}
-.gm-pb-legend li.intro .gm-key{color:var(--sage)}
-.gm-pb-legend li.intro strong{color:#fff;margin-top:6px}
 
 /* ============ 9. SCALING THE SYSTEM: one model, many workflows ============ */
 .gm-lib{margin:clamp(44px,5vw,66px) 0 0}
@@ -867,24 +775,24 @@ ul.gm-dash li b{color:var(--ink)}
 
 /* ============ responsive ============ */
 @media (max-width:1080px){
-  .gm-phases,.gm-split{display:none}
-  .gm-stages{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .gm-st{min-height:0}
-  .gm-st::after{display:none}
-  .gm-st-ph{position:static;width:auto;height:auto;overflow:visible;clip:auto;white-space:normal;display:block;margin-bottom:10px;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--forest-600)}
-  .gm-st.human .gm-st-ph{color:var(--sage)}
   .gm-shelf{grid-template-columns:repeat(4,minmax(0,1fr))}
   .gm-wf::after{display:none}
   .gm-base{margin-top:14px}
-  .gm-opm-head,.gm-opm-row{grid-template-columns:40px minmax(0,130px) minmax(0,150px) minmax(0,1fr) minmax(0,160px) 118px}
+}
+@media (max-width:1000px){
+  .mx-sn{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .gm-mx-t thead th{position:relative}
+  .gm-mx-t thead th.mx-rh{width:34%}
+  .mx-n{margin:0 auto}
+  .gm-mx-legend{display:block;margin-top:14px;font-size:12.5px;line-height:1.7;color:var(--muted)}
+  .gm-mx-legend b{color:var(--forest)}
 }
 @media (max-width:980px){
   .bandhead,.gm-practice,.gm-arch{grid-template-columns:1fr;gap:28px}
   .gm-arch-text{position:static}
   .twocol{columns:1}
   .gm-dq li{font-size:16px}
-  .gm-pb-legend{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .gm-outputs{max-width:620px}
+    .gm-outputs{max-width:620px}
   .gm-base{grid-template-columns:repeat(5,minmax(0,1fr))}
   .gm-base > div{grid-column:1 / -1}
   .gm-ctxout{grid-template-columns:1fr}
@@ -902,69 +810,31 @@ ul.gm-dash li b{color:var(--ink)}
   .gm-ctxout{order:3}
 }
 @media (max-width:860px){
-  .gm-opm-head{display:none}
-  .gm-opm-row{grid-template-columns:40px minmax(0,1fr);row-gap:10px;align-items:start;padding:20px 0}
-  .gm-opm-num{grid-row:1 / span 4;align-items:flex-start}
-  .gm-opm-num::before{top:0;bottom:-21px}
-  .gm-opm-row:first-child .gm-opm-num::before{top:16px}
-  .gm-opm-row.gate .gm-opm-num::before{top:0;bottom:auto;height:16px}
-  .gm-opm-row > h3,.gm-opm-row > .gm-opm-job,.gm-opm-row > .gm-io.gi,.gm-opm-row > .gm-io.go,.gm-opm-row > .gm-rev{grid-column:2;grid-row:auto}
-  .gm-opm-row > .gm-opm-num{grid-row:1 / span 5}
-  .gm-opm-row .gm-rev.none{display:none}
-  .gm-rev{padding-left:22px;align-self:start}
-  .gm-rev::before{display:none}
-  .gm-opm-row.gate{padding-left:10px;padding-right:10px}
 }
 @media (max-width:760px){
-  .gm-dgrid{grid-template-columns:1fr}
-  .gm-core{order:-1;padding:22px 18px}
-  .gm-dq.l,.gm-dq.r{padding:0 0 0 22px;position:relative;border-left:1px dashed var(--green-mid);margin-left:10px}
-  .gm-dq.l{margin-top:20px;padding-top:0}
-  .gm-dq.r{padding-top:12px}
+  .gm-mx{padding:18px 14px}
+  .gm-mx-t,.gm-mx-t thead,.gm-mx-t tbody{display:block}
+  .gm-mx-t tr{display:grid;grid-template-columns:repeat(9,minmax(0,1fr))}
+  .gm-mx-t thead th.mx-rh{display:none}
+  .gm-mx-t tbody th{grid-column:1 / -1;border-bottom:0;padding:14px 0 8px}
+  .gm-mx-t tbody td{height:34px;display:flex;align-items:center;justify-content:center;border-left:0;border-bottom:1px solid var(--rule)}
+  .gm-mx-t tbody tr:last-child td{border-bottom:0}
+  .mx-sn{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .gm-mx-t thead th{padding:8px 0 10px;position:relative}
+  .mx-n{margin:0 auto;width:24px;height:24px;font-size:11px}
+  .gm-mx-legend{display:block;margin-top:14px;font-size:12.5px;line-height:1.7;color:var(--muted)}
+  .gm-mx-legend b{color:var(--forest)}
+
+  .gm-dgrid2{grid-template-columns:1fr}
+  .gm-dhead{text-align:left;padding:0;margin-bottom:12px}
+  .gm-dq.l{padding:0 0 0 22px;margin-left:10px;border-left:1px dashed var(--green-mid)}
   .gm-dq.l li{text-align:left}
   .gm-dq li::after{left:auto;right:100%;width:22px}
   .gm-dq.l li::after{left:auto;right:100%}
-  .gm-dmap-bridge{display:block;height:0}
-  .gm-conds li{font-size:12.5px;padding:9px 6px;margin:0 4px}
-
-  .gm-gov-frame{position:static;margin:-4px 0 18px}
-  .gm-gov-frame p{padding:0;background:none}
-  .gm-gov{padding-top:24px}
-  .gm-g9{grid-template-columns:repeat(9,minmax(0,1fr))}
-  .gm-g9 > .gt{grid-column:8 / 10;grid-row:1 / span 3}
-  .gm-gh > li.lbl{display:none}
-  .gm-rule > .gt,.gm-gfoot > .gt{display:none}
-  .gm-gh > li.st:nth-child(2){grid-column:1}
-  .gm-gh > li.st:nth-child(3){grid-column:2}
-  .gm-gh > li.st:nth-child(4){grid-column:3}
-  .gm-gh > li.st:nth-child(5){grid-column:4}
-  .gm-gh > li.st:nth-child(6){grid-column:5}
-  .gm-gh > li.st:nth-child(7){grid-column:6}
-  .gm-gh > li.st:nth-child(8){grid-column:7}
-  .gm-gh > li.st:nth-child(9){grid-column:8}
-  .gm-gh > li.st:nth-child(10){grid-column:9}
-  .gm-gh > li.st{font-size:0;padding:12px 0 12px;display:flex;justify-content:center}
-  .gm-gh > li.st::before{left:50%;top:25px}
-  .gm-gh .n{margin:0;font-size:11px;width:25px;height:25px}
-  .gm-rule p{grid-column:1 / -1;padding:14px 0 8px}
-  .gm-rule .bar{grid-column:var(--s) / var(--e);grid-row:2;margin:0 4px 16px}
-  .gm-rule .locks{grid-column:2 / 4;grid-row:2;margin:0 4px 16px}
-  .gm-rule .bar.lockseg{grid-column:2 / 4}
-  .gm-rule .locks span{font-size:0;gap:0;justify-content:center}
-  .gm-rule .locks span b{display:none}
-  .gm-gfoot span.h{grid-column:8 / 10;padding:12px 2px 4px;font-size:9.5px;letter-spacing:.06em;text-align:center}
-  .gm-gfoot span.l{grid-column:1 / 8;font-size:12px}
-  .gm-glegend{display:block;margin-top:16px;font-size:12.5px;line-height:1.7;color:var(--muted)}
-  .gm-glegend b{color:var(--forest)}
+  .gm-core{padding:22px 18px;margin-top:20px}
+  
 
   .gm-pb-hint{display:block}
-  .gm-stages{grid-template-columns:1fr}
-  .gm-st{display:grid;grid-template-columns:48px minmax(0,1fr);column-gap:10px;padding:16px 16px 16px 14px}
-  .gm-st > *{grid-column:2}
-  .gm-st-n{grid-column:1;grid-row:1 / span 5;font-size:26px}
-  .gm-st h3{margin-top:0;font-size:19px}
-  .gm-st-ph{margin-bottom:4px}
-  .gm-st-tool{margin-top:12px;padding-top:10px}
   .gm-lrow{grid-template-columns:1fr}
   .gm-sheet{max-width:300px}
   .gm-ctx,.gm-sheet.l1+.gm-ctx,.gm-sheet.l2+.gm-ctx,.gm-sheet.l3+.gm-ctx,.gm-sheet.l4+.gm-ctx,.gm-sheet.l5+.gm-ctx{padding-top:14px}
@@ -977,9 +847,7 @@ ul.gm-dash li b{color:var(--ink)}
   .gm-outputs .pair{grid-template-columns:1fr 1fr}
 }
 @media (max-width:520px){
-  .gm-pb-legend{grid-template-columns:1fr}
-  .gm-conds li{font-size:12px}
-}
+    }
 
 </style>
 </head>
@@ -1009,24 +877,20 @@ ul.gm-dash li b{color:var(--ink)}
       <div>
         <p class="eyebrow">AI Workflow Design &middot; Content Operations &middot; GenAI</p>
         <h1 id="gm-h1">Designing a GenAI Marketing Operating System</h1>
-        <p class="brief">A growing B2B technology company needed to scale its marketing capability without the budget or team structure of a mature organization. Much of the execution sat with interns and recent graduates who were still building experience, while the product portfolio and demand for content continued to grow.</p>
+        <p class="brief">A growing B2B technology company needed to scale its marketing capability with a junior team and little budget for specialized tools.</p>
         <div class="gm-hero-body">
-          <p>I designed a GenAI marketing operating system to make that model workable. Using free and readily available AI tools, I created reusable prompts, machine-readable brand guidance, structured handoffs, human-in-the-loop reviews, and quality gates that moved work from research and strategy through creative production and review.</p>
-          <p>The result was a repeatable workflow that gave a junior team a clearer way to produce consistent, on-brand marketing without starting from scratch every time.</p>
+          <p>I designed a GenAI marketing operating system that turned senior marketing judgment into a repeatable workflow the team could use across research, strategy, creative development, production, and review.</p>
         </div>
       </div>
       <figure class="proofcard gm-os" aria-labelledby="gm-os-k">
-        <span class="pc-k" id="gm-os-k">The operating system</span>
+        <span class="pc-k" id="gm-os-k">One repeatable workflow</span>
         <ol class="chain">
-          <li class="node"><span class="n-t">Research</span><span class="n-d">Perplexity</span></li>
-          <li class="node"><span class="n-t">Strategy + Copy</span><span class="n-d">ChatGPT</span></li>
-          <li class="node"><span class="n-t">Creative Direction</span><span class="n-d">Claude</span></li>
-          <li class="node"><span class="n-t">Visual Production</span><span class="n-d">Image generation</span></li>
-          <li class="node"><span class="n-t">Production</span><span class="n-d">Adobe Express</span></li>
-          <li class="node"><span class="n-t">QA</span><span class="n-d">ChatGPT</span></li>
-          <li class="node is-human"><span class="n-t">Approval</span><span class="n-d">Human</span></li>
+          <li class="node"><span class="n-t">Research</span></li>
+          <li class="node"><span class="n-t">Strategy</span></li>
+          <li class="node"><span class="n-t">Creative development</span></li>
+          <li class="node"><span class="n-t">Production</span></li>
+          <li class="node is-human"><span class="n-t">Review</span></li>
         </ol>
-        <figcaption class="pc-m">Each stage, with the tool that supported it</figcaption>
       </figure>
     </div>
   </section>
@@ -1038,154 +902,152 @@ ul.gm-dash li b{color:var(--ink)}
         <p class="eyebrow">The challenge</p>
         <h2 id="gm-ch-h">Access to AI wasn&rsquo;t the same as knowing what good looked like.</h2>
       </div>
-      <div class="twocol">
-        <p>The team could open ChatGPT, Claude, or Perplexity and generate content quickly. The harder part was knowing how to guide the work: which sources to trust, which audience problem mattered, which claims were supportable, how to translate product value into a clear message, and whether the final asset met the brand standard.</p>
-        <p>Those decisions depend heavily on experience. Without a shared process, each new assignment risked becoming another blank page, another one-off prompt, and another round of senior review.</p>
+      <div class="gm-body gm-gov-copy">
+        <p>The team could generate content quickly. The harder part was deciding what should be created, which sources were credible, which claims were supportable, how product value should be framed, and whether the final work was ready to publish.</p>
+        <p>Those decisions were still happening in the heads of experienced reviewers. Every new assignment created another point of dependency.</p>
       </div>
 
       <figure class="gm-dmap" aria-labelledby="gm-dmap-cap">
-        <div class="gm-dmap-top">
-          <span class="gm-key">What the team had</span>
-          <ul class="gm-conds">
-            <li>Available AI tools</li>
-            <li>Growing content demand</li>
-            <li>Junior execution</li>
-          </ul>
-          <svg class="gm-merge" viewBox="0 0 600 40" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-            <path d="M100 0V18H500V0M300 18V40"/>
-          </svg>
-        </div>
-        <div class="gm-dgrid">
-          <ul class="gm-dq l" aria-label="Decisions inside the assignment, part one">
-            <li>Who is the audience?</li>
-            <li>What evidence is credible?</li>
-            <li>Which problem matters?</li>
-          </ul>
-          <div class="gm-core">
-            <span class="gm-key">The assignment</span>
-            <strong>A blank page</strong>
+        <div class="gm-dgrid2">
+          <div>
+            <span class="gm-key gm-dhead">Decisions inside every assignment</span>
+            <ul class="gm-dq l">
+              <li>Is this source credible?</li>
+              <li>Which audience problem matters?</li>
+              <li>Is this claim supportable?</li>
+              <li>How should product value be framed?</li>
+              <li>Does it meet the brand standard?</li>
+            </ul>
           </div>
-          <ul class="gm-dq r" aria-label="Decisions inside the assignment, part two">
-            <li>Which claims are supportable?</li>
-            <li>What should the audience understand?</li>
-            <li>Does the asset meet the brand standard?</li>
-          </ul>
+          <div class="gm-core">
+            <span class="gm-key">Where the judgment lived</span>
+            <strong>Experienced reviewers</strong>
+          </div>
         </div>
-        <div class="gm-dkey">
-          <span class="gm-key">What the work required: decisions that depend on experience</span>
-        </div>
-        <figcaption class="sr-only" id="gm-dmap-cap">Decision landscape. Available AI tools, growing content demand, and junior execution converge on a new assignment, which starts as a blank page. Six implicit decisions surround it: who is the audience, what evidence is credible, which problem matters, which claims are supportable, what the audience should understand, and whether the asset meets the brand standard.</figcaption>
+        <figcaption class="sr-only" id="gm-dmap-cap">The judgment gap. Five decisions inside every assignment, about source credibility, audience relevance, supportable claims, message framing, and brand quality, all route to experienced reviewers.</figcaption>
       </figure>
     </div>
-    <div class="statementband">
+    <div class="statementband gm-green">
       <div class="shell">
-        <p class="demand-close">The design challenge became clear: how could I make more of that judgment reusable while preserving the human judgment that still mattered?</p>
+        <p class="demand-close">I needed a way to make that judgment visible, reusable, and easier for the team to apply.</p>
       </div>
     </div>
   </section>
 
-  <!-- ============ 3. THE OPERATING MODEL ============ -->
-  <section class="section band" id="model" aria-labelledby="gm-om-h">
+  <!-- ============ 3. THE OPERATING SYSTEM ============ -->
+  <section class="section on-dark hasband" id="system" aria-labelledby="gm-ar-h">
     <div class="shell">
-      <div class="bandhead">
-        <div>
-          <p class="eyebrow">The operating model</p>
-          <h2 id="gm-om-h">I designed AI as a sequence of decisions.</h2>
+      <div class="gm-arch">
+        <div class="gm-arch-text">
+          <p class="eyebrow">The operating system</p>
+          <h2 id="gm-ar-h">I built the workflow around the decisions experienced marketers make.</h2>
+          <div class="gm-body">
+            <p>I broke the work into stages based on the decisions an experienced marketer would normally make along the way.</p>
+            <p>Research established what was true. Strategy defined what mattered. Copy shaped the message. Creative direction translated the message into a visual idea. Production built the asset. QA checked the work against the decisions that came before it.</p>
+          </div>
         </div>
-        <div class="body">
-          <p>I separated the work into stages so each part of the process had a specific job, a defined input, and a structured output that could move cleanly into the next step.</p>
-        </div>
-      </div>
 
-      <figure class="gm-opm" aria-label="The six core functions, each with a defined input, a specific job, a structured output, and the points where human review occurs">
-        <div class="gm-opm-head" aria-hidden="true">
-          <span></span><span>Stage</span><span>Defined input</span><span>Specific job</span><span>Structured output</span><span>Human review</span>
-        </div>
-        <ol>
-          <li class="gm-opm-row">
-            <span class="gm-opm-num" aria-hidden="true"><i>01</i></span>
-            <h3>Research</h3>
-            <p class="gm-opm-job">established the audience, problem, and evidence.</p>
-            <span class="gm-io gi"><span class="gm-chip in"><span class="io">In</span>Assignment</span></span>
-            <span class="gm-io go"><span class="gm-chip out"><span class="io">Out</span>Research brief</span></span>
-            <span class="gm-rev none" aria-hidden="true">None</span>
-          </li>
-          <li class="gm-opm-row">
-            <span class="gm-opm-num" aria-hidden="true"><i>02</i></span>
-            <h3>Strategy</h3>
-            <p class="gm-opm-job">turned that information into a clear communication objective.</p>
-            <span class="gm-io gi"><span class="gm-chip in"><span class="io">In</span>Research brief</span></span>
-            <span class="gm-io go"><span class="gm-chip out"><span class="io">Out</span>Content strategy</span></span>
-            <span class="gm-rev none" aria-hidden="true">None</span>
-          </li>
-          <li class="gm-opm-row">
-            <span class="gm-opm-num" aria-hidden="true"><i>03</i></span>
-            <h3>Copy</h3>
-            <p class="gm-opm-job">translated the strategy into messaging.</p>
-            <span class="gm-io gi"><span class="gm-chip in"><span class="io">In</span>Content strategy</span></span>
-            <span class="gm-io go"><span class="gm-chip out"><span class="io">Out</span>Copy package</span></span>
-            <span class="gm-rev"><b aria-hidden="true"></b>Creative review</span>
-          </li>
-          <li class="gm-opm-row">
-            <span class="gm-opm-num" aria-hidden="true"><i>04</i></span>
-            <h3>Creative direction</h3>
-            <p class="gm-opm-job">defined how the message should be visualized.</p>
-            <span class="gm-io gi"><span class="gm-chip in"><span class="io">In</span>Copy + brand guidance</span></span>
-            <span class="gm-io go"><span class="gm-chip out"><span class="io">Out</span>Creative brief</span></span>
-            <span class="gm-rev none" aria-hidden="true">None</span>
-          </li>
-          <li class="gm-opm-row">
-            <span class="gm-opm-num" aria-hidden="true"><i>05</i></span>
-            <h3>Production</h3>
-            <p class="gm-opm-job">assembled the asset.</p>
-            <span class="gm-io gi"><span class="gm-chip in"><span class="io">In</span>Creative brief</span></span>
-            <span class="gm-io go"><span class="gm-chip out"><span class="io">Out</span>Finished asset</span></span>
-            <span class="gm-rev"><b aria-hidden="true"></b>Creative review</span>
-          </li>
-          <li class="gm-opm-row">
-            <span class="gm-opm-num" aria-hidden="true"><i>06</i></span>
-            <h3>QA</h3>
-            <p class="gm-opm-job">checked the work against source material, brand standards, and approved decisions.</p>
-            <span class="gm-io gi"><span class="gm-chip in"><span class="io">In</span>Asset + sources</span></span>
-            <span class="gm-io go"><span class="gm-chip out"><span class="io">Out</span>QA findings</span></span>
-            <span class="gm-rev none" aria-hidden="true">None</span>
-          </li>
-          <li class="gm-opm-row gate">
-            <span class="gm-opm-num" aria-hidden="true"><i>&#10003;</i></span>
-            <h3>Approval</h3>
-            <p class="gm-opm-job">Creative approval, then executive approval.</p>
-            <span class="gm-io gi"><span class="gm-chip in"><span class="io">In</span>QA-passed asset</span></span>
-            <span class="gm-io go"><span class="gm-chip out"><span class="io">Out</span>Approved to publish</span></span>
-            <span class="gm-rev"><b aria-hidden="true"></b>Human decision</span>
-          </li>
-        </ol>
-      </figure>
-
-      <div class="gm-after gm-body">
-        <p>The tools could change from stage to stage. The structure stayed consistent.</p>
+        <figure style="margin:0" aria-label="Six workflow artifacts and a final human approval. Each artifact carries the approved context from the stages before it: research brief, content strategy, copy package, creative direction brief, visual assets and production, QA findings, then human approval.">
+          <ol class="gm-ledger">
+            <li class="gm-lrow">
+              <div class="gm-sheet">
+                <span class="gm-key">Artifact 01</span><h3>Research brief</h3>
+                <span class="ln"></span><span class="ln"></span><span class="ln"></span>
+              </div>
+              <div class="gm-ctx">
+                <span class="gm-key">Working context</span>
+                <ul class="gm-tags"><li>Assignment</li><li>Topic</li><li>Product brief</li><li>Audience</li></ul>
+              </div>
+            </li>
+            <li class="gm-hand" aria-hidden="true"><span class="gm-hand-line"></span></li>
+            <li class="gm-lrow">
+              <div class="gm-sheet l1">
+                <span class="gm-key">Artifact 02</span><h3>Content strategy</h3>
+                <span class="ln"></span><span class="ln"></span><span class="ln"></span>
+              </div>
+              <div class="gm-ctx">
+                <span class="gm-key">Working context</span>
+                <ul class="gm-tags"><li>Research brief</li><li>Product pages</li></ul>
+              </div>
+            </li>
+            <li class="gm-hand" aria-hidden="true"><span class="gm-hand-line"></span></li>
+            <li class="gm-lrow">
+              <div class="gm-sheet l2">
+                <span class="gm-key">Artifact 03</span><h3>Copy package</h3>
+                <span class="ln"></span><span class="ln"></span><span class="ln"></span>
+              </div>
+              <div class="gm-ctx">
+                <span class="gm-key">Working context</span>
+                <ul class="gm-tags"><li class="lk"><svg class="gm-lock" viewBox="0 0 11 12" aria-hidden="true" focusable="false"><rect x="1" y="5" width="9" height="6.2" rx="1"/><path d="M3 5V3.4a2.5 2.5 0 0 1 5 0V5"/></svg>Approved content strategy<span class="sr-only">, locked</span></li><li>Research brief</li></ul>
+              </div>
+            </li>
+            <li class="gm-hand" aria-hidden="true"><span class="gm-hand-line"></span></li>
+            <li class="gm-lrow">
+              <div class="gm-sheet l3">
+                <span class="gm-key">Artifact 04</span><h3>Creative direction brief</h3>
+                <span class="ln"></span><span class="ln"></span><span class="ln"></span>
+              </div>
+              <div class="gm-ctx">
+                <span class="gm-key">Working context</span>
+                <ul class="gm-tags"><li class="lk"><svg class="gm-lock" viewBox="0 0 11 12" aria-hidden="true" focusable="false"><rect x="1" y="5" width="9" height="6.2" rx="1"/><path d="M3 5V3.4a2.5 2.5 0 0 1 5 0V5"/></svg>Approved content strategy<span class="sr-only">, locked</span></li><li class="lk"><svg class="gm-lock" viewBox="0 0 11 12" aria-hidden="true" focusable="false"><rect x="1" y="5" width="9" height="6.2" rx="1"/><path d="M3 5V3.4a2.5 2.5 0 0 1 5 0V5"/></svg>Approved copy<span class="sr-only">, locked</span></li><li>Brand guidelines</li><li>Available assets</li></ul>
+              </div>
+            </li>
+            <li class="gm-hand" aria-hidden="true"><span class="gm-hand-line"></span></li>
+            <li class="gm-lrow">
+              <div class="gm-sheet l4">
+                <span class="gm-key">Artifact 05</span><h3>Visual assets / production</h3>
+                <span class="ln"></span><span class="ln"></span><span class="ln"></span>
+              </div>
+              <div class="gm-ctx">
+                <span class="gm-key">Working context</span>
+                <ul class="gm-tags"><li>Creative brief</li><li class="lk"><svg class="gm-lock" viewBox="0 0 11 12" aria-hidden="true" focusable="false"><rect x="1" y="5" width="9" height="6.2" rx="1"/><path d="M3 5V3.4a2.5 2.5 0 0 1 5 0V5"/></svg>Approved copy<span class="sr-only">, locked</span></li><li>Brand guidelines</li><li>Source assets</li><li>Brand template</li></ul>
+              </div>
+            </li>
+            <li class="gm-hand" aria-hidden="true"><span class="gm-hand-line"></span></li>
+            <li class="gm-lrow">
+              <div class="gm-sheet l5">
+                <span class="gm-key">Artifact 06</span><h3>QA findings</h3>
+                <span class="ln"></span><span class="ln"></span><span class="ln"></span>
+              </div>
+              <div class="gm-ctx">
+                <span class="gm-key">Working context</span>
+                <ul class="gm-tags"><li>Graphic and caption</li><li class="lk"><svg class="gm-lock" viewBox="0 0 11 12" aria-hidden="true" focusable="false"><rect x="1" y="5" width="9" height="6.2" rx="1"/><path d="M3 5V3.4a2.5 2.5 0 0 1 5 0V5"/></svg>Approved content strategy<span class="sr-only">, locked</span></li><li>Sources</li><li>Brand guidelines</li></ul>
+              </div>
+            </li>
+            <li class="gm-hand" aria-hidden="true"><span class="gm-hand-line"></span></li>
+            <li class="gm-lrow">
+              <div class="gm-sheet gm-gate-sheet">
+                <span class="gm-key">Decision</span><h3>Human approval</h3>
+                <span class="gm-gate-sub">Creative approval, then executive approval</span>
+              </div>
+              <div class="gm-ctx">
+                <span class="gm-key">Working context</span>
+                <ul class="gm-tags"><li>QA-passed graphic and caption</li><li>QA findings</li></ul>
+              </div>
+            </li>
+          </ol>
+          <figcaption class="gm-cap"><b>Controlled handoffs.</b> Each layer is an earlier artifact carried forward. Working context is taken from the required inputs in the Static Social playbook; a lock marks an approved decision downstream tools may not rewrite.</figcaption>
+        </figure>
       </div>
-      <p class="method-close">That became the foundation of the system: specialized tasks, controlled handoffs, and human-in-the-loop review at the points where judgment mattered most.</p>
+    </div>
+    <div class="statementband gm-green gm-after-band">
+      <div class="shell">
+        <p class="demand-close">Each stage produced the working context for the next, so the reasoning traveled with the work as it moved across tools and people.</p>
+      </div>
     </div>
   </section>
 
   <!-- ============ 4. ONE WORKFLOW IN PRACTICE ============ -->
-  <section class="section" id="workflow" aria-labelledby="gm-wf-h">
+  <section class="section hasband" id="workflow" aria-labelledby="gm-wf-h">
     <div class="shell">
       <div class="stackhead">
         <p class="eyebrow">One workflow in practice</p>
-        <h2 id="gm-wf-h">A single social post moved through nine controlled stages.</h2>
+        <h2 id="gm-wf-h">A single social post became the first full test of the system.</h2>
       </div>
       <div class="gm-practice">
         <div class="gm-body">
-          <p>I used the Static Social workflow as one of the first places to operationalize the model. What looked like a simple LinkedIn asset on the surface was supported by a deliberate sequence of decisions behind the scenes.</p>
-          <ul class="gm-dash">
-            <li><b>Research</b> established the audience, product context, and evidence.</li>
-            <li><b>Content strategy</b> defined the communication objective and value proposition.</li>
-            <li><b>Copy</b> translated that strategy into the message.</li>
-            <li><b>Creative direction</b> turned the message into a visual concept.</li>
-            <li><b>Visual generation and production</b> created the asset.</li>
-            <li><b>AI-assisted QA</b> checked the work against source material, brand guidance, and approved decisions before human review.</li>
-          </ul>
+          <p>Static Social gave me a contained way to test the model end to end.</p>
+          <p>One post moved through nine defined stages, from research and content strategy through production, AI QA, creative approval, and executive approval. Each stage had a required deliverable, a clear owner, and a defined handoff.</p>
         </div>
         <figure class="gm-outputs">
           <div class="pair">
@@ -1202,206 +1064,37 @@ ul.gm-dash li b{color:var(--ink)}
         </figure>
       </div>
 
-      <figure class="gm-nine" aria-labelledby="gm-nine-lead">
-        <p class="gm-lead" id="gm-nine-lead">The full workflow moved through nine stages:</p>
-        <div class="gm-phases" aria-hidden="true">
-          <span class="gm-ph p1">Understand</span>
-          <span class="gm-ph p2">Decide</span>
-          <span class="gm-ph p3">Create</span>
-          <span class="gm-ph p4">Validate</span>
-          <span class="gm-ph p5">Approve</span>
-        </div>
-        <ol class="gm-stages">
-          <li class="gm-st">
-            <span class="gm-st-ph">Understand</span>
-            <span class="gm-st-n" aria-hidden="true">01</span>
-            <h3>Research</h3>
-            <p class="gm-st-out"><b>Produces</b>Research brief with linked sources</p>
-            <p class="gm-st-tool"><span>Tool</span>Perplexity</p>
-          </li>
-          <li class="gm-st">
-            <span class="gm-st-ph">Decide</span>
-            <span class="gm-st-n" aria-hidden="true">02</span>
-            <h3>Content Strategy</h3>
-            <p class="gm-st-out"><b>Produces</b>One-page content strategy</p>
-            <p class="gm-st-tool"><span>Tool</span>ChatGPT</p>
-          </li>
-          <li class="gm-st">
-            <span class="gm-st-ph">Create</span>
-            <span class="gm-st-n" aria-hidden="true">03</span>
-            <h3>Copy</h3>
-            <p class="gm-st-out"><b>Produces</b>Headline, graphic copy, and caption</p>
-            <p class="gm-st-rev">Creative review</p>
-            <p class="gm-st-tool"><span>Tool</span>ChatGPT</p>
-          </li>
-          <li class="gm-st">
-            <span class="gm-st-ph">Create</span>
-            <span class="gm-st-n" aria-hidden="true">04</span>
-            <h3>Creative Direction</h3>
-            <p class="gm-st-out"><b>Produces</b>Visual production brief</p>
-            <p class="gm-st-tool"><span>Tool</span>Claude</p>
-          </li>
-          <li class="gm-st">
-            <span class="gm-st-ph">Create</span>
-            <span class="gm-st-n" aria-hidden="true">05</span>
-            <h3>Visual Assets</h3>
-            <p class="gm-st-out"><b>Produces</b>Production-ready image assets</p>
-            <p class="gm-st-rev">Creative review</p>
-            <p class="gm-st-tool"><span>Tool</span>Image generation</p>
-          </li>
-          <li class="gm-st">
-            <span class="gm-st-ph">Create</span>
-            <span class="gm-st-n" aria-hidden="true">06</span>
-            <h3>Production</h3>
-            <p class="gm-st-out"><b>Produces</b>Final social graphic draft</p>
-            <p class="gm-st-rev">Creative review</p>
-            <p class="gm-st-tool"><span>Tool</span>Adobe Express</p>
-          </li>
-          <li class="gm-st">
-            <span class="gm-st-ph">Validate</span>
-            <span class="gm-st-n" aria-hidden="true">07</span>
-            <h3>AI QA</h3>
-            <p class="gm-st-out"><b>Produces</b>QA scorecard and prioritized corrections</p>
-            <p class="gm-st-tool"><span>Tool</span>ChatGPT</p>
-          </li>
-          <li class="gm-st human">
-            <span class="gm-st-ph">Approve</span>
-            <span class="gm-st-n" aria-hidden="true">08</span>
-            <h3>Creative Approval</h3>
-            <p class="gm-st-out"><b>Produces</b>Creative approval, captured in the task</p>
-            <p class="gm-st-tool"><span>Decided by</span>Human</p>
-          </li>
-          <li class="gm-st human">
-            <span class="gm-st-ph">Approve</span>
-            <span class="gm-st-n" aria-hidden="true">09</span>
-            <h3>Executive Approval</h3>
-            <p class="gm-st-out"><b>Produces</b>Final approval, captured in the task</p>
-            <p class="gm-st-tool"><span>Decided by</span>Human</p>
-          </li>
-        </ol>
-        <div class="gm-split" aria-hidden="true">
-          <span class="ai">AI-supported work, with creative review at stages 3, 5, and 6</span>
-          <span class="hu">Explicit human approval</span>
-        </div>
-        <figcaption class="gm-cap"><b>Static Social workflow.</b> Stage names, deliverables, and primary tools from the Static Social playbook.</figcaption>
-      </figure>
-      <p class="gm-nine-after">Each stage produced a specific deliverable for the next, so context and decisions moved forward with the work.</p>
     </div>
-  </section>
-
-  <!-- ============ 5. WORKFLOW ARCHITECTURE ============ -->
-  <section class="section on-dark" id="architecture" aria-labelledby="gm-ar-h">
-    <div class="shell">
-      <div class="gm-arch">
-        <div class="gm-arch-text">
-          <p class="eyebrow">Workflow architecture</p>
-          <h2 id="gm-ar-h">The output of one stage became the working context for the next.</h2>
-          <div class="gm-body">
-            <p>The system depended on preserving the decisions already made upstream so each tool could continue the work with the right context.</p>
-            <p>That handoff structure reduced rework, protected approved messaging, and helped junior marketers understand what had already been decided and where judgment was still required.</p>
-          </div>
-        </div>
-
-        <figure style="margin:0" aria-label="Six workflow artifacts. Each one carries the approved context from the stages before it.">
-          <ol class="gm-ledger">
-            <li class="gm-lrow">
-              <div class="gm-sheet">
-                <span class="gm-key">Artifact 01</span><h3>Research brief</h3>
-                <span class="ln"></span><span class="ln"></span><span class="ln"></span>
-              </div>
-              <div class="gm-ctx">
-                <span class="gm-key">Working context</span>
-                <ul class="gm-tags"><li>Assignment</li><li>Topic</li><li>Product brief</li><li>Audience</li></ul>
-              </div>
-            </li>
-            <li class="gm-hand"><span class="gm-hand-line" aria-hidden="true"></span><p>A research brief became the input for content strategy.</p></li>
-            <li class="gm-lrow">
-              <div class="gm-sheet l1">
-                <span class="gm-key">Artifact 02</span><h3>Content strategy</h3>
-                <span class="ln"></span><span class="ln"></span><span class="ln"></span>
-              </div>
-              <div class="gm-ctx">
-                <span class="gm-key">Working context</span>
-                <ul class="gm-tags"><li>Research brief</li><li>Product pages</li></ul>
-              </div>
-            </li>
-            <li class="gm-hand"><span class="gm-hand-line" aria-hidden="true"></span><p>The approved content strategy became the input for copy.</p></li>
-            <li class="gm-lrow">
-              <div class="gm-sheet l2">
-                <span class="gm-key">Artifact 03</span><h3>Copy package</h3>
-                <span class="ln"></span><span class="ln"></span><span class="ln"></span>
-              </div>
-              <div class="gm-ctx">
-                <span class="gm-key">Working context</span>
-                <ul class="gm-tags"><li class="lk"><svg class="gm-lock" viewBox="0 0 11 12" aria-hidden="true" focusable="false"><rect x="1" y="5" width="9" height="6.2" rx="1"/><path d="M3 5V3.4a2.5 2.5 0 0 1 5 0V5"/></svg>Approved content strategy<span class="sr-only">, locked</span></li><li>Research brief</li></ul>
-              </div>
-            </li>
-            <li class="gm-hand"><span class="gm-hand-line" aria-hidden="true"></span><p>Copy and brand guidance became the input for creative direction.</p></li>
-            <li class="gm-lrow">
-              <div class="gm-sheet l3">
-                <span class="gm-key">Artifact 04</span><h3>Creative direction brief</h3>
-                <span class="ln"></span><span class="ln"></span><span class="ln"></span>
-              </div>
-              <div class="gm-ctx">
-                <span class="gm-key">Working context</span>
-                <ul class="gm-tags"><li class="lk"><svg class="gm-lock" viewBox="0 0 11 12" aria-hidden="true" focusable="false"><rect x="1" y="5" width="9" height="6.2" rx="1"/><path d="M3 5V3.4a2.5 2.5 0 0 1 5 0V5"/></svg>Approved content strategy<span class="sr-only">, locked</span></li><li class="lk"><svg class="gm-lock" viewBox="0 0 11 12" aria-hidden="true" focusable="false"><rect x="1" y="5" width="9" height="6.2" rx="1"/><path d="M3 5V3.4a2.5 2.5 0 0 1 5 0V5"/></svg>Approved copy<span class="sr-only">, locked</span></li><li>Brand guidelines</li><li>Available assets</li></ul>
-              </div>
-            </li>
-            <li class="gm-hand"><span class="gm-hand-line" aria-hidden="true"></span><p>The creative brief shaped image generation and production.</p></li>
-            <li class="gm-lrow">
-              <div class="gm-sheet l4">
-                <span class="gm-key">Artifacts 05&ndash;06</span><h3>Visual assets and production</h3>
-                <span class="ln"></span><span class="ln"></span><span class="ln"></span>
-              </div>
-              <div class="gm-ctx">
-                <span class="gm-key">Working context</span>
-                <ul class="gm-tags"><li>Creative brief</li><li class="lk"><svg class="gm-lock" viewBox="0 0 11 12" aria-hidden="true" focusable="false"><rect x="1" y="5" width="9" height="6.2" rx="1"/><path d="M3 5V3.4a2.5 2.5 0 0 1 5 0V5"/></svg>Approved copy<span class="sr-only">, locked</span></li><li>Brand guidelines</li><li>Source assets</li><li>Brand template</li></ul>
-              </div>
-            </li>
-            <li class="gm-hand"><span class="gm-hand-line" aria-hidden="true"></span><p>QA reviewed the final asset against the same source material and approved decisions that informed the work from the beginning.</p></li>
-            <li class="gm-lrow">
-              <div class="gm-sheet l5">
-                <span class="gm-key">Artifact 07</span><h3>QA findings</h3>
-                <span class="ln"></span><span class="ln"></span><span class="ln"></span>
-              </div>
-              <div class="gm-ctx">
-                <span class="gm-key">Working context</span>
-                <ul class="gm-tags"><li>Graphic and caption</li><li class="lk"><svg class="gm-lock" viewBox="0 0 11 12" aria-hidden="true" focusable="false"><rect x="1" y="5" width="9" height="6.2" rx="1"/><path d="M3 5V3.4a2.5 2.5 0 0 1 5 0V5"/></svg>Approved content strategy<span class="sr-only">, locked</span></li><li>Sources</li><li>Brand guidelines</li></ul>
-              </div>
-            </li>
-          </ol>
-          <figcaption class="gm-cap"><b>Controlled handoffs.</b> Each layer is an earlier artifact carried forward. Working context is taken from the required inputs in the Static Social playbook; a lock marks an approved decision downstream tools may not rewrite.</figcaption>
-        </figure>
+    <div class="statementband gm-green gm-after-band">
+      <div class="shell">
+        <p class="demand-close">The workflow gave the team one repeatable path from assignment to approved asset.</p>
       </div>
-      <p class="fignote-l">The workflow became a chain of controlled decisions.</p>
     </div>
   </section>
 
-  <!-- ============ 6. ENCODING EXPERTISE ============ -->
+  <!-- ============ 5. ENCODING EXPERTISE ============ -->
   <section class="section band" id="expertise" aria-labelledby="gm-ex-h">
     <div class="shell">
-      <div class="bandhead">
-        <div>
-          <p class="eyebrow">Encoding expertise</p>
-          <h2 id="gm-ex-h">I turned senior marketing judgment into reusable operating context.</h2>
-        </div>
-        <div class="body">
-          <p>The workflow could only scale if the team had guidance for making the decisions inside each stage.</p>
-        </div>
+      <div class="stackhead">
+        <p class="eyebrow">Encoding expertise</p>
+        <h2 id="gm-ex-h">I translated brand standards into AI-ready Markdown.</h2>
+      </div>
+      <div class="gm-body gm-gov-copy">
+        <p>The workflow became reusable when the guidance inside each stage became reusable too.</p>
+        <p>I built prompts that defined the role, objective, required inputs, source rules, constraints, output structure, and quality criteria for each task. I also converted brand standards, writing guidance, and product context into machine-readable Markdown files that could travel with the workflow.</p>
       </div>
 
-      <figure style="margin:0" aria-label="Reusable prompts and machine-readable Markdown files combine into reusable operating context for every stage">
-        <ol class="gm-eq" aria-label="Senior judgment plus brand standards plus structured instructions produce reusable operating context">
+      <figure style="margin:0" aria-label="Reusable prompts and machine-readable Markdown files combine into a consistent operating context">
+        <ol class="gm-eq" aria-label="Senior judgment plus brand standards plus structured instructions produce a consistent operating context">
           <li>Senior judgment</li><li class="op" aria-hidden="true">+</li>
           <li>Brand standards</li><li class="op" aria-hidden="true">+</li>
           <li>Structured instructions</li><li class="op" aria-hidden="true">&rarr;</li>
-          <li class="res">Reusable operating context</li>
+          <li class="res">Consistent operating context</li>
         </ol>
         <div class="gm-enc">
           <div class="gm-spec">
             <div class="gm-spec-h">
-              <span class="gm-key">Reusable prompt &middot; anatomy</span>
-              <p>I built reusable prompts that defined:</p>
+              <span class="gm-key">Reusable prompt &middot; anatomy</span><strong class="gm-spec-t">Defined for each task</strong>
             </div>
             <ol>
               <li><span class="n">01</span><span class="f">the role</span><span class="v" style="--w:46%" aria-hidden="true"></span></li>
@@ -1412,125 +1105,168 @@ ul.gm-dash li b{color:var(--ink)}
               <li><span class="n">06</span><span class="f">output structure</span><span class="v" style="--w:54%" aria-hidden="true"></span></li>
               <li><span class="n">07</span><span class="f">quality criteria</span><span class="v" style="--w:78%" aria-hidden="true"></span></li>
             </ol>
-            <div class="gm-spec-att">
-              <span class="gm-key">Attached context</span>
-              <span class="gm-md">brand-guidelines.md</span><span class="gm-md">writing-guidance.md</span><span class="gm-md">product-context.md</span>
-            </div>
           </div>
           <div class="gm-feed" aria-hidden="true">
-            <svg viewBox="0 0 64 100" preserveAspectRatio="none" focusable="false"><path d="M64 30H32V88H4M64 50H32M64 70H32"/><path d="M10 84L4 88L10 92"/></svg>
+            <svg viewBox="0 0 64 100" preserveAspectRatio="none" focusable="false"><path d="M64 18H32V70H64M64 44H4"/><path d="M10 40L4 44L10 48"/></svg>
           </div>
           <div class="gm-files">
             <div class="gm-files-h">
               <span class="gm-key">Machine-readable context</span>
-              <p>I also translated brand standards, writing guidance, and product context into machine-readable Markdown files that could travel with the work from one tool to the next.</p>
             </div>
             <div class="gm-file"><span class="fn">brand-guidelines.md</span><span class="fd">Brand standards</span><span class="ln" aria-hidden="true"></span></div>
             <div class="gm-file"><span class="fn">writing-guidance.md</span><span class="fd">Writing guidance</span><span class="ln" aria-hidden="true"></span></div>
             <div class="gm-file"><span class="fn">product-context.md</span><span class="fd">Product context</span><span class="ln" aria-hidden="true"></span></div>
           </div>
-          <div class="gm-down" aria-hidden="true"><span></span><span></span><span></span></div>
-          <div class="gm-ctxout" style="grid-column:1 / -1">
-            <div>
-              <span class="gm-key">Result</span>
-              <strong>Reusable operating context</strong>
-            </div>
-            <ol aria-label="Available at every stage">
-              <li><b>01</b>Research</li><li><b>02</b>Strategy</li><li><b>03</b>Copy</li><li><b>04</b>Creative direction</li><li><b>05</b>Production</li><li><b>06</b>QA</li>
-            </ol>
-          </div>
         </div>
       </figure>
 
-      <div class="gm-after gm-body">
-        <p>This gave the AI clearer boundaries, gave the team stronger guidance, and helped human reviewers focus on the decisions that required deeper experience.</p>
-      </div>
-      <p class="method-close">The goal was to make more of that judgment available at the moment the team needed it.</p>
+      <p class="method-close">This gave the team a consistent operating context across tools and assignments.</p>
     </div>
   </section>
 
-  <!-- ============ 7. GOVERNANCE ============ -->
+  <!-- ============ 6. GOVERNANCE ============ -->
   <section class="section" id="governance" aria-labelledby="gm-gv-h">
     <div class="shell">
       <div class="stackhead">
         <p class="eyebrow">Governance</p>
-        <h2 id="gm-gv-h">The workflow needed guardrails as much as it needed speed.</h2>
+        <h2 id="gm-gv-h">Scale required rules the team could trust.</h2>
       </div>
-      <div class="twocol">
-        <p>As the process became more reusable, governance became part of the design. The system needed to protect against unsupported claims, changes to approved decisions, sensitive information exposure, and visuals that could imply product functionality that did not exist.</p>
-        <p>I built those protections directly into the workflow.</p>
+      <div class="gm-body gm-gov-copy">
+        <p>As the workflow became more reusable, I added controls around the places where AI introduced risk.</p>
+        <p>Claims had to trace back to approved sources. Confidential information stayed out of free AI accounts. Approved strategy and copy became locked inputs. Generated visuals could support a concept without fabricating product functionality. AI QA could flag issues and recommend corrections. Human reviewers retained final approval.</p>
       </div>
 
-      <figure class="gm-gov" aria-labelledby="gm-gov-cap">
-        <div class="gm-gov-frame">
-          <p><span class="gm-key">Boundary around every stage</span>Confidential information stayed out of free AI accounts.</p>
-        </div>
-        <div class="gm-gbody">
-          <ol class="gm-gh gm-g9" aria-label="Workflow stages">
-            <li class="lbl" aria-hidden="true"><span class="gm-key">Operating rule</span></li>
-            <li class="st"><span class="n">1</span>Research</li>
-            <li class="st"><span class="n">2</span>Content strategy</li>
-            <li class="st"><span class="n">3</span>Copy</li>
-            <li class="st"><span class="n">4</span>Creative direction</li>
-            <li class="st"><span class="n">5</span>Visual assets</li>
-            <li class="st"><span class="n">6</span>Production</li>
-            <li class="st"><span class="n">7</span>AI QA</li>
-            <li class="st gate"><span class="n">8</span>Creative approval</li>
-            <li class="st gate"><span class="n">9</span>Executive approval</li>
-            <li class="gt" aria-hidden="true"></li>
-          </ol>
-          <ul class="gm-rules">
-            <li class="gm-rule gm-g9" style="--s:1;--e:8;--S:2;--E:9">
-              <p>Claims had to trace back to approved sources.<span class="scope"> Applies from research through AI QA, stages 1 to 7.</span></p>
-              <span class="bar" aria-hidden="true"></span>
-              <span class="gt" aria-hidden="true"></span>
-            </li>
-            <li class="gm-rule gm-g9" style="--s:2;--e:10;--S:3;--E:11">
-              <p>Approved strategy and copy became locked inputs for downstream stages.<span class="scope"> Locked at content strategy and copy, stages 2 and 3, and held through executive approval, stage 9.</span></p>
-              <span class="bar thin" aria-hidden="true"></span>
-              <span class="bar lockseg" aria-hidden="true"></span>
-              <span class="locks" aria-hidden="true"><span><svg class="gm-lock" viewBox="0 0 11 12" focusable="false"><rect x="1" y="5" width="9" height="6.2" rx="1"/><path d="M3 5V3.4a2.5 2.5 0 0 1 5 0V5"/></svg></span><span><svg class="gm-lock" viewBox="0 0 11 12" focusable="false"><rect x="1" y="5" width="9" height="6.2" rx="1"/><path d="M3 5V3.4a2.5 2.5 0 0 1 5 0V5"/></svg></span></span>
-              <span class="gt" aria-hidden="true"></span>
-            </li>
-            <li class="gm-rule gm-g9" style="--s:5;--e:7;--S:6;--E:8">
-              <p>Generated visuals could support the concept without inventing product UI.<span class="scope"> Applies to visual assets and production, stages 5 and 6.</span></p>
-              <span class="bar" aria-hidden="true"></span>
-              <span class="gt" aria-hidden="true"></span>
-            </li>
-            <li class="gm-rule gm-g9" style="--s:7;--e:8;--S:8;--E:9">
-              <p>AI QA could identify issues and recommend corrections without rewriting approved work.<span class="scope"> Applies to AI QA, stage 7.</span></p>
-              <span class="bar" aria-hidden="true"></span>
-              <span class="gt" aria-hidden="true"></span>
-            </li>
+      <figure class="gm-mx" aria-labelledby="gm-mx-t">
+        <div class="gm-mx-top">
+          <h3 id="gm-mx-t">Where each control applies</h3>
+          <ul class="gm-mx-key" aria-label="Key">
+            <li><span class="mx-dot" aria-hidden="true"></span>Control applies</li>
+            <li><svg class="gm-lock" viewBox="0 0 11 12" aria-hidden="true" focusable="false"><rect x="1" y="5" width="9" height="6.2" rx="1"/><path d="M3 5V3.4a2.5 2.5 0 0 1 5 0V5"/></svg>Locked input</li>
+            <li><span class="mx-ring" aria-hidden="true"></span>Creative review</li>
+            <li><svg class="mx-chk" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8.5l3.2 3L13 4.5"/></svg>Human approval</li>
           </ul>
-          <div class="gm-gfoot gm-g9" aria-hidden="true">
-            <span class="l">Each bar marks the stages a rule governs.</span>
-            <span class="h">Human approval</span>
-            <span class="gt"></span>
-          </div>
         </div>
-        <p class="gm-glegend"><b>1</b> Research &middot; <b>2</b> Content strategy &middot; <b>3</b> Copy &middot; <b>4</b> Creative direction &middot; <b>5</b> Visual assets &middot; <b>6</b> Production &middot; <b>7</b> AI QA &middot; <b>8</b> Creative approval &middot; <b>9</b> Executive approval</p>
-        <figcaption class="sr-only" id="gm-gov-cap">Governance rules placed on the nine-stage workflow. Each bar shows the stages a rule governs. Stages 8 and 9, creative and executive approval, are human decisions.</figcaption>
+        <div class="gm-mx-wrap">
+          <table class="gm-mx-t" role="table">
+            <thead role="rowgroup">
+              <tr role="row">
+                <th role="columnheader" scope="col" class="mx-rh"><span class="gm-key">Control</span></th>
+                <th role="columnheader" scope="col" class="mx-st"><span class="mx-n">1</span><span class="mx-sn">Research</span></th>
+                <th role="columnheader" scope="col" class="mx-st"><span class="mx-n">2</span><span class="mx-sn">Content Strategy</span></th>
+                <th role="columnheader" scope="col" class="mx-st"><span class="mx-n">3</span><span class="mx-sn">Copy</span></th>
+                <th role="columnheader" scope="col" class="mx-st"><span class="mx-n">4</span><span class="mx-sn">Creative Direction</span></th>
+                <th role="columnheader" scope="col" class="mx-st"><span class="mx-n">5</span><span class="mx-sn">Visual Assets</span></th>
+                <th role="columnheader" scope="col" class="mx-st"><span class="mx-n">6</span><span class="mx-sn">Production</span></th>
+                <th role="columnheader" scope="col" class="mx-st"><span class="mx-n">7</span><span class="mx-sn">AI QA</span></th>
+                <th role="columnheader" scope="col" class="mx-st ap"><span class="mx-n">8</span><span class="mx-sn">Creative Approval</span></th>
+                <th role="columnheader" scope="col" class="mx-st ap"><span class="mx-n">9</span><span class="mx-sn">Executive Approval</span></th>
+              </tr>
+            </thead>
+            <tbody role="rowgroup">
+              <tr role="row">
+                <th role="rowheader" scope="row" class="mx-rh">Source traceability</th>
+                <td role="cell" class="mx-c"><span class="mx-dot" aria-hidden="true"></span><span class="sr-only">Applies: Research</span></td>
+                <td role="cell" class="mx-c"><span class="mx-dot" aria-hidden="true"></span><span class="sr-only">Applies: Content Strategy</span></td>
+                <td role="cell" class="mx-c"><span class="mx-dot" aria-hidden="true"></span><span class="sr-only">Applies: Copy</span></td>
+                <td role="cell" class="mx-c"><span class="sr-only">Not applicable: Creative Direction</span></td>
+                <td role="cell" class="mx-c"><span class="sr-only">Not applicable: Visual Assets</span></td>
+                <td role="cell" class="mx-c"><span class="sr-only">Not applicable: Production</span></td>
+                <td role="cell" class="mx-c"><span class="mx-dot" aria-hidden="true"></span><span class="sr-only">Applies: AI QA</span></td>
+                <td role="cell" class="mx-c ap"><span class="sr-only">Not applicable: Creative Approval</span></td>
+                <td role="cell" class="mx-c ap"><span class="sr-only">Not applicable: Executive Approval</span></td>
+              </tr>
+              <tr role="row">
+                <th role="rowheader" scope="row" class="mx-rh">Confidential information handling</th>
+                <td role="cell" class="mx-c"><span class="mx-dot" aria-hidden="true"></span><span class="sr-only">Applies: Research</span></td>
+                <td role="cell" class="mx-c"><span class="mx-dot" aria-hidden="true"></span><span class="sr-only">Applies: Content Strategy</span></td>
+                <td role="cell" class="mx-c"><span class="mx-dot" aria-hidden="true"></span><span class="sr-only">Applies: Copy</span></td>
+                <td role="cell" class="mx-c"><span class="mx-dot" aria-hidden="true"></span><span class="sr-only">Applies: Creative Direction</span></td>
+                <td role="cell" class="mx-c"><span class="mx-dot" aria-hidden="true"></span><span class="sr-only">Applies: Visual Assets</span></td>
+                <td role="cell" class="mx-c"><span class="mx-dot" aria-hidden="true"></span><span class="sr-only">Applies: Production</span></td>
+                <td role="cell" class="mx-c"><span class="mx-dot" aria-hidden="true"></span><span class="sr-only">Applies: AI QA</span></td>
+                <td role="cell" class="mx-c ap"><span class="sr-only">Not applicable: Creative Approval</span></td>
+                <td role="cell" class="mx-c ap"><span class="sr-only">Not applicable: Executive Approval</span></td>
+              </tr>
+              <tr role="row">
+                <th role="rowheader" scope="row" class="mx-rh">Approved strategy lock</th>
+                <td role="cell" class="mx-c"><span class="sr-only">Not applicable: Research</span></td>
+                <td role="cell" class="mx-c"><span class="sr-only">Not applicable: Content Strategy</span></td>
+                <td role="cell" class="mx-c"><svg class="gm-lock" viewBox="0 0 11 12" aria-hidden="true" focusable="false"><rect x="1" y="5" width="9" height="6.2" rx="1"/><path d="M3 5V3.4a2.5 2.5 0 0 1 5 0V5"/></svg><span class="sr-only">Locked input: Copy</span></td>
+                <td role="cell" class="mx-c"><svg class="gm-lock" viewBox="0 0 11 12" aria-hidden="true" focusable="false"><rect x="1" y="5" width="9" height="6.2" rx="1"/><path d="M3 5V3.4a2.5 2.5 0 0 1 5 0V5"/></svg><span class="sr-only">Locked input: Creative Direction</span></td>
+                <td role="cell" class="mx-c"><svg class="gm-lock" viewBox="0 0 11 12" aria-hidden="true" focusable="false"><rect x="1" y="5" width="9" height="6.2" rx="1"/><path d="M3 5V3.4a2.5 2.5 0 0 1 5 0V5"/></svg><span class="sr-only">Locked input: Visual Assets</span></td>
+                <td role="cell" class="mx-c"><svg class="gm-lock" viewBox="0 0 11 12" aria-hidden="true" focusable="false"><rect x="1" y="5" width="9" height="6.2" rx="1"/><path d="M3 5V3.4a2.5 2.5 0 0 1 5 0V5"/></svg><span class="sr-only">Locked input: Production</span></td>
+                <td role="cell" class="mx-c"><svg class="gm-lock" viewBox="0 0 11 12" aria-hidden="true" focusable="false"><rect x="1" y="5" width="9" height="6.2" rx="1"/><path d="M3 5V3.4a2.5 2.5 0 0 1 5 0V5"/></svg><span class="sr-only">Locked input: AI QA</span></td>
+                <td role="cell" class="mx-c ap"><svg class="gm-lock" viewBox="0 0 11 12" aria-hidden="true" focusable="false"><rect x="1" y="5" width="9" height="6.2" rx="1"/><path d="M3 5V3.4a2.5 2.5 0 0 1 5 0V5"/></svg><span class="sr-only">Locked input: Creative Approval</span></td>
+                <td role="cell" class="mx-c ap"><svg class="gm-lock" viewBox="0 0 11 12" aria-hidden="true" focusable="false"><rect x="1" y="5" width="9" height="6.2" rx="1"/><path d="M3 5V3.4a2.5 2.5 0 0 1 5 0V5"/></svg><span class="sr-only">Locked input: Executive Approval</span></td>
+              </tr>
+              <tr role="row">
+                <th role="rowheader" scope="row" class="mx-rh">Approved copy lock</th>
+                <td role="cell" class="mx-c"><span class="sr-only">Not applicable: Research</span></td>
+                <td role="cell" class="mx-c"><span class="sr-only">Not applicable: Content Strategy</span></td>
+                <td role="cell" class="mx-c"><span class="sr-only">Not applicable: Copy</span></td>
+                <td role="cell" class="mx-c"><svg class="gm-lock" viewBox="0 0 11 12" aria-hidden="true" focusable="false"><rect x="1" y="5" width="9" height="6.2" rx="1"/><path d="M3 5V3.4a2.5 2.5 0 0 1 5 0V5"/></svg><span class="sr-only">Locked input: Creative Direction</span></td>
+                <td role="cell" class="mx-c"><svg class="gm-lock" viewBox="0 0 11 12" aria-hidden="true" focusable="false"><rect x="1" y="5" width="9" height="6.2" rx="1"/><path d="M3 5V3.4a2.5 2.5 0 0 1 5 0V5"/></svg><span class="sr-only">Locked input: Visual Assets</span></td>
+                <td role="cell" class="mx-c"><svg class="gm-lock" viewBox="0 0 11 12" aria-hidden="true" focusable="false"><rect x="1" y="5" width="9" height="6.2" rx="1"/><path d="M3 5V3.4a2.5 2.5 0 0 1 5 0V5"/></svg><span class="sr-only">Locked input: Production</span></td>
+                <td role="cell" class="mx-c"><svg class="gm-lock" viewBox="0 0 11 12" aria-hidden="true" focusable="false"><rect x="1" y="5" width="9" height="6.2" rx="1"/><path d="M3 5V3.4a2.5 2.5 0 0 1 5 0V5"/></svg><span class="sr-only">Locked input: AI QA</span></td>
+                <td role="cell" class="mx-c ap"><svg class="gm-lock" viewBox="0 0 11 12" aria-hidden="true" focusable="false"><rect x="1" y="5" width="9" height="6.2" rx="1"/><path d="M3 5V3.4a2.5 2.5 0 0 1 5 0V5"/></svg><span class="sr-only">Locked input: Creative Approval</span></td>
+                <td role="cell" class="mx-c ap"><svg class="gm-lock" viewBox="0 0 11 12" aria-hidden="true" focusable="false"><rect x="1" y="5" width="9" height="6.2" rx="1"/><path d="M3 5V3.4a2.5 2.5 0 0 1 5 0V5"/></svg><span class="sr-only">Locked input: Executive Approval</span></td>
+              </tr>
+              <tr role="row">
+                <th role="rowheader" scope="row" class="mx-rh">Authentic product functionality</th>
+                <td role="cell" class="mx-c"><span class="sr-only">Not applicable: Research</span></td>
+                <td role="cell" class="mx-c"><span class="sr-only">Not applicable: Content Strategy</span></td>
+                <td role="cell" class="mx-c"><span class="sr-only">Not applicable: Copy</span></td>
+                <td role="cell" class="mx-c"><span class="sr-only">Not applicable: Creative Direction</span></td>
+                <td role="cell" class="mx-c"><span class="mx-dot" aria-hidden="true"></span><span class="sr-only">Applies: Visual Assets</span></td>
+                <td role="cell" class="mx-c"><span class="sr-only">Not applicable: Production</span></td>
+                <td role="cell" class="mx-c"><span class="mx-dot" aria-hidden="true"></span><span class="sr-only">Applies: AI QA</span></td>
+                <td role="cell" class="mx-c ap"><span class="sr-only">Not applicable: Creative Approval</span></td>
+                <td role="cell" class="mx-c ap"><span class="sr-only">Not applicable: Executive Approval</span></td>
+              </tr>
+              <tr role="row">
+                <th role="rowheader" scope="row" class="mx-rh">Advisory AI QA</th>
+                <td role="cell" class="mx-c"><span class="sr-only">Not applicable: Research</span></td>
+                <td role="cell" class="mx-c"><span class="sr-only">Not applicable: Content Strategy</span></td>
+                <td role="cell" class="mx-c"><span class="sr-only">Not applicable: Copy</span></td>
+                <td role="cell" class="mx-c"><span class="sr-only">Not applicable: Creative Direction</span></td>
+                <td role="cell" class="mx-c"><span class="sr-only">Not applicable: Visual Assets</span></td>
+                <td role="cell" class="mx-c"><span class="sr-only">Not applicable: Production</span></td>
+                <td role="cell" class="mx-c"><span class="mx-dot" aria-hidden="true"></span><span class="sr-only">Applies: AI QA</span></td>
+                <td role="cell" class="mx-c ap"><span class="sr-only">Not applicable: Creative Approval</span></td>
+                <td role="cell" class="mx-c ap"><span class="sr-only">Not applicable: Executive Approval</span></td>
+              </tr>
+              <tr role="row">
+                <th role="rowheader" scope="row" class="mx-rh">Human approval</th>
+                <td role="cell" class="mx-c"><span class="sr-only">Not applicable: Research</span></td>
+                <td role="cell" class="mx-c"><span class="sr-only">Not applicable: Content Strategy</span></td>
+                <td role="cell" class="mx-c"><span class="mx-ring" aria-hidden="true"></span><span class="sr-only">Creative review: Copy</span></td>
+                <td role="cell" class="mx-c"><span class="sr-only">Not applicable: Creative Direction</span></td>
+                <td role="cell" class="mx-c"><span class="mx-ring" aria-hidden="true"></span><span class="sr-only">Creative review: Visual Assets</span></td>
+                <td role="cell" class="mx-c"><span class="mx-ring" aria-hidden="true"></span><span class="sr-only">Creative review: Production</span></td>
+                <td role="cell" class="mx-c"><span class="sr-only">Not applicable: AI QA</span></td>
+                <td role="cell" class="mx-c ap"><svg class="mx-chk" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8.5l3.2 3L13 4.5"/></svg><span class="sr-only">Human approval: Creative Approval</span></td>
+                <td role="cell" class="mx-c ap"><svg class="mx-chk" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8.5l3.2 3L13 4.5"/></svg><span class="sr-only">Human approval: Executive Approval</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="gm-mx-legend" aria-hidden="true"><b>1</b> Research &middot; <b>2</b> Content Strategy &middot; <b>3</b> Copy &middot; <b>4</b> Creative Direction &middot; <b>5</b> Visual Assets &middot; <b>6</b> Production &middot; <b>7</b> AI QA &middot; <b>8</b> Creative Approval &middot; <b>9</b> Executive Approval</p>
+        <figcaption class="gm-cap"><b>Governance controls across the workflow.</b> Placement follows the quality gates, required inputs, and review points in the Static Social playbook.</figcaption>
       </figure>
 
-      <div class="gm-after gm-body">
-        <p>Human review remained the final control point. Creative and executive approvals kept accountability with the people responsible for the brand and the business.</p>
-      </div>
-      <p class="method-close">The system accelerated execution while preserving human responsibility.</p>
+<p class="method-close">These rules made governance part of everyday execution.</p>
     </div>
   </section>
 
-  <!-- ============ 8. TEAM ENABLEMENT ============ -->
+  <!-- ============ 7. TEAM ENABLEMENT ============ -->
   <section class="section band" id="enablement" aria-labelledby="gm-te-h">
     <div class="shell">
-      <div class="bandhead">
-        <div>
-          <p class="eyebrow">Team enablement</p>
-          <h2 id="gm-te-h">The workflow taught while it produced.</h2>
-        </div>
-        <div class="body">
-          <p>The team needed a clearer way to work across research, strategy, copy, creative development, production, and review.</p>
-        </div>
+      <div class="stackhead">
+        <p class="eyebrow">Team enablement</p>
+        <h2 id="gm-te-h">The playbooks gave the team a shared way to work.</h2>
+      </div>
+      <div class="gm-body gm-gov-copy">
+        <p>The team could see what came into each stage, what had already been decided, what they were responsible for producing, and what quality looked like before the work moved forward.</p>
       </div>
 
       <figure class="gm-pb" aria-labelledby="gm-pb-cap">
@@ -1545,13 +1281,13 @@ ul.gm-dash li b{color:var(--ink)}
               <thead>
                 <tr>
                   <th scope="col">Workflow Stage</th>
-                  <th scope="col"><span class="mk" aria-hidden="true">1</span><span>What to Do</span></th>
-                  <th scope="col"><span class="mk" aria-hidden="true">2</span><span>Required Inputs</span></th>
-                  <th scope="col"><span class="mk" aria-hidden="true">3</span><span>Required Output</span></th>
-                  <th scope="col"><span class="mk" aria-hidden="true">4</span><span>AI May Change</span></th>
-                  <th scope="col"><span class="mk" aria-hidden="true">5</span><span>Quality Gate</span></th>
-                  <th scope="col"><span class="mk" aria-hidden="true">6</span><span>Next Step / Handoff</span></th>
-                  <th scope="col"><span class="mk" aria-hidden="true">7</span><span>Human Review Required</span></th>
+                  <th scope="col">What to Do</th>
+                  <th scope="col">Required Inputs</th>
+                  <th scope="col">Required Output</th>
+                  <th scope="col">AI May Change</th>
+                  <th scope="col">Quality Gate</th>
+                  <th scope="col">Next Step / Handoff</th>
+                  <th scope="col">Human Review Required</th>
                 </tr>
               </thead>
               <tbody>
@@ -1601,37 +1337,26 @@ ul.gm-dash li b{color:var(--ink)}
           <div class="gm-pb-fade" aria-hidden="true"></div>
         </div>
         <p class="gm-pb-hint" aria-hidden="true">Scroll sideways to see every column.</p>
-        <ol class="gm-pb-legend" aria-label="What each annotated column makes visible">
-          <li class="intro"><span class="gm-key">Every row shows</span><strong>What a junior marketer needs at each stage</strong></li>
-          <li><span class="mk" aria-hidden="true">1</span><div><strong>What they need to do</strong><span class="col">What to Do</span></div></li>
-          <li><span class="mk" aria-hidden="true">2</span><div><strong>What comes in</strong><span class="col">Required Inputs</span></div></li>
-          <li><span class="mk" aria-hidden="true">3</span><div><strong>What they need to produce</strong><span class="col">Required Output</span></div></li>
-          <li><span class="mk" aria-hidden="true">4</span><div><strong>What has already been decided</strong><span class="col">AI May Change, and nothing beyond it</span></div></li>
-          <li><span class="mk" aria-hidden="true">5</span><div><strong>How quality is evaluated</strong><span class="col">Quality Gate</span></div></li>
-          <li><span class="mk" aria-hidden="true">6</span><div><strong>What moves forward</strong><span class="col">Next Step / Handoff</span></div></li>
-          <li><span class="mk" aria-hidden="true">7</span><div><strong>When human review occurs</strong><span class="col">Human Review Required</span></div></li>
-        </ol>
         <figcaption class="gm-cap" id="gm-pb-cap"><b>Static Social playbook, stages 1 to 3 of 9.</b> Selected columns shown in their original order; objective, tool, prompt template, and notes columns omitted.<span class="nda">Client and platform references replaced with bracketed labels.</span></figcaption>
       </figure>
 
-      <div class="twocol gm-after">
-        <p>By making inputs, decisions, outputs, and quality criteria explicit, the playbooks gave junior marketers a structure they could follow from one stage to the next. They could see what had already been decided, what evidence supported the work, what the next deliverable needed to contain, and when a human reviewer needed to step in.</p>
-        <p>Over time, the workflow also became a way to transfer experience. The team could move through increasingly complex marketing tasks with less ambiguity, while senior reviewers focused their attention on the decisions that required deeper judgment.</p>
+      <div class="gm-body gm-after">
+        <p>The playbooks created a shared operating language across research, strategy, copy, creative development, production, and review.</p>
+        <p>Junior marketers gained a clearer path through unfamiliar work, while senior reviewers could spend more time on the decisions that required deeper experience.</p>
       </div>
-      <p class="method-close">The system made experienced judgment easier to access, understand, and apply throughout the work.</p>
     </div>
   </section>
 
-  <!-- ============ 9. SCALING THE SYSTEM ============ -->
+  <!-- ============ 8. SCALING THE SYSTEM ============ -->
   <section class="section" id="scale" aria-labelledby="gm-sc-h">
     <div class="shell">
       <div class="stackhead">
         <p class="eyebrow">Scaling the system</p>
-        <h2 id="gm-sc-h">One workflow became a pattern the team could reuse.</h2>
+        <h2 id="gm-sc-h">One workflow became the foundation for a broader marketing system.</h2>
       </div>
-      <div class="twocol">
-        <p>The Static Social workflow established the core structure: define the work, ground it in source material, move through specialized AI tasks, preserve approved decisions, and bring humans in at the right points.</p>
-        <p>That same pattern supported other marketing deliverables, including product teasers, demos, one-pagers, blog content, video scripts, thought leadership, case studies, SEO updates, email campaigns, and sales materials.</p>
+      <div class="gm-body gm-gov-copy">
+<p>The Static Social workflow established a reusable pattern the team could apply to other deliverables.</p>
+<p>The same operating model expanded across product teasers, demos, one-pagers, blog content, video scripts, thought leadership, case studies, SEO updates, email campaigns, and sales materials.</p>
       </div>
 
       <figure class="gm-lib" aria-labelledby="gm-lib-cap">
@@ -1665,9 +1390,9 @@ ul.gm-dash li b{color:var(--ink)}
       </figure>
 
       <div class="gm-after gm-body">
-        <p>Each workflow adapted to the deliverable while preserving the same underlying architecture: clear inputs, reusable prompts, controlled handoffs, quality gates, and human review.</p>
+        <p>Each workflow adapted to the work while preserving the same core structure: clear inputs, reusable prompts, controlled handoffs, quality gates, and human review.</p>
       </div>
-      <p class="gm-finale">The result was a growing library of marketing playbooks built from one consistent operating model.</p>
+      <p class="gm-finale">What began as one repeatable process became a growing library of marketing playbooks built from the same operating model.</p>
       <div class="gm-finale-cta">
         <button class="btn" type="button" data-cf-open>Start a conversation</button>
         <a class="btn alt" href="index.html#work">All work</a>
