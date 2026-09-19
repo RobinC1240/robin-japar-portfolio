@@ -42,7 +42,7 @@
 }
 .projnav-all:hover,.projnav-all:focus-visible{color:var(--forest);text-decoration:underline;text-underline-offset:4px}
 @media (max-width:560px){
-  /* keep the two arrows and all seven numbers on one line */
+  /* keep the two arrows and all eight numbers on one line */
   .projnav-row{gap:6px}
   .projnav-arrow{width:42px;height:42px}
   .projnav-arrow svg{width:17px;height:17px}
@@ -50,11 +50,11 @@
   .projnav-num{min-width:31px;height:38px;padding:0 2px;font-size:13px;letter-spacing:.04em}
 }
 @media (max-width:400px){
-  /* Seven numbers plus two arrows no longer fit one line inside the
+  /* Eight numbers plus two arrows no longer fit one line inside the
      gutters on a 320px screen. Rather than shrink the numbers below a
      usable touch target, the arrows hold the outer edges and the
      number row drops beneath them at full width. Nothing is hidden. */
   .projnav-row{flex-wrap:wrap;justify-content:space-between;row-gap:16px}
-  .projnav-nums{order:3;flex:0 0 100%;justify-content:center;gap:4px}
-  .projnav-num{min-width:36px;height:40px;padding:0 4px;font-size:13px;letter-spacing:.06em}
+  .projnav-nums{order:3;flex:0 0 100%;justify-content:center;gap:2px}
+  .projnav-num{min-width:33px;height:40px;padding:0 3px;font-size:13px;letter-spacing:.04em}
 }

@@ -20,6 +20,7 @@
   "use strict";
 
   var PROJECTS = [
+    { file: "work-genai-marketing-operating-system.html",        title: "Designing a GenAI Marketing Operating System" },
     { file: "work-ai-transformation-roadmap-framework.html",     title: "Designing an AI Transformation Planning Framework" },
     { file: "work-flash-vendor-transition.html",                 title: "Rebuilding a High-Performing Content Team" },
     { file: "work-enterprise-personalization.html",              title: "Designing Enterprise Personalization" },
